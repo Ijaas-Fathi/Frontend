@@ -5,6 +5,7 @@ import Footer from './Components/Footer';
 import Login from './Pages/Login';
 import Home from './Pages/Home';
 import About from './Pages/About';
+import Contact from './Pages/Contact';
 
 
 function App() {
