@@ -8,7 +8,7 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Tutorials from './Pages/Tutorials';
 import TutorialDetails from './Pages/TutorialDetails';
-
+import Registration from './Pages/Registration';
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/tutorials" element={<Tutorials />} />
           <Route path="/tutorials/:id" element={<TutorialDetails />} />
+          <Route path="/registration" element={<Registration />} />
           <Route path="*" element={<div>404 Page Not Found</div>} />
         </Routes>
         <Footer />
