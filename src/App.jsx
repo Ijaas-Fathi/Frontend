@@ -7,6 +7,7 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Tutorials from './Pages/Tutorials';
+import TutorialDetails from './Pages/TutorialDetails';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/tutorials" element={<Tutorials />} />
+          <Route path="/tutorialData" element={<TutorialDetails />} />
           <Route path="*" element={<div>404 Page Not Found</div>} />
         </Routes>
         <Footer />
