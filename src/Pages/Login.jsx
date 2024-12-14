@@ -114,11 +114,11 @@ const Login = () => {
               <option value="Health & Fitness">Health & Fitness</option>
             </select>
           </div>
-          <button type="submit" className="btn btn-primary w-100">
+          <button type="submit" className="btn btn-primary fw-bold w-100">
             Login
           </button>
         </form>
-        <div className="text-center mt-3">
+        <div className="text-center fw-bold mt-3">
           <p>
             Don't have an account? <a href="/Registration">Sign up</a>
           </p>

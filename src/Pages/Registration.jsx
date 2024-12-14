@@ -138,9 +138,9 @@ return(
                    <option value="Health & Fitness">Health & Fitness</option>
                  </select>
                </div>
-               <button type="submit" className="btn btn-primary w-100">Register</button>
+               <button type="submit" className="btn btn-success w-100 fw-bold">Register</button>
             </form>
-            <div className='text-center mt-3'>
+            <div className='text-center fw-bold mt-3'>
                 <p>Already have an Account? <a href='/login'>Login</a></p>
             </div>
         </div>
