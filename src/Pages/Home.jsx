@@ -14,7 +14,7 @@ const Home = () => (
         By enrolling in these courses, you get the opportunity to learn at your own pace, acquire new knowledge, and stay updated with the latest industry trends and technologies. 
         Whether you're looking to improve your professional skills, explore new hobbies, or advance in your career, 
         these courses provide valuable resources and insights from experienced educators and experts in the field..</p>
-      <button className="btn btn-primary btn-lg">Browse Courses</button>
+      <button className="btn btn-primary btn-lg"><a className='text-white' href='/Tutorials'>Browse Courses</a></button>
     </div>
 
     {/* Categories Section */}

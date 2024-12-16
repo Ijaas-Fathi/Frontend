@@ -34,7 +34,7 @@ const About = () => (
       <p>
         Be a part of our growing community of learners and educators. Together, we can make knowledge accessible to all.
       </p>
-      <button className="btn btn-primary btn-lg">Get Started</button>
+      <button className="btn btn-dark btn-lg"><a className='text-white' href='/Login'>Get Started</a></button>
     </div>
   </div>
 );
