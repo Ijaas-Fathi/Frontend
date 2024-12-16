@@ -7,6 +7,14 @@ const Tutorials = () => {
       { id: 1, title: "React Basics" },
       { id: 2, title: "Advanced React" },
       { id: 3, title: "React with TypeScript" },
+      { id: 4, title: "Entrepreneurship 101" },
+      { id: 5, title: "Financial Management for Businesses" },
+      { id: 6, title: "Machine Learning Basics" },
+      { id: 7, title: "Cybersecurity Essentials" },
+      { id: 8, title: "Graphic Design Fundamentals" },
+      { id: 9, title: "Digital Illustration Masterclass" },
+      { id: 10, title: "Yoga for Beginners" },
+      { id: 11, title: "Strength Training Essentials" },
     ];
 
     return (

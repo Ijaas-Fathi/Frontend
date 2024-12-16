@@ -22,23 +22,26 @@ const Home = () => (
       <div className="container">
         <h2 className="text-center mb-4">Popular Categories</h2>
         <div className="row">
-          <div className="col-md-3 col-sm-6 mb-3">
-            <div className="category bg-primary text-white text-center py-3 rounded">Business</div>
+        <div className="col-md-3 col-sm-6 mb-3">
+            <div className="category bg-danger text-white text-center fw-bold py-3 rounded">React</div>
           </div>
           <div className="col-md-3 col-sm-6 mb-3">
-            <div className="category bg-success text-white text-center py-3 rounded">Technology</div>
+            <div className="category bg-primary text-white text-center fw-bold py-3 rounded">Business</div>
           </div>
           <div className="col-md-3 col-sm-6 mb-3">
-            <div className="category bg-info text-white text-center py-3 rounded">Art & Design</div>
+            <div className="category bg-success text-white text-center fw-bold py-3 rounded">Technology</div>
           </div>
           <div className="col-md-3 col-sm-6 mb-3">
-            <div className="category bg-warning text-white text-center py-3 rounded">Health & Fitness</div>
+            <div className="category bg-info text-white text-center fw-bold py-3 rounded">Art & Design</div>
+          </div>
+          <div className="col-md-3 col-sm-6 mb-3">
+            <div className="category bg-warning text-white text-center fw-bold py-3 rounded">Health & Fitness</div>
           </div>
         </div>
       </div>
     </div>
 
-    {/* Featured Section */}
+  
     <div className="featured-section py-5 bg-light">
       <div className="container">
         <h2 className="text-center mb-4">Featured Courses</h2>
