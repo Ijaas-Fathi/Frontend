@@ -176,36 +176,88 @@ const TutorialDetails = () => {
 
         return (
             <div className="container py-5">
-                <h1 className="text-center mb-4">Tutorial Details</h1>
-                {tutorial ? (
-                    <div className="row">
-                        <div className="col-lg-4 col-md-6 mb-4">
-                            <img src={tutorial.image} alt={`${tutorial.title} thumbnail`} className="img-fluid rounded shadow-lg" />
-                        </div>
-                        <div className="col-lg-8 col-md-6">
-                        <h2>{tutorial.title}</h2>
-                            <p><strong>Instructor:</strong> {tutorial.instructor}</p>
-                            <p><strong>Duration:</strong> {tutorial.duration}</p>
-                            <p><strong>Payment:</strong> {tutorial.payment}</p>
-                            <p>{tutorial.description}</p>
-
-                            <h3 className="mt-4">Course Curriculum</h3>
-                            <ul className="list-group">
-                                {tutorial.curriculum.map((item, index) => (
-                                    <li key={index} className="list-group-item">{item}</li>
-                                ))}
-                            </ul>
-                            <div className="cta-section mt-4">
-                                <button className="btn btn-primary btn-lg">Enroll Now</button>
-                            </div>
-                        </div>
-                        </div>
-                ):(
-                    <p className="text-center text-danger">Tutorial not found.</p>
-
-                )}
+              <h1 className="container-fluid display-4 text-center fw-bold text-gradient">
+                Tutorial Details
+              </h1>
+              {tutorial ? (
+                <div className="mt-5">
+                  <div className="row">
+                    <div className="col-lg-4 col-md-6 mb-4">
+                      <img
+                        src={tutorial.image}
+                        alt={`${tutorial.title} thumbnail`}
+                        className="img-fluid rounded shadow-lg"
+                        style={{
+                          border: "4px solid",
+                          borderImageSlice: 1,
+                          borderImageSource: "linear-gradient(to right, #4facfe, #00f2fe)",
+                        }}
+                      />
+                    </div>
+                    <div className="col-lg-8 col-md-6">
+                      <h2
+                        style={{
+                          background: "linear-gradient(to right, #ff6a00, #ee0979)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                        }}
+                      >
+                        {tutorial.title}
+                      </h2>
+                      <p>
+                        <strong>Instructor:</strong> {tutorial.instructor}
+                      </p>
+                      <p>
+                        <strong>Duration:</strong> {tutorial.duration}
+                      </p>
+                      <p>
+                        <strong>Payment:</strong> {tutorial.payment}
+                      </p>
+                      <p>{tutorial.description}</p>
+                      <h3
+                        style={{
+                          background: "linear-gradient(to right, #43e97b, #38f9d7)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                        }}
+                        className="mt-4"
+                      >
+                        Course Curriculum
+                      </h3>
+                      <ul className="list-group">
+                        {tutorial.curriculum.map((item, index) => (
+                          <li
+                            key={index}
+                            className="list-group-item"
+                            style={{
+                              background: "linear-gradient(to right, #ff9a9e, #fecfef)",
+                            }}
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="cta-section mt-4">
+                        <button
+                          className="btn btn-lg"
+                          style={{
+                            background: "linear-gradient(to right, #ff7e5f, #feb47b)",
+                            color: "#fff",
+                            border: "none",
+                          }}
+                        >
+                          Enroll Now
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                );
+              ) : (
+                <p className="text-center text-danger">Tutorial not found.</p>
+              )}
+            </div>
+          );
+          
             };
             
             export default TutorialDetails;

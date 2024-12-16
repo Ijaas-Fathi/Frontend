@@ -6,7 +6,7 @@ function Header() {
     <header className="border-bottom border-warning border-5 bg-info text-dark py-2">
       <div className="container d-flex justify-content-between align-items-center">
         {/* Logo */}
-        <h1 className="display-4 text-center text-dark mt-3 mb-4 fw-bold">Tutorial App</h1>
+        <h1 className="display-5 text-center text-dark mt-3 mb-4 fw-bold">TUTORIAL APP</h1>
         
         {/* Navigation */}
         <nav>
