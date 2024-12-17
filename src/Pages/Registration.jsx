@@ -51,9 +51,9 @@ const Registration = () => {
 };
 
 return(
-    <div className="d-flex justify-content-center align-items-center min-vh-100 bg-light pt-5" >
-        <div className="ard shadow-lg p-4" style={{ width: '100%', maxWidth: '500px' }} >
-            <h1 className='text-center mb-4'>Register</h1>
+    <div className="d-flex justify-content-center align-items-center min-vh-100 bg-white pt-5" >
+        <div className="ard shadow-lg bg-info p-4" style={{ width: '100%', maxWidth: '500px' }} >
+            <h1 className='text-center mb-4'>Registration</h1>
             {error && <div className='alert alert-danger'>{error}</div>}
             <form onSubmit={handleSubmit}>
                 <div className='mb-3'>
@@ -132,15 +132,16 @@ return(
                    required
                  >
                    <option value="">Select a field</option>
+                   <option value="Health & Fitness">React</option>
                    <option value="Technology">Technology</option>
                    <option value="Business">Business</option>
                    <option value="Art & Design">Art & Design</option>
                    <option value="Health & Fitness">Health & Fitness</option>
                  </select>
                </div>
-               <button type="submit" className="btn btn-success w-100 fw-bold">Register</button>
+               <button type="submit" className="btn btn-light fs-5  w-100 fw-bold">Register Now</button>
             </form>
-            <div className='text-center fw-bold mt-3'>
+            <div className='text-center fs-5 fw-bold mt-3'>
                 <p>Already have an Account? <a href='/login'>Login</a></p>
             </div>
         </div>
