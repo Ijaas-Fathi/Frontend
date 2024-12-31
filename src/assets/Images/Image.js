@@ -14,6 +14,7 @@ import graphic from './graphic';
 import digital from './digital';
 import yoga from './yoga';
 import strength from './strength';
+import alex from './alex';
 
 export const Images = {image1}
 export const Images1 = {image2}
@@ -31,3 +32,4 @@ export const graphic = {graphic}
 export const digital = {digital}
 export const yoga = {yoga}
 export const strength = {strength}
+export const alex = {alex}
