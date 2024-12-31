@@ -132,7 +132,7 @@ const Login = () => {
             )}
           </div>
           <div className="card-footer text-center bg-dark text-white py-3">
-            <small>Powered by LearnVibe</small>
+            <small>Powered by LearnLoop</small>
           </div>
         </div>
       </main>
