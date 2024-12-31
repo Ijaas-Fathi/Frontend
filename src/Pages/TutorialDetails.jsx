@@ -17,6 +17,7 @@ const TutorialDetails = () => {
             title: "React Basics",
             description: "This is a beginner's guide to React. Learn how to build dynamic, single-page web applications with React, a popular JavaScript library. From component creation to state management, this course covers all the fundamentals.",
             instructor: "John Doe",
+            duration: "3 hours",
             payment: "$300",
             image: reactBasic,
             curriculum: ["Introduction to React", "JSX Basics", "Components & Props", "State Management", "Event Handling", "React Router Basics"],

@@ -5,6 +5,9 @@ import advReact from './advReact.png';
 import tsReact from './tsReact';
 import ent from './enterpreneur';
 import fin from './finance';
+import back from './background';
+import mission from './mission';
+import choose from './choose';
 
 export const Images = {image1}
 export const Images1 = {image2}
@@ -13,3 +16,6 @@ export const advReact = {advReact}
 export const ts = {tsReact}
 export const ent = {enterpreneur}
 export const fin = {finance}
+export const back = {background}
+export const mission = {misssion}
+export const choose = {choose}
