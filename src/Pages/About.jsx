@@ -39,7 +39,7 @@ const About = () => (
     <div className="row align-items-center mb-5">
       {/* Why Choose Us Text */}
       <div className="col-md-7 order-md-2">
-        <h2 className="h3 mb-3 text-info fw-bold">Why Choose Us?</h2>
+        <h2 className="h3 mb-3 text-danger fw-bold">Why Choose Us?</h2>
         <ul className="list-unstyled text-muted">
           <li><i className="bi bi-check-circle text-success me-2"></i> Expert instructors with industry experience</li>
           <li><i className="bi bi-check-circle text-success me-2"></i> Comprehensive and up-to-date content</li>
