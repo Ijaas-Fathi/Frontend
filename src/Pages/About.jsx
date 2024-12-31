@@ -65,7 +65,7 @@ const About = () => (
         Be a part of our growing community of learners and educators. Together, we can make knowledge accessible to all.
       </p>
       <button className="btn btn-dark btn-lg px-4">
-        <a className="text-white text-decoration-none" href="/Login">Get Started</a>
+        <a  href="/Login" className="text-white text-decoration-none">Get Started</a>
       </button>
     </div>
 

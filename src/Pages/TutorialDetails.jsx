@@ -6,8 +6,12 @@ import tsReact from '../assets/Images/tsReact.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ent from '../assets/Images/enterpreneur.png';
 import fin from '../assets/Images/finance.png';
-
-
+import ml from '../assets/Images/machine.png';
+import cyber from "../assets/Images/cyber.png";
+import graphic from "../assets/Images/graphic.png";
+import digital from "../assets/Images/digital.png";
+import yoga from "../assets/Images/yoga.png";
+import strength from "../assets/Images/strength.png";
 
 const TutorialDetails = () => {
     const { id } = useParams();
@@ -81,7 +85,7 @@ const TutorialDetails = () => {
               instructor: "Emily White",
               duration: "6 hours",
               payment: "$500",
-              image: "techMachineLearning.png",
+              image: ml,
               curriculum: [
                 "Introduction to Machine Learning",
                 "Supervised Learning",
@@ -97,7 +101,7 @@ const TutorialDetails = () => {
               instructor: "James Anderson",
               duration: "5 hours",
               payment: "$450",
-              image: "techCybersecurity.png",
+              image: cyber,
               curriculum: [
                 "Introduction to Cybersecurity",
                 "Common Threats and Vulnerabilities",
@@ -113,7 +117,7 @@ const TutorialDetails = () => {
               instructor: "Sophia Green",
               duration: "4 hours",
               payment: "$300",
-              image: "artGraphicDesign.png",
+              image: graphic,
               curriculum: [
                 "Understanding Typography",
                 "Color Theory Basics",
@@ -129,7 +133,7 @@ const TutorialDetails = () => {
               instructor: "Daniel Scott",
               duration: "5 hours",
               payment: "$400",
-              image: "artDigitalIllustration.png",
+              image: digital,
               curriculum: [
                 "Introduction to Digital Tools",
                 "Sketching and Outlines",
@@ -146,7 +150,7 @@ const TutorialDetails = () => {
               instructor: "Anna Lee",
               duration: "3 hours",
               payment: "$200",
-              image: "fitnessYoga.png",
+              image: yoga,
               curriculum: [
                 "Introduction to Yoga",
                 "Basic Yoga Poses",
@@ -162,7 +166,7 @@ const TutorialDetails = () => {
               instructor: "Michael Davis",
               duration: "4 hours",
               payment: "$250",
-              image: "fitnessStrengthTraining.png",
+              image: strength,
               curriculum: [
                 "Understanding Strength Training",
                 "Basic Lifting Techniques",
@@ -189,9 +193,9 @@ const TutorialDetails = () => {
                         alt={`${tutorial.title} thumbnail`}
                         className="img-fluid rounded shadow-lg"
                         style={{
-                          border: "4px solid",
-                          borderImageSlice: 1,
-                          borderImageSource: "linear-gradient(to right, #4facfe, #00f2fe)",
+                          border: "6px solid",
+                          borderImageSlice: 2,
+                          borderImageSource: "linear-gradient(to right, #4facfe,rgb(31, 69, 71))",
                         }}
                       />
                     </div>

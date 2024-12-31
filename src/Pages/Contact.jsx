@@ -49,9 +49,9 @@ const Contact = () => {
       <div className="row justify-content-center">
         <div className="col-md-8">
           <div className="contact-info mb-4 p-4 rounded shadow-sm" style={{ background: "linear-gradient(to right, #6dd5ed, #2193b0)" }}>
-            <h3 className="text-white">Get in Touch</h3>
-            <p className="text-white">Email: <a href="mailto:info@tutorialapp.com" className="text-white">info@tutorialapp.com</a></p>
-            <p className="text-white">Phone: <a href="tel:+1234567890" className="text-white">+123-456-7890</a></p>
+            <h3 className="text-dark fs-5 fw-bold">Get in Touch</h3>
+            <p className="text-dark fs-6 fw-bold">Email: <a href="mailto:info@tutorialapp.com" className="text-dark">info@tutorialapp.com</a></p>
+            <p className="text-dark fs-6 fw-bold">Phone: <a href="tel:+1234567890" className="text-dark">+123-456-7890</a></p>
           </div>
 
           {responseStatus && (
@@ -61,10 +61,10 @@ const Contact = () => {
           )}
 
           <div className="contact-form-container p-4 rounded shadow-lg" style={{ background: "linear-gradient(to right, #a1c4fd, #c2e9fb)" }}>
-            <h3 className="text-center" style={{ color: "#2a5298", fontWeight: "bold" }}>Send Us a Message</h3>
+            <h3 className="text-center" style={{ color: "#2a5298", fontWeight: "bold" }}> Leave us a Message😊😊</h3>
             <form onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="name" className="text-dark">Name</label>
+                <label htmlFor="name" className="text-dark fw-bold">Name: </label>
                 <input
                   type="text"
                   id="name"
@@ -77,7 +77,7 @@ const Contact = () => {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="email" className="text-dark">Email</label>
+                <label htmlFor="email" className="text-dark fw-bold">Email:</label>
                 <input
                   type="email"
                   id="email"
@@ -90,7 +90,7 @@ const Contact = () => {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="message" className="text-dark">Message</label>
+                <label htmlFor="message" className="text-dark fw-bold">Message:</label>
                 <textarea
                   id="message"
                   name="message"
@@ -102,8 +102,8 @@ const Contact = () => {
                   style={{ borderColor: "#1e3c72" }}
                 ></textarea>
               </div>
-              <button type="submit" className="btn btn-danger btn-block text-white mt-3" style={{ background: "#2a5298", borderColor: "#1e3c72" }}>
-                Submit
+              <button type="submit" className="btn btn-danger btn-block text-white mt-3 fw-bold fs-5" style={{ background: "#2a5298", borderColor: "#1e3c72" }}>
+                Send
               </button>
             </form>
           </div>

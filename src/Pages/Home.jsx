@@ -23,19 +23,19 @@ const Home = () => (
         <h2 className="text-center mb-4">Popular Categories</h2>
         <div className="row">
         <div className="col-md-3 col-sm-6 mb-3">
-            <div className="category bg-danger text-white text-center fw-bold py-3 rounded">React</div>
+            <div className="category bg-danger text-white text-center fw-bold py-3 fs-5 rounded">React</div>
           </div>
           <div className="col-md-3 col-sm-6 mb-3">
-            <div className="category bg-primary text-white text-center fw-bold py-3 rounded">Business</div>
+            <div className="category bg-primary text-white text-center fw-bold py-3 fs-5 rounded">Business</div>
           </div>
           <div className="col-md-3 col-sm-6 mb-3">
-            <div className="category bg-success text-white text-center fw-bold py-3 rounded">Technology</div>
+            <div className="category bg-success text-white text-center fw-bold py-3 fs-5 rounded">Technology</div>
           </div>
           <div className="col-md-3 col-sm-6 mb-3">
-            <div className="category bg-info text-white text-center fw-bold py-3 rounded">Art & Design</div>
+            <div className="category bg-info text-white text-center fw-bold py-3 fs-5 rounded">Art & Design</div>
           </div>
           <div className="col-md-3 col-sm-6 mb-3">
-            <div className="category bg-warning text-white text-center fw-bold py-3 rounded">Health & Fitness</div>
+            <div className="category bg-warning text-white text-center fw-bold py-3 fs-5 rounded">Health & Fitness</div>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@ const Home = () => (
         <div className="row">
         <div className="col-md-6 d-flex align-items-stretch">
           <div className="card mb-3 shadow">
-          <a href='CourseDetails'><img src={image1} className="card-img-top" alt="React for Beginners" /></a>
+          <a href='Tutorials'><img src={image1} className="card-img-top" alt="React for Beginners" /></a>
             <div className="card-body">
               <h5 className="card-title">React for Beginners</h5>
               <p className="card-text">
@@ -57,13 +57,13 @@ const Home = () => (
             </div>
           </div>
         </div>
-        <div className="col-md-6 d-flex align-items-stretch">
+        <div className="col-md-6 align-items-stretch">
           <div className="card mb-3 shadow">
-            <a href='CourseDetails'><img src={image2} className="card-img-top" alt="Mastering Photoshop" /></a>
+            <a href='Tutorials'><img src={image2} className="card-img-top" alt="Mastering Photoshop" /></a>
             <div className="card-body">
-              <h5 className="card-title">Mastering Photoshop</h5>
+              <h5 className="card-title">Graphic Designing</h5>
               <p className="card-text">
-                Enhance your design skills with this comprehensive Photoshop course.
+              Creativity Meets Precision✨</p><p>Design Your Vision!!.              
               </p>
             </div>
           </div>

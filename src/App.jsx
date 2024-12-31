@@ -9,6 +9,7 @@ import Contact from './Pages/Contact';
 import Tutorials from './Pages/Tutorials';
 import TutorialDetails from './Pages/TutorialDetails';
 import Registration from './Pages/Registration';
+import Enrollment from './Pages/Enrollment';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/tutorials" element={<Tutorials />} />
           <Route path="/tutorials/:id" element={<TutorialDetails />} />
           <Route path="/registration" element={<Registration />} />
+          <Route path='/enrollment' element={<Enrollment />} />
           <Route path="*" element={<div>404 Page Not Found</div>} />
         </Routes>
         <Footer />
