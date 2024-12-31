@@ -221,6 +221,10 @@ const Registration = () => {
                     required
                   />
                 </div>
+
+                {/* Instructor-specific fields */}
+                {role === 'Instructor' && (
+                  <>
                     <div className="mb-3">
                       <label htmlFor="bio" className="form-label">Bio</label>
                       <textarea
@@ -240,7 +244,8 @@ const Registration = () => {
                     </div>
                   </>
                 )}
-          
+              </>
+            )}
 
             <button type="submit" className="btn btn-primary fs-5 w-100 fw-bold">Register Now</button>
           </form>

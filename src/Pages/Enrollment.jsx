@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom'; 
 
 // A mock function to check if the user is logged in
 const checkLoggedIn = () => {

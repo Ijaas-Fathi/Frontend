@@ -24,7 +24,7 @@ function App() {
           <Route path="/tutorials" element={<Tutorials />} />
           <Route path="/tutorials/:id" element={<TutorialDetails />} />
           <Route path="/registration" element={<Registration />} />
-          <Route path='/enrollment' element={<Enrollment />} />
+          <Route path="/enrollment" element={<Enrollment />} />
           <Route path="*" element={<div>404 Page Not Found</div>} />
         </Routes>
         <Footer />

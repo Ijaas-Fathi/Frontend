@@ -1,9 +1,10 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useParams } from "react-router-dom";
 import reactBasic from '../assets/Images/reactBasic.png';
 import advReact from '../assets/Images/advReact.png';
 import tsReact from '../assets/Images/tsReact.png';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import ent from '../assets/Images/enterpreneur.png';
 import fin from '../assets/Images/finance.png';
 import ml from '../assets/Images/machine.png';
@@ -15,6 +16,11 @@ import strength from "../assets/Images/strength.png";
 
 const TutorialDetails = () => {
     const { id } = useParams();
+    const navigate = useNavigate(); 
+
+    const handleEnrollClick = () => {
+      navigate('/enrollment'); // Navigate to the enrollment page
+    };
 
     const tutorialData = {
         1: {
@@ -250,6 +256,7 @@ const TutorialDetails = () => {
                             color: "#fff",
                             border: "none",
                           }}
+                          onClick={handleEnrollClick} // Navigate when clicked
                         >
                           Enroll Now
                         </button>
