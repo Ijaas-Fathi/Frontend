@@ -57,14 +57,14 @@ const Tutorials = () => {
                   className="card-text"
                   style={{
                     color: "#6c757d", 
-                    fontWeight: "normal",
+                    fontWeight: "bold",
                   }}
                 >
                   Click to learn more about this tutorial.
                 </p>
                 <Link
                   to={`/tutorials/${tutorial.id}`}
-                  className="btn btn-outline-primary mt-3"
+                  className="btn btn-outline-white mt-3"
                   style={{
                     color: "#007bff", 
                     borderColor: "#007bff", 
