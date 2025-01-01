@@ -8,8 +8,10 @@ const Login = () => {
     email: '',
     password: '',
   });
-
   const [error, setError] = useState('');
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
+  const [resetEmail, setResetEmail] = useState('');
+  const [newPassword, setNewPassword] = useState('');
 
   const handleRoleChange = (e) => {
     setRole(e.target.value);
@@ -24,17 +26,52 @@ const Login = () => {
     });
   };
 
+  const handleForgotPassword = (e) => {
+    e.preventDefault();
+
+    if (!resetEmail) {
+      setError('Please enter your email address to reset your password');
+      return;
+    }
+
+    if (!/\S+@\S+\.\S+/.test(resetEmail)) {
+      setError('Invalid email address');
+      return;
+    }
+
+    setError('');
+    alert(`Password reset link sent to ${resetEmail}`);
+    setShowForgotPassword(false);
+  };
+
+  const handleNewPassword = (e) => {
+    e.preventDefault();
+
+    if (!newPassword) {
+      setError('Please enter a new password');
+      return;
+    }
+
+    if (newPassword.length < 6) {
+      setError('Password should be at least 6 characters long');
+      return;
+    }
+
+    setError('');
+    alert('Password has been reset successfully!');
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { email, password} = formData;
+    const { email, password } = formData;
 
-  // Validation
+    // Validation
     if (!role) {
       setError('Please select a role (Student or Instructor)');
       return;
     }
 
-    if (!email || !password || !contact || !preferredStudy) {
+    if (!email || !password) {
       setError('Please fill out all fields');
       return;
     }
@@ -50,7 +87,7 @@ const Login = () => {
   };
 
   return (
-    <div className="d-flex positiom-relative flex-column min-vh-100">
+    <div className="d-flex position-relative flex-column min-vh-100">
       {/* Background */}
       <div
         className="position-absolute top-5 left-0 w-100 h-100"
@@ -62,7 +99,7 @@ const Login = () => {
           zIndex: -1,
         }}
       ></div>
-        <h1 className="bg-dark text-white text-center py-3 fw-normal">Login here to Enroll Courses</h1>
+      <h1 className="bg-dark text-white text-center py-3 fw-normal">Login here to Enroll Courses</h1>
       {/* Main content */}
       <main className="flex-grow-1 d-flex justify-content-center align-items-center">
         <div className="card shadow-lg p-4" style={{ width: '100%', maxWidth: '500px', borderRadius: '20px' }}>
@@ -127,6 +164,14 @@ const Login = () => {
                   <p>
                     Don't have an account? <a href="/Registration">Sign up</a>
                   </p>
+                  <p>
+                    <button
+                      className="btn btn-link p-0 text-primary"
+                      onClick={() => setShowForgotPassword(true)}
+                    >
+                      Forgot Password?
+                    </button>
+                  </p>
                 </div>
               </>
             )}
@@ -136,6 +181,46 @@ const Login = () => {
           </div>
         </div>
       </main>
+
+      {/* Forgot Password Modal */}
+      {showForgotPassword && (
+        <div className="modal d-block" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">Forgot Password</h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  onClick={() => setShowForgotPassword(false)}
+                ></button>
+              </div>
+              <div className="modal-body">
+                {error && <div className="alert alert-danger">{error}</div>}
+                <form onSubmit={handleForgotPassword}>
+                  <div className="mb-3">
+                    <label htmlFor="resetEmail" className="form-label">
+                      Enter your email
+                    </label>
+                    <input
+                      type="email"
+                      id="resetEmail"
+                      value={resetEmail}
+                      onChange={(e) => setResetEmail(e.target.value)}
+                      className="form-control"
+                      placeholder="Enter your email"
+                      required
+                    />
+                  </div>
+                  <button type="submit" className="btn btn-primary w-100">
+                    Send Reset Link
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
