@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Correct hook for navigation in React Router v6+
 
 // A mock function to check if the user is logged in
 const checkLoggedIn = () => {
@@ -12,17 +13,17 @@ const Enrollment = () => {
   const [enrollmentDate, setEnrollmentDate] = useState('');
   const [completionStatus, setCompletionStatus] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const history = useHistory();
+  const navigate = useNavigate(); // Use useNavigate instead of useHistory
 
   useEffect(() => {
     // Check if the user is logged in on component mount
     if (!checkLoggedIn()) {
       // Redirect to login page if not logged in
-      history.push('/login');
+      navigate('/login');
     } else {
       setIsLoggedIn(true);
     }
-  }, [history]);
+  }, [navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
