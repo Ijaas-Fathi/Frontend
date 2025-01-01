@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className="border-top border-dark border-5 bg-secondary text-black py-4">
       <div className="container text-center">
-        <p className="fs-6 text-white mt-3 mb-4 fw-normal">© 2024 Tutorial App. All rights reserved.</p>
+        <p className="fs-6 text-white mt-3 mb-4 fw-normal">© 2024 Learn Loop. All rights reserved.</p>
         <div className="d-flex justify-content-center align-items-center">
           <a href="https://facebook.com" className="fs-5 text-primary mx-3" aria-label="Facebook" target="-blank">
             <FaFacebook size={24} />
