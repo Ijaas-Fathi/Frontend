@@ -5,6 +5,8 @@ import choose from '../assets/Images/choose.png';
 import alex from '../assets/Images/alex.png';
 import jamie from '../assets/Images/jamie.png';
 import taylor from '../assets/Images/taylor.png';
+import { motion } from 'framer-motion';
+
 
 const About = () => (
   <div className="container py-5">
@@ -21,13 +23,13 @@ const About = () => (
     {/* Main Content Section */}
     <div className="row align-items-center mb-5">
       {/* Left Section with Image */}
-      <div className="col-md-5 mb-4 mb-md-0">
+      <motion.div className="col-md-5 mb-4 mb-md-0 " whileHover={{ scale: 1.1 }}>
         <img 
           src={mission}
           alt="Mission" 
           className="img-fluid rounded shadow"
         />
-      </div>
+      </motion.div>
       
       {/* Mission Text */}
       <div className="col-md-7">
@@ -53,13 +55,13 @@ const About = () => (
       </div>
 
       {/* Right Section with Image */}
-      <div className="col-md-5 order-md-1 mb-4 mb-md-0">
+      <motion.div className="col-md-5 order-md-1 mb-4 mb-md-0" whileHover={{ scale: 1.1 }}>
         <img 
           src={choose}
           alt="Why Choose Us" 
           className="img-fluid rounded shadow"
         />
-      </div>
+      </motion.div>
     </div>
 
     {/* Join Us Section */}

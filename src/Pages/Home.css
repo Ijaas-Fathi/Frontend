@@ -1,0 +1,23 @@
+@keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .hero-section {
+    animation: slideIn 1s ease-out;
+  }
+  
+  .category {
+    animation: slideIn 1s ease-out;
+  }
+  
+  .featured-section {
+    animation: slideIn 1.5s ease-out;
+  }
+  
