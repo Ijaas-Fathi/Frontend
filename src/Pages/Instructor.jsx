@@ -7,7 +7,7 @@ const instructorData = {
         lastname: 'Doe',
         email: 'john.doe@example.com',
         bio: 'John is a seasoned instructor with over 10 years of experience in teaching web development and programming.',
-        rating: 4.8,
+        rating: 4.5,
 };
 
 const Instructor = () => {
