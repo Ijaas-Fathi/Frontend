@@ -19,7 +19,7 @@ const TutorialDetails = () => {
     const navigate = useNavigate(); 
 
     const handleEnrollClick = () => {
-      navigate('/enrollment'); // Navigate to the enrollment page
+      navigate('/enrollment'); 
     };
 
     const tutorialData = {
@@ -216,7 +216,7 @@ const TutorialDetails = () => {
                         {tutorial.title}
                       </h2>
                       <p>
-                        <strong>Instructor:</strong> {tutorial.instructor}
+                        <strong>Instructor:</strong><a href="/Instructor" > {tutorial.instructor} </a>
                       </p>
                       <p>
                         <strong>Duration:</strong> {tutorial.duration}

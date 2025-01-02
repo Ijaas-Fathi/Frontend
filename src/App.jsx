@@ -10,6 +10,7 @@ import Tutorials from './Pages/Tutorials';
 import TutorialDetails from './Pages/TutorialDetails';
 import Registration from './Pages/Registration';
 import Enrollment from './Pages/Enrollment';
+import Instructor from './Pages/Instructor';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/tutorials/:id" element={<TutorialDetails />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/enrollment" element={<Enrollment />} />
+          <Route path='/instructor' element={<Instructor />} />
           <Route path="*" element={<div>404 Page Not Found</div>} />
         </Routes>
         <Footer />
