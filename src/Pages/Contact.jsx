@@ -54,7 +54,7 @@ const Contact = () => {
             src={contact} 
             alt="Contact"
             className="img-fluid rounded mb-4 shadow"
-            style={{ maxHeight: "400px", width: "100%", objectFit: "cover" }}
+            style={{ maxHeight: "400px", width: "100%", objectFit: "cover", transform: "rotate(345deg)", transition: "transform 0.5s ease" }}
           />
         </div>
 
