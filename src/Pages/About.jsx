@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import mission from '../assets/Images/mission.png';
 import choose from '../assets/Images/choose.png';
 import alex from '../assets/Images/alex.png';
+import jamie from '../assets/Images/jamie.png';
+import taylor from '../assets/Images/taylor.png';
 
 const About = () => (
   <div className="container py-5">
@@ -94,7 +96,7 @@ const About = () => (
         <div className="col-md-4">
           <div className="card shadow-sm">
             <img 
-              src="https://via.placeholder.com/100" 
+              src={jamie}
               alt="User 2" 
               className="card-img-top rounded-circle mx-auto mt-3" 
               style={{ width: '100px', height: '100px' }}
@@ -110,7 +112,7 @@ const About = () => (
         <div className="col-md-4">
           <div className="card shadow-sm">
             <img 
-              src="https://via.placeholder.com/100" 
+              src={taylor} 
               alt="User 3" 
               className="card-img-top rounded-circle mx-auto mt-3" 
               style={{ width: '100px', height: '100px' }}

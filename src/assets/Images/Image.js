@@ -15,6 +15,8 @@ import digital from './digital';
 import yoga from './yoga';
 import strength from './strength';
 import alex from './alex';
+import jamie from './jamie';
+import taylor from './taylor';
 
 export const Images = {image1}
 export const Images1 = {image2}
@@ -33,3 +35,5 @@ export const digital = {digital}
 export const yoga = {yoga}
 export const strength = {strength}
 export const alex = {alex}
+export const jamie = {jamie}
+export const taylor = {taylor}
