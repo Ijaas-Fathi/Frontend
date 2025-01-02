@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import contact from '../assets/Images/contact.png';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -48,9 +49,9 @@ const Contact = () => {
 
       <div className="row justify-content-center">
         <div className="col-md-4">
-          {/* Add Image on the left side */}
+          {}
           <img
-            src="contact_image.jpg" // Replace with your image path
+            src={contact} 
             alt="Contact"
             className="img-fluid rounded mb-4 shadow"
             style={{ maxHeight: "400px", width: "100%", objectFit: "cover" }}
@@ -153,7 +154,7 @@ const Contact = () => {
         <div className="col-md-4">
           {/* Add Image on the right side */}
           <img
-            src="tutorial_image.jpg" // Replace with your image path
+            src="" 
             alt="Tutorials"
             className="img-fluid rounded mb-4 shadow"
             style={{ maxHeight: "400px", width: "100%", objectFit: "cover" }}

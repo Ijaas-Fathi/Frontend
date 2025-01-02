@@ -17,6 +17,7 @@ import strength from './strength';
 import alex from './alex';
 import jamie from './jamie';
 import taylor from './taylor';
+import contact from './contact';
 
 export const Images = {image1}
 export const Images1 = {image2}
@@ -37,3 +38,4 @@ export const strength = {strength}
 export const alex = {alex}
 export const jamie = {jamie}
 export const taylor = {taylor}
+export const contact = {contact}
