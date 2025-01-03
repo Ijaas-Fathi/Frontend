@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import contact from '../assets/Images/contact.png';
-import tutorial from '../assets/Images/tutorial.png';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -150,16 +149,6 @@ const Contact = () => {
               </button>
             </form>
           </div>
-        </div>
-
-        <div className="col-md-4">
-          {/* Add Image on the right side */}
-          <img
-            src={tutorial} 
-            alt="Tutorials"
-            className="img-fluid rounded mb-4 shadow"
-            style={{ maxHeight: "400px", width: "100%", objectFit: "cover" }}
-          />
         </div>
       </div>
     </div>

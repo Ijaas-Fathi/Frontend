@@ -79,6 +79,7 @@ const Tutorials = () => {
         ))}
       </div>
     </div>
+    
   );
 };
 
