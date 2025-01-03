@@ -92,7 +92,7 @@ const Contact = () => {
               className="text-center"
               style={{ color: "#2a5298", fontWeight: "bold" }}
             >
-              Leave us a Message😊😊
+              Leave us a Message✉️
             </h3>
             <form onSubmit={handleSubmit}>
               <div className="form-group">
