@@ -1,19 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Home.css';
 import image1 from "../assets/Images/image1.png";
 import image2 from '../assets/Images/image2.png'; 
 import { motion } from 'framer-motion';
+import back1 from '../assets/Images/back1.png'; 
+import back2 from '../assets/Images/back2.png'; 
+
 
 const Home = () => {
   const slideInVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
   };
+
+  const images = [back1, back2];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
+  
+    return () => clearInterval(interval);
+    }, [images.length]);
+
+
   return(
-  <div className="home">
+  <div className="home"
+        style={{
+          backgroundImage: `url(${images[currentImageIndex]})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          transition: 'background-image 1s ease-in-out',
+        
+        }}>
     {/* Hero Section */}
-    <motion.div className="hero-section text-center bg-light py-5"
+    <motion.div className="hero-section text-center py-5"
        initial="hidden"
        animate="visible"
        variants={slideInVariants}

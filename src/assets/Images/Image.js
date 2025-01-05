@@ -19,6 +19,8 @@ import jamie from './jamie';
 import taylor from './taylor';
 import contact from './contact';
 import tutorial from './tutorial';
+import back1 from './back1';
+import back2 from './back2';
 
 export const Images = {image1}
 export const Images1 = {image2}
@@ -41,3 +43,5 @@ export const jamie = {jamie}
 export const taylor = {taylor}
 export const contact = {contact}
 export const tutorial = {tutorial}
+export const back1 = {back1}
+export const back2 = {back2}
