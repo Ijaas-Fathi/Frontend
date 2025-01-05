@@ -30,8 +30,9 @@ const Home = () => {
   <div className="home"
         style={{
           backgroundImage: `url(${images[currentImageIndex]})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundSize: 'auto',
+          backgroundPosition: 'center 30%',
+          backgroundRepeat: 'no-repeat',
           transition: 'background-image 1s ease-in-out',
         
         }}>
@@ -42,12 +43,11 @@ const Home = () => {
        variants={slideInVariants}
        transition={{ duration: 1 }}
     >
-      <h1 className="display-4 fw-bold">Unlock Your Potential Here!!!</h1>
-      <p className="lead">You can learn from top instructors across a wide range of subjects and enhance your skills by accessing thousands of online courses. 
-        These courses are designed to cater to various learning levels, from beginners to advanced learners. 
-        By enrolling in these courses, you get the opportunity to learn at your own pace, acquire new knowledge, and stay updated with the latest industry trends and technologies. 
-        Whether you're looking to improve your professional skills, explore new hobbies, or advance in your career, 
-        these courses provide valuable resources and insights from experienced educators and experts in the field..</p>
+      <h1 className="display-4 fw-bold"
+      style={{
+        fontFamily: "'Pacifico', cursive",     color: '#bd0c4a', }}>Unlock Your Potential Here!!!</h1>
+      <p className="lead fw-bold">You can learn from top instructors across a wide range of subjects and enhance your skills by accessing thousands of online courses. 
+        These courses are designed to cater to various learning levels, from beginners to advanced learners.</p>
       <button className="btn btn-primary btn-lg"><a className='text-white' href='/Tutorials'>Browse Courses</a></button>
     </motion.div>
 
