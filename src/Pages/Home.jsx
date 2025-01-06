@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import back1 from '../assets/Images/back1.png'; 
 import back2 from '../assets/Images/back2.png'; 
 import back3 from '../assets/Images/back3.png'; 
+import back4 from '../assets/Images/back4.png'; 
 
 
 const Home = () => {
@@ -15,7 +16,7 @@ const Home = () => {
     visible: { opacity: 1, y: 0 },
   };
 
-  const images = [back1, back2, back3];
+  const images = [back1, back2, back3, back4];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   useEffect(() => {
@@ -52,7 +53,7 @@ const Home = () => {
     >
       <h1 className="display-4 fw-bold"
       style={{
-        fontFamily: "Pacifico, cursive",     color: '#bd0c4a', }}>Unlock Your Potential Here!!!</h1>
+        fontFamily: "Pacifico, cursive",     color: '#086031', }}>Unlock Your Potential Here!!!</h1>
       <p className="lead fw-bold">You can learn from top instructors across a wide range of subjects and enhance your skills by accessing thousands of online courses. 
         These courses are designed to cater to various learning levels, from beginners to advanced learners.</p>
       <button className="btn btn-primary btn-lg"><a className='text-white' href='/Tutorials'>Browse Courses</a></button>
@@ -67,7 +68,11 @@ const Home = () => {
         transition={{ duration: 1, delay: 0.5 }}
       >
         <div className="container">
-          <h2 className="text-center mb-4">Popular Categories</h2>
+          <h2 className="text-center mb-4 fw-bold fs-1"
+          style={{
+            fontFamily: 'Montserrat',
+            color: '#d71515 ',
+          }}>POPULAR CATEGORIES</h2>
           <div className="row">
             <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
               <div className="category bg-danger text-white text-center fw-bold py-3 fs-5 rounded">React</div>
