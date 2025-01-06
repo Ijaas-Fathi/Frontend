@@ -21,6 +21,7 @@ import contact from './contact';
 import tutorial from './tutorial';
 import back1 from './back1';
 import back2 from './back2';
+import back3 from './back3';
 
 export const Images = {image1}
 export const Images1 = {image2}
@@ -45,3 +46,4 @@ export const contact = {contact}
 export const tutorial = {tutorial}
 export const back1 = {back1}
 export const back2 = {back2}
+export const back3 = {back3}

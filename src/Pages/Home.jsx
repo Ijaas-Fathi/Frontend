@@ -6,6 +6,7 @@ import image2 from '../assets/Images/image2.png';
 import { motion } from 'framer-motion';
 import back1 from '../assets/Images/back1.png'; 
 import back2 from '../assets/Images/back2.png'; 
+import back3 from '../assets/Images/back3.png'; 
 
 
 const Home = () => {
@@ -14,7 +15,7 @@ const Home = () => {
     visible: { opacity: 1, y: 0 },
   };
 
-  const images = [back1, back2];
+  const images = [back1, back2, back3];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   useEffect(() => {
@@ -27,15 +28,21 @@ const Home = () => {
 
 
   return(
+  <div className="home" style={{ position: 'relative', overflow: 'hidden' }}>
   <div className="home"
-        style={{
+        style={{ position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,          
           backgroundImage: `url(${images[currentImageIndex]})`,
           backgroundSize: 'auto',
           backgroundPosition: 'center 30%',
           backgroundRepeat: 'no-repeat',
           transition: 'background-image 1s ease-in-out',
-        
-        }}>
+          filter: 'blur(10px)',
+          zIndex: -1,
+        }}></div>
     {/* Hero Section */}
     <motion.div className="hero-section text-center py-5"
        initial="hidden"
@@ -45,7 +52,7 @@ const Home = () => {
     >
       <h1 className="display-4 fw-bold"
       style={{
-        fontFamily: "'Pacifico', cursive",     color: '#bd0c4a', }}>Unlock Your Potential Here!!!</h1>
+        fontFamily: "Pacifico, cursive",     color: '#bd0c4a', }}>Unlock Your Potential Here!!!</h1>
       <p className="lead fw-bold">You can learn from top instructors across a wide range of subjects and enhance your skills by accessing thousands of online courses. 
         These courses are designed to cater to various learning levels, from beginners to advanced learners.</p>
       <button className="btn btn-primary btn-lg"><a className='text-white' href='/Tutorials'>Browse Courses</a></button>
