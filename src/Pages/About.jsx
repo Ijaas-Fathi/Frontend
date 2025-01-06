@@ -6,17 +6,36 @@ import alex from '../assets/Images/alex.png';
 import jamie from '../assets/Images/jamie.png';
 import taylor from '../assets/Images/taylor.png';
 import { motion } from 'framer-motion';
+import about_back from '../assets/Images/about_back.png';
 
 
 const About = () => (
-  <div className="container py-5">
+  <div style={{
+    position: 'relative',
+  }} >
+<div 
+style={{
+    background: `url(${about_back})`,
+    backgroundSize: '35%',
+    backgroundPosition: 'right',
+    backgroundRepeat: 'no-repeat',
+    position: 'absolute',
+    top: '-350px',
+    left: '120px',
+    width: '100%',
+    height: '100%',
+    filter: 'blur(2px)',
+    zIndex: -1,
+    transform: 'rotate(40deg)'
+  }}></div>
+
+  <div className="container py-5" style={{ position: 'relative', zIndex: 1 }}>
     {/* Header Section */}
     <div className="text-center mb-5">
       <h1 className="display-4 text-primary fw-bold">About Us</h1>
       <p className="lead text-muted fw-bold">
         Empowering learners worldwide by providing accessible, high-quality education that breaks barriers and creates opportunities. 
         We use innovative technology to offer personalized learning experiences, catering to diverse needs. 
-        Our mission is to make education a universal right, fostering a global community of empowered individuals.
       </p>
     </div>
 
@@ -130,6 +149,7 @@ const About = () => (
       </div>
     </div>
   </div>
+</div>
 );
 
 export default About;

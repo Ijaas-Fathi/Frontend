@@ -23,6 +23,7 @@ import back1 from './back1';
 import back2 from './back2';
 import back3 from './back3';
 import back4 from './back4';
+import about_back from './about_back';
 
 export const Images = {image1}
 export const Images1 = {image2}
@@ -49,3 +50,4 @@ export const back1 = {back1}
 export const back2 = {back2}
 export const back3 = {back3}
 export const back4 = {back4}
+export const about_back = {about_back}
