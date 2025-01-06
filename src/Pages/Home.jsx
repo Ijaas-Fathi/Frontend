@@ -41,7 +41,7 @@ const Home = () => {
           backgroundPosition: 'center 30%',
           backgroundRepeat: 'no-repeat',
           transition: 'background-image 1s ease-in-out',
-          filter: 'blur(10px)',
+          filter: 'blur(2px)',
           zIndex: -1,
         }}></div>
     {/* Hero Section */}
