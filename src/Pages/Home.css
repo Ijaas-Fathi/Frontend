@@ -10,14 +10,14 @@
   }
   
   .hero-section {
-    animation: slideIn 1s ease-out;
+    animation: slideIn 0.5s ease-out;
   }
   
   .category {
-    animation: slideIn 1s ease-out;
+    animation: slideIn 0.5s ease-out;
   }
   
   .featured-section {
-    animation: slideIn 1.5s ease-out;
+    animation: slideIn 0.5s ease-out;
   }
   
