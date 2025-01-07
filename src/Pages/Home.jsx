@@ -27,6 +27,21 @@ const Home = () => {
     return () => clearInterval(interval);
     }, [images.length]);
 
+      const [color, setColor] = useState('#000');
+
+      useEffect(() => {
+        const colors = ['#fb9930', '#2e7c4a', '#65b7f7', '#d37aff'];
+        let index = 0;
+
+        const interval = setInterval(() => {
+          setColor(colors[index]);
+          index = (index + 1) % colors.length;
+        }, 5000);
+
+        return () => clearInterval(interval);
+      }, []);
+    
+
 
   return(
   <div className="home" style={{ position: 'relative', overflow: 'hidden' }}>
@@ -71,7 +86,7 @@ const Home = () => {
           <h2 className="text-center mb-4 fw-bold fs-1"
           style={{
             fontFamily: 'Montserrat',
-            color: '#d71515 ',
+            color: color,
           }}>POPULAR CATEGORIES</h2>
           <div className="row">
             <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
