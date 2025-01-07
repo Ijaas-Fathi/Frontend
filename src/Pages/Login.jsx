@@ -101,14 +101,14 @@ const Login = () => {
       ></div>
       <h1 className="bg-dark text-white text-center py-3 fw-normal">Login here to Enroll Courses</h1>
       {/* Main content */}
-      <main className="flex-grow-1 d-flex justify-content-center align-items-center">
+      <main className="flex-grow-1 d-flex justify-content-center align-items-center" style={{opacity: 0.7}}>
         <div className="card shadow-lg p-4" style={{ width: '100%', maxWidth: '500px', borderRadius: '20px' }}>
           <div className="card-header bg-dark text-white text-center fs-3 fw-bold py-3">
             Select Role
           </div>
           <div className="card-body bg-light py-4">
             <div className="mb-4">
-              <label className="form-label">Are you a Student or an Instructor?</label>
+              <label className="form-label fw-bold">Are you a Student or an Instructor?</label>
               <select
                 className="form-select"
                 value={role}
@@ -123,10 +123,10 @@ const Login = () => {
 
             {role && (
               <>
-                <h3 className="text-center mb-4 text-dark">Login as {role}</h3>
+                <h3 className="text-center mb-4 text-dark fw-bold">Login as {role}</h3>
                 {error && <div className="alert alert-danger">{error}</div>}
                 <form onSubmit={handleSubmit}>
-                  <div className="mb-3">
+                  <div className="mb-3 fw-bold">
                     <label htmlFor="email" className="form-label">
                       Email
                     </label>
@@ -141,7 +141,7 @@ const Login = () => {
                       required
                     />
                   </div>
-                  <div className="mb-3">
+                  <div className="mb-3 fw-bold">
                     <label htmlFor="password" className="form-label">
                       Password
                     </label>

@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import back from '../assets/Images/background.png';
 
-
-
 const Registration = () => {
   const [role, setRole] = useState(''); // Role selection: Student or Instructor
   const [formData, setFormData] = useState({
@@ -15,7 +13,6 @@ const Registration = () => {
     confirmPassword: '',
     bio: '', // Instructor specific
   });
-  const [rating, setRating] = useState(0); // Rating for Instructor
   const [error, setError] = useState('');
 
   const handleRoleChange = (e) => {
@@ -95,8 +92,8 @@ const Registration = () => {
       <header className="text-white text-center py-3 shadow-lg">
         <h2>Welcome to the Registration Page</h2>
       </header>
-      <div className="d-flex justify-content-center align-items-center flex-grow-1">
-        <div className="card shadow-lg bg-light p-4 rounded" style={{ width: '100%', maxWidth: '600px' }}>
+      <div className="d-flex justify-content-center align-items-center flex-grow-1 fw-bold">
+        <div className="card shadow-lg bg-light p-4 rounded" style={{ width: '100%', maxWidth: '600px', opacity: 0.7}}>
           <h1 className="text-center mb-4">Registration</h1>
           {error && <div className="alert alert-danger">{error}</div>}
           <form onSubmit={handleSubmit}>
