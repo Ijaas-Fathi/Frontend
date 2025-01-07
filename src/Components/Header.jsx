@@ -6,7 +6,7 @@ function Header() {
     <header
       className="border-bottom border-secondary border-5 shadow-sm"
       style={{
-        backgroundColor: '#154360',
+        backgroundColor: '#2F4F4F',
       }}
     >
       <div className="container d-flex justify-content-between align-items-center">
@@ -14,7 +14,7 @@ function Header() {
         <div
             className="d-flex align-items-center justify-content-center mx-auto"
             style={{
-              background: 'linear-gradient(45deg, #85C1E9, #2874A6, #1F618D, #154360)', 
+              background: 'linear-gradient(45deg, #FFB6C1, #FFC0CB,  #008B8B, 	#008080)', 
               borderRadius: '15px',
               boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.2)', 
               width: '30%', 
