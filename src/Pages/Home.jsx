@@ -27,7 +27,7 @@ const Home = () => {
     return () => clearInterval(interval);
     }, [images.length]);
 
-      const [color, setColor] = useState('grey');
+      const [color, setColor] = useState('black');
 
       useEffect(() => {
         const colors = ['#03295d', '#930702', '#065d03', '#2b035d'];

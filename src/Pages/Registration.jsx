@@ -1,33 +1,8 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FaStar } from 'react-icons/fa';
 import back from '../assets/Images/background.png';
 
-const StarRating = ({ rating, setRating }) => {
-  return (
-    <div>
-      {[...Array(5)].map((_, index) => {
-        const starValue = index + 1;
-        return (
-          <label key={index}>
-            <input
-              type="radio"
-              name="rating"
-              value={starValue}
-              onClick={() => setRating(starValue)}
-              style={{ display: 'none' }}
-            />
-            <FaStar
-              size={30}
-              color={starValue <= rating ? '#ffc107' : '#e4e5e9'}
-              style={{ cursor: 'pointer', marginRight: '5px' }}
-            />
-          </label>
-        );
-      })}
-    </div>
-  );
-};
+
 
 const Registration = () => {
   const [role, setRole] = useState(''); // Role selection: Student or Instructor
@@ -237,17 +212,8 @@ const Registration = () => {
                         rows="3"
                         required
                       ></textarea>
-                    </div></>)}
-                    {role == 'Student' && (
-                      <>
-                    <div className="mb-3">
-                      <label htmlFor="rating" className="form-label">Rating</label>
-                      <StarRating rating={rating} setRating={setRating} />
-                    </div>
-                  </>
-                )}
-              
-            <div style={{ marginBottom: '20px', fontSize: '0.9rem' }}>
+                    </div></>)}    
+              <div style={{ marginBottom: '20px', fontSize: '0.9rem' }}>
               <input type="checkbox" id="terms" required style={{ marginRight: '10px' }} />
               <label htmlFor="terms">
                 By signing up, you agree to our{' '}
