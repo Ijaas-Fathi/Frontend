@@ -27,10 +27,10 @@ const Home = () => {
     return () => clearInterval(interval);
     }, [images.length]);
 
-      const [color, setColor] = useState('#000');
+      const [color, setColor] = useState('grey');
 
       useEffect(() => {
-        const colors = ['#fb9930', '#2e7c4a', '#65b7f7', '#d37aff'];
+        const colors = ['#03295d', '#930702', '#065d03', '#2b035d'];
         let index = 0;
 
         const interval = setInterval(() => {
@@ -85,6 +85,12 @@ const Home = () => {
         <div className="container">
           <h2 className="text-center mb-4 fw-bold fs-1"
           style={{
+            backgroundSize: 'contain',
+            padding: '10px 20px',
+            borderRadius: '30px',
+            width: '50%',
+            marginLeft: '300px',
+            backgroundColor: '#dfe0e7',
             fontFamily: 'Montserrat',
             color: color,
           }}>POPULAR CATEGORIES</h2>
