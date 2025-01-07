@@ -8,17 +8,15 @@ const checkLoggedIn = () => {
 };
 
 const Enrollment = () => {
-  const [studentId, setStudentId] = useState('');
-  const [tutorialId, setTutorialId] = useState('');
-  const [enrollmentDate, setEnrollmentDate] = useState('');
-  const [completionStatus, setCompletionStatus] = useState('');
+  const [student_id, setStudent_id] = useState('');
+  const [course_id, setCourse_id] = useState('');
+  const [enrollment_date, setEnrollment_date] = useState('');
+  const [completion_status, setCompletion_status] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const navigate = useNavigate(); // Use useNavigate instead of useHistory
+  const navigate = useNavigate(); 
 
   useEffect(() => {
-    // Check if the user is logged in on component mount
     if (!checkLoggedIn()) {
-      // Redirect to login page if not logged in
       navigate('/login');
     } else {
       setIsLoggedIn(true);
@@ -27,12 +25,11 @@ const Enrollment = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle the form submission logic (e.g., send the data to an API or update state)
     console.log({
-      studentId,
-      tutorialId,
-      enrollmentDate,
-      completionStatus,
+      student_id,
+      course_id,
+      enrollment_date,
+      completion_status,
     });
   };
 
@@ -45,48 +42,48 @@ const Enrollment = () => {
       {isLoggedIn ? (
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="studentId">Student ID:</label>
+            <label htmlFor="student_id">Student ID:</label>
             <input
               type="text"
-              id="studentId"
+              id="student_id"
               className="form-control"
-              value={studentId}
-              onChange={(e) => setStudentId(e.target.value)}
+              value={student_id}
+              onChange={(e) => setStudent_id(e.target.value)}
               required
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="tutorialId">Tutorial ID:</label>
+            <label htmlFor="course_id">Tutorial ID:</label>
             <input
               type="text"
-              id="tutorialId"
+              id="course_id"
               className="form-control"
-              value={tutorialId}
-              onChange={(e) => setTutorialId(e.target.value)}
+              value={course_id}
+              onChange={(e) => setCourse_id(e.target.value)}
               required
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="enrollmentDate">Enrollment Date:</label>
+            <label htmlFor="enrollment_date">Enrollment Date:</label>
             <input
               type="date"
-              id="enrollmentDate"
+              id="enrollment_date"
               className="form-control"
-              value={enrollmentDate}
-              onChange={(e) => setEnrollmentDate(e.target.value)}
+              value={enrollment_date}
+              onChange={(e) => setEnrollment_date(e.target.value)}
               required
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="completionStatus">Completion Status:</label>
+            <label htmlFor="completion_status">Completion Status:</label>
             <select
-              id="completionStatus"
+              id="completion_status"
               className="form-control"
-              value={completionStatus}
-              onChange={(e) => setCompletionStatus(e.target.value)}
+              value={completion_status}
+              onChange={(e) => setCompletion_status(e.target.value)}
               required
             >
               <option value="">Select Status</option>

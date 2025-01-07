@@ -60,8 +60,8 @@ const Registration = () => {
     e.preventDefault();
 
     const {
-      firstname,
-      lastname,
+      first_name,
+      last_name,
       email,
       username,
       password,
@@ -76,8 +76,8 @@ const Registration = () => {
     }
 
     if (
-      !firstname ||
-      !lastname ||
+      !first_name ||
+      !last_name ||
       !email ||
       !username ||
       !password ||
@@ -144,12 +144,12 @@ const Registration = () => {
             {role && (
               <>
                 <div className="mb-3">
-                  <label htmlFor="firstname" className="form-label">First Name</label>
+                  <label htmlFor="first_name" className="form-label">First Name</label>
                   <input
                     type="text"
-                    id="firstname"
-                    name="firstname"
-                    value={formData.firstname}
+                    id="first_name"
+                    name="first_name"
+                    value={formData.first_name}
                     onChange={handleChange}
                     className="form-control"
                     placeholder="Enter your first name"
@@ -157,12 +157,12 @@ const Registration = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="lastname" className="form-label">Last Name</label>
+                  <label htmlFor="last_name" className="form-label">Last Name</label>
                   <input
                     type="text"
-                    id="lastname"
-                    name="lastname"
-                    value={formData.lastname}
+                    id="last_name"
+                    name="last_name"
+                    value={formData.last_name}
                     onChange={handleChange}
                     className="form-control"
                     placeholder="Enter your last name"
