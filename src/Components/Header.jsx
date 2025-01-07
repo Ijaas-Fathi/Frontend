@@ -134,6 +134,24 @@ function Header() {
               </li>
 
           </ul>
+            <form className='d-flex' style={{flex: 1, marginLeft: '260px'}}>
+            <input 
+              type='text'
+              className='form-control'
+              placeholder='Search here...'
+              style={{
+                borderColor: 'black',
+                borderWidth: '3px',
+                borderRadius: '15px',
+                marginLeft: '10px',
+                width: '200px',
+              }}
+              />
+              <button
+              type='submit'
+              className='btn fw-bold'
+              style={{borderRadius: '15px', width: '100px', backgroundColor: '#66e0ec', borderWidth: '#2f6064'}} >Search</button>
+          </form>
         </nav>
       </div>
     </header>
