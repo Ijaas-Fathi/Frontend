@@ -248,6 +248,19 @@ const Registration = () => {
                 )}
               </>
             )}
+            <div style={{ marginBottom: '20px', fontSize: '0.9rem' }}>
+              <input type="checkbox" id="terms" required style={{ marginRight: '10px' }} />
+              <label htmlFor="terms">
+                By signing up, you agree to our{' '}
+                <a href="/terms" target="_blank" rel="noopener noreferrer">
+                  Terms of Use
+                </a>{' '}
+                and{' '}
+                <a href="/privacy" target="_blank" rel="noopener noreferrer">
+                  Privacy Policy
+                </a>.
+              </label>
+            </div>
 
             <button type="submit" className="btn btn-primary fs-5 w-100 fw-bold">Register Now</button>
           </form>
