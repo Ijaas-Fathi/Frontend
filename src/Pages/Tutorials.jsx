@@ -18,7 +18,7 @@ const Tutorials = () => {
   ];
 
   return (
-    <div className="container-fluid py-5" style={{background: 'linear-gradient(45deg, #8ccfea 50%,rgb(255, 159, 196) 50%)'}}>
+    <div className="container-fluid py-5" style={{background: 'linear-gradient(45deg, #8ccfea 50%, #71ddb7 50%)'}}>
         <h1
         className="display-4 fw-bold text-center mb-4 text-dark">
         Our Tutorials
