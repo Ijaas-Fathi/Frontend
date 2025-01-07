@@ -246,8 +246,7 @@ const Registration = () => {
                     </div>
                   </>
                 )}
-              </>
-            )}
+              
             <div style={{ marginBottom: '20px', fontSize: '0.9rem' }}>
               <input type="checkbox" id="terms" required style={{ marginRight: '10px' }} />
               <label htmlFor="terms">
@@ -261,7 +260,8 @@ const Registration = () => {
                 </a>.
               </label>
             </div>
-
+            </>
+            )}
             <button type="submit" className="btn btn-primary fs-5 w-100 fw-bold">Register Now</button>
           </form>
           <div className="text-center fs-5 fw-bold mt-3">
