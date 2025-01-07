@@ -140,7 +140,6 @@ function Header() {
               className='form-control'
               placeholder='Search here...'
               style={{
-                borderColor: 'black',
                 borderWidth: '3px',
                 borderRadius: '15px',
                 marginLeft: '10px',
