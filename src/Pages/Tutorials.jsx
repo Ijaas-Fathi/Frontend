@@ -18,7 +18,7 @@ const Tutorials = () => {
   ];
 
   return (
-    <div className="container-fluid py-5" style={{background: 'linear-gradient(45deg, #8ccfea 50%,rgb(255, 159, 196) 50%)'}}>
+    <div className="container-fluid py-5" style={{background: 'linear-gradient(45deg, #A9A9A9 50%, #008B8B 50%)'}}>
         <h1
         className="display-4 fw-bold text-center mb-4 text-dark">
         Our Tutorials
@@ -29,7 +29,7 @@ const Tutorials = () => {
             <div
               className="card shadow-sm h-100 border-0"
               style={{
-                background: "#f8f9fa", 
+                backgroundColor: "#F5FFFA", 
                 color: "#333", 
                 borderRadius: "15px",
                 transition: "transform 0.3s ease, box-shadow 0.3s ease",

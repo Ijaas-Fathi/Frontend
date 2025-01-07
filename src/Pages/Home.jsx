@@ -68,10 +68,9 @@ const Home = () => {
     >
       <h1 className="display-4 fw-bold"
       style={{
-        fontFamily: "Pacifico, cursive",     color: '#086031', }}>Unlock Your Potential Here!!!</h1>
+        fontFamily: "Pacifico, cursive",     color: '#0f36e7', }}>Unlock Your Potential Here!!!</h1>
       <p className="lead fw-bold">You can learn from top instructors across a wide range of subjects and enhance your skills by accessing thousands of online courses. 
         These courses are designed to cater to various learning levels, from beginners to advanced learners.</p>
-      <button className="btn btn-primary btn-lg"><a className='text-white' href='/Tutorials'>Browse Courses</a></button>
     </motion.div>
 
     {/* Categories Section */}
