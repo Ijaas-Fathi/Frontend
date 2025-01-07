@@ -237,7 +237,9 @@ const Registration = () => {
                         rows="3"
                         required
                       ></textarea>
-                    </div>
+                    </div></>)}
+                    {role == 'Student' && (
+                      <>
                     <div className="mb-3">
                       <label htmlFor="rating" className="form-label">Rating</label>
                       <StarRating rating={rating} setRating={setRating} />
