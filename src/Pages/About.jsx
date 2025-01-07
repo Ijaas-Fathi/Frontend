@@ -24,7 +24,7 @@ style={{
     left: '120px',
     width: '100%',
     height: '100%',
-    filter: 'blur(2px)',
+    filter: 'blur(3px)',
     zIndex: -1,
     transform: 'rotate(40deg)'
   }}></div>
@@ -42,11 +42,19 @@ style={{
     {/* Main Content Section */}
     <div className="row align-items-center mb-5">
       {/* Left Section with Image */}
-      <motion.div className="col-md-5 mb-4 mb-md-0 " whileHover={{ scale: 1.1 }}>
+      <motion.div className="col-md-5 mb-4 mb-md-0 " 
+                  whileHover={{ 
+                    scale: 1.1, }}
+                    animate={{
+                      rotate: [0, 360], // Rotate from 0 to 360 degrees
+                    }}
+                
+                    transition={{ repeat: Infinity, repeatType: "loop", duration: 5}}>
         <img 
           src={mission}
           alt="Mission" 
           className="img-fluid rounded shadow"
+          style={{width: '70%', height: 'auto',}}
         />
       </motion.div>
       
@@ -79,6 +87,7 @@ style={{
           src={choose}
           alt="Why Choose Us" 
           className="img-fluid rounded shadow"
+          style={{transform: 'rotate(325deg)', width: '70%', height: 'auto',}}
         />
       </motion.div>
     </div>
