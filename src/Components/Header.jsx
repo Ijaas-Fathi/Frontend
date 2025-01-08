@@ -14,9 +14,7 @@ function Header() {
         <div
             className="d-flex align-items-center justify-content-center mx-auto"
             style={{
-              background: 'linear-gradient(45deg, #FFB6C1, #FFC0CB,  #008B8B, 	#008080)', 
               borderRadius: '15px',
-              boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.2)', 
               width: '30%', 
               borderLeft: '3px solid #fff',
               borderRight: '3px solid #fff', 
@@ -29,7 +27,7 @@ function Header() {
                 letterSpacing: '2px',
                 fontSize: '2.5rem',
                 color: '#fff',
-                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)', 
+                textShadow: '5px 5px 5px rgba(0, 0, 0, 0.3)', 
                 display: 'inline-block', 
                 padding: '10px 20px',
               }}

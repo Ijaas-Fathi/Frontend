@@ -45,11 +45,11 @@ style={{
       <motion.div className="col-md-5 mb-4 mb-md-0 " 
                   whileHover={{ 
                     scale: 1.1, }}
-                    animate={{
-                      rotate: [0, 360], // Rotate from 0 to 360 degrees
-                    }}
-                
-                    transition={{ repeat: Infinity, repeatType: "loop", duration: 5}}>
+                    style={{
+                    animation: 'slideAnimation 2s infinite',
+                      animationDelay: '2s',
+                        }}            
+                    transition={{ repeat: Infinity, repeatType: "loop", duration: 2}}>
         <img 
           src={mission}
           alt="Mission" 

@@ -11,9 +11,19 @@ import TutorialDetails from './Pages/TutorialDetails';
 import Registration from './Pages/Registration';
 import Enrollment from './Pages/Enrollment';
 import Instructor from './Pages/Instructor';
+import SiteBackground from './assets/Images/SiteBackground.png';
 
 function App() {
+  const backgroundStyle = {
+    background: `url(${SiteBackground}) no-repeat center center fixed`,
+    backgroundSize: "cover",
+    minHeight: "100vh",
+    margin: 0,
+    padding: 0,
+  };
+
   return (
+    <div style={backgroundStyle}>
     <Router>
       <div className="App">
         <Header /><br />
@@ -31,7 +41,7 @@ function App() {
         </Routes>
         <Footer />
       </div>
-    </Router>
+    </Router></div>
   );
 }
 
