@@ -5,8 +5,8 @@ import back from '../assets/Images/background.png';
 const Registration = () => {
   const [role, setRole] = useState(''); // Role selection: Student or Instructor
   const [formData, setFormData] = useState({
-    firstname: '',
-    lastname: '',
+    first_name: '',
+    last_name: '',
     email: '',
     username: '',
     password: '',
