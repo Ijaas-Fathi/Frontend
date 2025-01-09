@@ -31,7 +31,7 @@ style={{
 
   <div className="container py-5" style={{ position: 'relative', zIndex: 1 }}>
     {/* Header Section */}
-    <div className="text-center mb-5">
+    <div className="text-center mb-5 bg-white">
       <h1 className="display-4 text-primary fw-bold">About Us</h1>
       <p className="lead text-muted fw-bold">
         Empowering learners worldwide by providing accessible, high-quality education that breaks barriers and creates opportunities. 
@@ -40,7 +40,7 @@ style={{
     </div>
 
     {/* Main Content Section */}
-    <div className="row align-items-center mb-5">
+    <div className="row align-items-center mb-5 bg-white">
       {/* Left Section with Image */}
       <motion.div className="col-md-5 mb-4 mb-md-0 " 
                   whileHover={{ 
@@ -59,7 +59,7 @@ style={{
       </motion.div>
       
       {/* Mission Text */}
-      <div className="col-md-7">
+      <div className="col-md-7 bg-white">
         <h2 className="h3 mb-3 text-success fw-bold">Our Mission</h2>
         <p className="text-muted">
           Our mission is to make learning accessible to everyone by offering a wide range of tutorials and courses. 
@@ -68,7 +68,7 @@ style={{
       </div>
     </div>
 
-    <div className="row align-items-center mb-5">
+    <div className="row align-items-center mb-5 bg-white">
       {/* Why Choose Us Text */}
       <div className="col-md-7 order-md-2">
         <h2 className="h3 mb-3 text-danger fw-bold">Why Choose Us?</h2>
@@ -93,7 +93,7 @@ style={{
     </div>
 
     {/* Join Us Section */}
-    <div className="text-center mt-5">
+    <div className="text-center mt-5 bg-white">
       <h2 className="h3 mb-4 text-warning fw-bold">Join Us</h2>
       <p className="text-muted">
         Be a part of our growing community of learners and educators. Together, we can make knowledge accessible to all.

@@ -14,7 +14,7 @@ import Instructor from './Pages/Instructor';
 import SiteBackground from './assets/Images/SiteBackground.png';
 
 function App() {
-  const backgroundStyle = {
+    const backgroundStyle = {
     background: `url(${SiteBackground}) no-repeat center center fixed`,
     backgroundSize: "cover",
     minHeight: "100vh",
