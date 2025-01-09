@@ -13,22 +13,6 @@ const About = () => (
   <div style={{
     position: 'relative',
   }} >
-<div 
-style={{
-    background: `url(${about_back})`,
-    backgroundSize: '35%',
-    backgroundPosition: 'right',
-    backgroundRepeat: 'no-repeat',
-    position: 'absolute',
-    top: '-350px',
-    left: '120px',
-    width: '100%',
-    height: '100%',
-    filter: 'blur(3px)',
-    zIndex: -1,
-    transform: 'rotate(40deg)'
-  }}></div>
-
   <div className="container py-5" style={{ position: 'relative', zIndex: 1 }}>
     {/* Header Section */}
     <div className="text-center mb-5 bg-white">
@@ -93,7 +77,13 @@ style={{
     </div>
 
     {/* Join Us Section */}
-    <div className="text-center mt-5 bg-white">
+    <div className="text-center mt-5">
+    <img 
+          src={about_back}
+          alt="Mission" 
+          className="img-fluid rounded shadow"
+          style={{width: '40%', height: 'auto', marginLeft: '700px', transform: 'rotate(30deg)', filter: 'blur(2px)', opacity: 0.8,}}
+        />
       <h2 className="h3 mb-4 text-warning fw-bold">Join Us</h2>
       <p className="text-muted">
         Be a part of our growing community of learners and educators. Together, we can make knowledge accessible to all.

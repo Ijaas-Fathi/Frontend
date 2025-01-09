@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
@@ -14,8 +14,19 @@ import Instructor from './Pages/Instructor';
 import SiteBackground from './assets/Images/SiteBackground.png';
 
 function App() {
+  const [offsetY, setOffsetY] = useState(0);
+  const handleScroll = () => {
+    setOffsetY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+
     const backgroundStyle = {
-    background: `url(${SiteBackground}) no-repeat center center fixed`,
+    background: `url(${SiteBackground}) no-repeat center ${50 + offsetY * 0.1}% fixed`,
     backgroundSize: "cover",
     minHeight: "100vh",
     margin: 0,

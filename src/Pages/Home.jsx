@@ -11,22 +11,51 @@ import back4 from '../assets/Images/back4.png';
 
 
 const Home = () => {
-  const slideInVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
-  };
-
   const images = [back1, back2, back3, back4];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000);
-  
-    return () => clearInterval(interval);
-    }, [images.length]);
+    return () => clearInterval(interval); 
+  }, [images.length]);
 
+  const handleNext = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const handlePrevious = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const imageStyle = {
+    width: "70%",
+    height: "100vh",
+    objectFit: "cover",
+    transition: "opacity 1s ease-in-out",
+  };
+
+
+  const arrowStyle = {
+    position: 'absolute',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    fontSize: '2rem',
+    color: 'white',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    border: 'none',
+    borderRadius: '50%',
+    padding: '10px',
+    cursor: 'pointer',
+    zIndex: 10,
+  };
+
+  const slideInVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
       const [color, setColor] = useState('black');
 
       useEffect(() => {
@@ -36,7 +65,7 @@ const Home = () => {
         const interval = setInterval(() => {
           setColor(colors[index]);
           index = (index + 1) % colors.length;
-        }, 5000);
+        }, 500);
 
         return () => clearInterval(interval);
       }, []);
@@ -44,21 +73,8 @@ const Home = () => {
 
 
   return(
+    <div className='bg-white'>
   <div className="home" style={{ position: 'relative', overflow: 'hidden' }}>
-  <div className="home"
-        style={{ position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,          
-          backgroundImage: `url(${images[currentImageIndex]})`,
-          backgroundSize: 'auto',
-          backgroundPosition: 'center 30%',
-          backgroundRepeat: 'no-repeat',
-          transition: 'background-image 1s ease-in-out',
-          filter: 'blur(2px)',
-          zIndex: -1,
-        }}></div>
     {/* Hero Section */}
     <motion.div className="hero-section text-center py-5"
        initial="hidden"
@@ -66,15 +82,46 @@ const Home = () => {
        variants={slideInVariants}
        transition={{ duration: 1 }}
     >
+      <motion.div
+        className="categories-section py-5"
+        initial="hidden"
+        animate="visible"
+        variants={slideInVariants}
+        transition={{ duration: 1, delay: 0.5 }}
+      ></motion.div>
+    <div className="home" style={{ position: 'relative', overflow: 'hidden' }}>
+      <div style={{ position: 'relative', textAlign: 'center', color: 'white' }}>
+      <div style={{ position: 'relative', textAlign: 'center', color: 'white' }}>
+        {/* Left Arrow */}
+        <button 
+          onClick={handlePrevious} 
+          style={{ ...arrowStyle, left: '10px' }}>
+          &#8249;
+        </button>
+        <img 
+          src={images[currentImageIndex]} 
+          alt={`Slide ${currentImageIndex + 1}`} 
+          style={imageStyle} 
+        />
+         <button 
+          onClick={handleNext} 
+          style={{ ...arrowStyle, right: '10px' }}>
+          &#8250;
+        </button>
+        </div>
+      </div>
+    </div>
+
+      <br /><br /><br />
+      <div style={{backgroundColor: '#F0F8FF'}}>
       <h1 className="display-4 fw-bold"
       style={{
-        fontFamily: "Pacifico, cursive",     color: '#DC143C', }}>Unlock Your Potential Here!!!</h1>
-      <p className="lead fw-bold">You can learn from top instructors across a wide range of subjects and enhance your skills by accessing thousands of online courses. 
+        fontFamily: "Pacifico, cursive", color: '#DC143C', backgroundColor: '#F0F8FF'}}>Unlock Your Potential Here!!!</h1>
+        <br /><p className="lead fw-bold" >You can learn from top instructors across a wide range of subjects and enhance your skills by accessing thousands of online courses. 
         These courses are designed to cater to various learning levels, from beginners to advanced learners.</p>
-    </motion.div>
-
-    {/* Categories Section */}
-    <motion.div
+        </div>
+        </motion.div>
+        <motion.div
         className="categories-section py-5"
         initial="hidden"
         animate="visible"
@@ -89,31 +136,30 @@ const Home = () => {
             borderRadius: '30px',
             width: '50%',
             marginLeft: '300px',
-            backgroundColor: '#dfe0e7',
             fontFamily: 'Montserrat',
             color: color,
           }}>POPULAR CATEGORIES</h2>
           <div className="row">
             <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
-              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#5F9EA0'}}>React</div>
+              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#8B4513'}}>React</div>
             </motion.div>
             <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
-              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#DAA520'}}>Business</div>
+              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#8B4513'}}>Business</div>
             </motion.div>
             <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
               <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#8B4513'}}>Technology</div>
             </motion.div>
             <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
-              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#DB7093'}}>Art & Design</div>
+              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#8B4513'}}>Art & Design</div>
             </motion.div>
             <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
-              <div className="category text-white text-center fw-bold py-3 fs-5 rounded"  style={{backgroundColor: '#B22222'}}>Health & Fitness</div>
+              <div className="category text-white text-center fw-bold py-3 fs-5 rounded"  style={{backgroundColor: '#8B4513'}}>Health & Fitness</div>
             </motion.div>
           </div>
         </div>
       </motion.div>
   
-    <motion.div className="featured-section py-5 bg-light"
+    <motion.div className="featured-section py-5"
      initial="hidden"
      animate="visible"
      variants={slideInVariants}
@@ -147,6 +193,7 @@ const Home = () => {
       </div>
       </div>
     </motion.div>
+  </div>
   </div>
 );
 };

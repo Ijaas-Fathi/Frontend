@@ -93,7 +93,7 @@ const Registration = () => {
         <h2>Welcome to the Registration Page</h2>
       </header>
       <div className="d-flex justify-content-center align-items-center flex-grow-1 fw-bold">
-        <div className="card shadow-lg bg-light p-4 rounded" style={{ width: '100%', maxWidth: '600px', opacity: 0.7}}>
+        <div className="card shadow-lg bg-light p-4 rounded" style={{ width: '100%', maxWidth: '600px', opacity: 0.9}}>
           <h1 className="text-center mb-4">Registration</h1>
           {error && <div className="alert alert-danger">{error}</div>}
           <form onSubmit={handleSubmit}>

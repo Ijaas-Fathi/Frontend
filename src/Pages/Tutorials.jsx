@@ -18,9 +18,9 @@ const Tutorials = () => {
   ];
 
   return (
-    <div className="container-fluid py-5" style={{background: 'linear-gradient(45deg, #A9A9A9 50%, #008B8B 50%)'}}>
+    <div className="container-fluid py-5">
         <h1
-        className="display-4 fw-bold text-center mb-4 text-dark">
+        className="display-4 fw-bold text-center mb-4 text-dark" style={{backgroundColor: '#5DC4B3', padding: '5px', borderRadius: '15px'}}>
         Our Tutorials
         </h1>
       <div className="row row-cols-1 row-cols-md-3 g-4">

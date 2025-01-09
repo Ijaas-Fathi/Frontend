@@ -88,20 +88,9 @@ const Login = () => {
 
   return (
     <div className="d-flex position-relative flex-column min-vh-100">
-      {/* Background */}
-      <div
-        className="position-absolute top-5 left-0 w-100 h-100"
-        style={{
-          backgroundImage: `url(${back})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'blur(8px)',
-          zIndex: -1,
-        }}
-      ></div>
-      <h1 className="bg-dark text-white text-center py-3 fw-normal">Login here to Enroll Courses</h1>
+      <h1 className="bg-dark text-white text-center py-3 fw-normal" style={{marginTop: '50px'}}>Login here to Enroll Courses</h1>
       {/* Main content */}
-      <main className="flex-grow-1 d-flex justify-content-center align-items-center" style={{opacity: 0.7}}>
+      <main className="flex-grow-1 d-flex justify-content-center align-items-center" style={{opacity: 0.9}}>
         <div className="card shadow-lg p-4" style={{ width: '100%', maxWidth: '500px', borderRadius: '20px' }}>
           <div className="card-header bg-dark text-white text-center fs-3 fw-bold py-3">
             Select Role

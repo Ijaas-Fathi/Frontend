@@ -6,23 +6,23 @@ function Header() {
     <header
       className="border-bottom border-secondary border-5 shadow-sm"
       style={{
-        backgroundColor: '#2F4F4F',
+         backgroundColor: '#2F4F4F',
+         position: 'fixed',
+         top: 0,
+         width: '100%',
+         zIndex: 1000, 
       }}
     >
       <div className="container d-flex justify-content-between align-items-center">
         {/* Logo */}
         <div
-            className="d-flex align-items-center justify-content-center mx-auto"
-            style={{
-              borderRadius: '15px',
-              width: '30%', 
-              borderLeft: '3px solid #fff',
-              borderRight: '3px solid #fff', 
-            }}
+              className="d-flex align-items-center justify-content-center mx-auto"
+              
           >
             <h1
               className="text-uppercase fw-bold text-center"
               style={{
+                marginLeft: '1px',
                 fontFamily: "'Pacifico', cursive", 
                 letterSpacing: '2px',
                 fontSize: '2.5rem',
