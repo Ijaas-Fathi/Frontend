@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Home.css';
 import image1 from "../assets/Images/image1.png";
 import image2 from '../assets/Images/image2.png'; 
 import { motion } from 'framer-motion';
@@ -13,6 +12,7 @@ import back4 from '../assets/Images/back4.png';
 const Home = () => {
   const images = [back1, back2, back3, back4];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -31,12 +31,12 @@ const Home = () => {
   };
 
   const imageStyle = {
-    width: "70%",
+    width: "100%",
     height: "100vh",
     objectFit: "cover",
-    transition: "opacity 1s ease-in-out",
+    transition: "transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 1s ease-in-out",
+    transform: "scale(1)",
   };
-
 
   const arrowStyle = {
     position: 'absolute',
@@ -73,7 +73,7 @@ const Home = () => {
 
 
   return(
-    <div className='bg-white'>
+ <div className='bg-white'>
   <div className="home" style={{ position: 'relative', overflow: 'hidden' }}>
     {/* Hero Section */}
     <motion.div className="hero-section text-center py-5"
@@ -89,7 +89,7 @@ const Home = () => {
         variants={slideInVariants}
         transition={{ duration: 1, delay: 0.5 }}
       ></motion.div>
-    <div className="home" style={{ position: 'relative', overflow: 'hidden' }}>
+      <div className="home" style={{ position: 'relative', overflow: 'hidden' }}>
       <div style={{ position: 'relative', textAlign: 'center', color: 'white' }}>
       <div style={{ position: 'relative', textAlign: 'center', color: 'white' }}>
         {/* Left Arrow */}
@@ -111,8 +111,6 @@ const Home = () => {
         </div>
       </div>
     </div>
-
-      <br /><br /><br />
       <div style={{backgroundColor: '#F0F8FF'}}>
       <h1 className="display-4 fw-bold"
       style={{
@@ -141,19 +139,19 @@ const Home = () => {
           }}>POPULAR CATEGORIES</h2>
           <div className="row">
             <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
-              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#8B4513'}}>React</div>
+              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#55C79A'}}>React</div>
             </motion.div>
             <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
-              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#8B4513'}}>Business</div>
+              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#55C79A'}}>Business</div>
             </motion.div>
             <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
-              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#8B4513'}}>Technology</div>
+              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#55C79A'}}>Technology</div>
             </motion.div>
             <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
-              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#8B4513'}}>Art & Design</div>
+              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#55C79A'}}>Art & Design</div>
             </motion.div>
             <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
-              <div className="category text-white text-center fw-bold py-3 fs-5 rounded"  style={{backgroundColor: '#8B4513'}}>Health & Fitness</div>
+              <div className="category text-white text-center fw-bold py-3 fs-5 rounded"  style={{backgroundColor: '#55C79A'}}>Health & Fitness</div>
             </motion.div>
           </div>
         </div>
