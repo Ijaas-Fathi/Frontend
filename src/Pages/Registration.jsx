@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import back from '../assets/Images/background.png';
+import axios from 'axios';
 
 const Registration = () => {
-  const [role, setRole] = useState(''); // Role selection: Student or Instructor
+  const [role, setRole] = useState('');
   const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
@@ -14,10 +15,12 @@ const Registration = () => {
     bio: '', // Instructor specific
   });
   const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleRoleChange = (e) => {
     setRole(e.target.value);
-    setError(''); // Clear any previous errors
+    setError('');
+    setSuccessMessage('');
   };
 
   const handleChange = (e) => {
@@ -28,7 +31,7 @@ const Registration = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const {
@@ -41,7 +44,6 @@ const Registration = () => {
       bio,
     } = formData;
 
-    // Validation
     if (!role) {
       setError('Please select a role (Student or Instructor)');
       return;
@@ -54,7 +56,7 @@ const Registration = () => {
       !username ||
       !password ||
       !confirmPassword ||
-      (role === 'Instructor' && (!bio || rating === 0))
+      (role === 'Instructor' && !bio)
     ) {
       setError('Please fill out all required fields');
       return;
@@ -71,14 +73,48 @@ const Registration = () => {
     }
 
     setError('');
-    const submissionData = { ...formData, rating };
-    console.log(`Registration Successful for ${role}:`, submissionData);
-    alert(`Registration Successful as ${role}!`);
+    setSuccessMessage('');
+
+    const url =
+      role === 'Student'
+        ? 'http://localhost:8080/api/students'
+        : 'http://localhost:8080/api/instructors';
+
+    const data = {
+      firstName: first_name,
+      lastName: last_name,
+      email,
+      userName: username,
+      password,
+      ...(role === 'Instructor' && { bio }),
+    };
+
+    try {
+      const response = await axios.post(url, data, { withCredentials: true });
+      setSuccessMessage(`Registration Successful as ${role}!`);
+      // Clear the form
+      setFormData({
+        first_name: '',
+        last_name: '',
+        email: '',
+        username: '',
+        password: '',
+        confirmPassword: '',
+        bio: '',
+      });
+      setRole('');
+      // Optionally redirect to login or another page
+      setTimeout(() => (window.location.href = '/login'), 2000);
+    } catch (error) {
+      setError(
+        error.response?.data?.message || 'Error during registration. Please try again.'
+      );
+      console.error(error);
+    }
   };
 
   return (
     <div className="d-flex position-relative flex-column min-vh-100">
-      {/* Background */}
       <div
         className="position-absolute top-0 left-0 w-100 h-100"
         style={{
@@ -93,12 +129,18 @@ const Registration = () => {
         <h2>Welcome to the Registration Page</h2>
       </header>
       <div className="d-flex justify-content-center align-items-center flex-grow-1 fw-bold">
-        <div className="card shadow-lg bg-light p-4 rounded" style={{ width: '100%', maxWidth: '600px', opacity: 0.9}}>
+        <div
+          className="card shadow-lg bg-light p-4 rounded"
+          style={{ width: '100%', maxWidth: '600px', opacity: 0.9 }}
+        >
           <h1 className="text-center mb-4">Registration</h1>
           {error && <div className="alert alert-danger">{error}</div>}
+          {successMessage && <div className="alert alert-success">{successMessage}</div>}
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
-              <label htmlFor="role" className="form-label">Select Role</label>
+              <label htmlFor="role" className="form-label">
+                Select Role
+              </label>
               <select
                 id="role"
                 name="role"
@@ -112,11 +154,12 @@ const Registration = () => {
                 <option value="Instructor">Instructor</option>
               </select>
             </div>
-
             {role && (
               <>
                 <div className="mb-3">
-                  <label htmlFor="first_name" className="form-label">First Name</label>
+                  <label htmlFor="first_name" className="form-label">
+                    First Name
+                  </label>
                   <input
                     type="text"
                     id="first_name"
@@ -129,7 +172,9 @@ const Registration = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="last_name" className="form-label">Last Name</label>
+                  <label htmlFor="last_name" className="form-label">
+                    Last Name
+                  </label>
                   <input
                     type="text"
                     id="last_name"
@@ -142,7 +187,9 @@ const Registration = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="email" className="form-label">Email</label>
+                  <label htmlFor="email" className="form-label">
+                    Email
+                  </label>
                   <input
                     type="email"
                     id="email"
@@ -155,7 +202,9 @@ const Registration = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="username" className="form-label">Username</label>
+                  <label htmlFor="username" className="form-label">
+                    Username
+                  </label>
                   <input
                     type="text"
                     id="username"
@@ -163,12 +212,14 @@ const Registration = () => {
                     value={formData.username}
                     onChange={handleChange}
                     className="form-control"
-                    placeholder="Enter your preferred username"
+                    placeholder="Enter your username"
                     required
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="password" className="form-label">Password</label>
+                  <label htmlFor="password" className="form-label">
+                    Password
+                  </label>
                   <input
                     type="password"
                     id="password"
@@ -181,7 +232,9 @@ const Registration = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
+                  <label htmlFor="confirmPassword" className="form-label">
+                    Confirm Password
+                  </label>
                   <input
                     type="password"
                     id="confirmPassword"
@@ -193,42 +246,46 @@ const Registration = () => {
                     required
                   />
                 </div>
-
-                {/* Instructor-specific fields */}
                 {role === 'Instructor' && (
-                  <>
-                    <div className="mb-3">
-                      <label htmlFor="bio" className="form-label">Bio</label>
-                      <textarea
-                        id="bio"
-                        name="bio"
-                        value={formData.bio}
-                        onChange={handleChange}
-                        className="form-control"
-                        placeholder="Write a short bio about yourself"
-                        rows="3"
-                        required
-                      ></textarea>
-                    </div></>)}    
-              <div style={{ marginBottom: '20px', fontSize: '0.9rem' }}>
-              <input type="checkbox" id="terms" required style={{ marginRight: '10px' }} />
-              <label htmlFor="terms">
-                By signing up, you agree to our{' '}
-                <a href="/terms" target="_blank" rel="noopener noreferrer">
-                  Terms of Use
-                </a>{' '}
-                and{' '}
-                <a href="/privacy" target="_blank" rel="noopener noreferrer">
-                  Privacy Policy
-                </a>.
-              </label>
-            </div>
-            </>
+                  <div className="mb-3">
+                    <label htmlFor="bio" className="form-label">
+                      Bio
+                    </label>
+                    <textarea
+                      id="bio"
+                      name="bio"
+                      value={formData.bio}
+                      onChange={handleChange}
+                      className="form-control"
+                      placeholder="Write a short bio"
+                      rows="3"
+                      required
+                    ></textarea>
+                  </div>
+                )}
+                <div style={{ marginBottom: '20px', fontSize: '0.9rem' }}>
+                  <input type="checkbox" id="terms" required style={{ marginRight: '10px' }} />
+                  <label htmlFor="terms">
+                    By signing up, you agree to our{' '}
+                    <a href="/terms" target="_blank" rel="noopener noreferrer">
+                      Terms of Use
+                    </a>{' '}
+                    and{' '}
+                    <a href="/privacy" target="_blank" rel="noopener noreferrer">
+                      Privacy Policy
+                    </a>.
+                  </label>
+                </div>
+              </>
             )}
-            <button type="submit" className="btn btn-primary fs-5 w-100 fw-bold">Register Now</button>
+            <button type="submit" className="btn btn-primary fs-5 w-100 fw-bold">
+              Register Now
+            </button>
           </form>
           <div className="text-center fs-5 fw-bold mt-3">
-            <p>Already have an account? <a href="/login">Login</a></p>
+            <p>
+              Already have an account? <a href="/login">Login</a>
+            </p>
           </div>
         </div>
       </div>
