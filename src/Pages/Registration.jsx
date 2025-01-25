@@ -12,7 +12,7 @@ const Registration = () => {
     username: '',
     password: '',
     confirmPassword: '',
-    bio: '', // Instructor specific
+    bio: '', 
   });
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
@@ -92,7 +92,6 @@ const Registration = () => {
     try {
       const response = await axios.post(url, data, { withCredentials: true });
       setSuccessMessage(`Registration Successful as ${role}!`);
-      // Clear the form
       setFormData({
         first_name: '',
         last_name: '',

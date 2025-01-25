@@ -96,11 +96,9 @@ function Footer() {
                 </a>
               </div></div>
 
-
-
           <div className="col-md-4 text-white text-right" style={{borderLeft: '3px solid #fff'}}>
             <h5 className="fw-bold">Subscribe to Our Newsletter</h5>
-            <form onSubmit={handleSubmit} className="mt-3">
+            <form onSubmit={handleSubmit} className="mt-4 text-right" style={{width: '100%'}}>
               <input
                 type="email"
                 className="form-control mb-2"

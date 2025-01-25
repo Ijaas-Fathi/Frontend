@@ -15,7 +15,7 @@ const About = () => (
   }} >
   <div className="container py-5" style={{ position: 'relative', zIndex: 1 }}>
     {/* Header Section */}
-    <div className="text-center mb-5 bg-white">
+    <div className="text-center mb-3 bg-white">
       <h1 className="display-4 text-primary fw-bold">About Us</h1>
       <p className="lead text-muted fw-bold">
         Empowering learners worldwide by providing accessible, high-quality education that breaks barriers and creates opportunities. 

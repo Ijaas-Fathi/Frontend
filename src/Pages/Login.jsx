@@ -145,9 +145,10 @@ const Login = () => {
                       required
                     />
                   </div>
+                  <a href="/UploadTutorialPage"> 
                   <button type="submit" className="btn btn-primary fs-5 fw-bold w-100">
-                    Login
-                  </button>
+                    Login 
+                  </button></a>
                 </form>
                 <div className="text-center fs-5 fw-bold mt-3">
                   <p>
