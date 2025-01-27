@@ -11,7 +11,7 @@ import TutorialDetails from './Pages/TutorialDetails';
 import Registration from './Pages/Registration';
 import Enrollment from './Pages/Enrollment';
 import Instructor from './Pages/Instructor';
-import UploadTutorialPage from './Pages/TutorialUploadPage';
+import UploadTutorialPage from './Pages/UploadTutorialPage';
 import SiteBackground from './assets/Images/SiteBackground.png';
 
 function App() {
@@ -49,7 +49,7 @@ function App() {
           <Route path="/registration" element={<Registration />} />
           <Route path="/enrollment" element={<Enrollment />} />
           <Route path='/instructor' element={<Instructor />} />
-          <Route path='/uploadTutorial' element={<UploadTutorialPage />} />
+          <Route path='/UploadTutorialPage' element={<UploadTutorialPage />} />
           <Route path="*" element={<div>404 Page Not Found</div>} />
         </Routes>
         <Footer />

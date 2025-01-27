@@ -187,7 +187,7 @@ const TutorialDetails = () => {
 
         return (
             <div className="container py-5">
-              <h1 className="container-fluid display-4 text-center fw-bold text-gradient">
+              <h1 className="container-fluid display-4 text-center fw-bold text-gradient" style={{backgroundColor: '#F0F8FF'}}>
                 Tutorial Details
               </h1>
               {tutorial ? (
@@ -207,14 +207,16 @@ const TutorialDetails = () => {
                     </div>
                     <div className="col-lg-8 col-md-6">
                       <h2
-                        style={{
-                          background: "linear-gradient(to right, #ff6a00, #ee0979)",
+                        style={{ 
+                          background: "linear-gradient(to right, #2c3e50, #4b79a1)",
+                          fontWeight: 'bold',  
                           WebkitBackgroundClip: "text",
                           WebkitTextFillColor: "transparent",
                         }}
                       >
                         {tutorial.title}
                       </h2>
+                      <div  style={{backgroundColor: '#E0FFFF'}}>
                       <p>
                         <strong>Instructor:</strong><a href="/Instructor" > {tutorial.instructor} </a>
                       </p>
@@ -225,13 +227,15 @@ const TutorialDetails = () => {
                         <strong>Payment:</strong> {tutorial.payment}
                       </p>
                       <p>{tutorial.description}</p>
+                      </div>
                       <h3
                         style={{
-                          background: "linear-gradient(to right, #43e97b, #38f9d7)",
+                          background: "linear-gradient(to right, #2c3e50, #4b79a1)",
+                          fontWeight: 'bold',               
                           WebkitBackgroundClip: "text",
                           WebkitTextFillColor: "transparent",
                         }}
-                        className="mt-4"
+                        className="mt-4 text-dark"
                       >
                         Course Curriculum
                       </h3>

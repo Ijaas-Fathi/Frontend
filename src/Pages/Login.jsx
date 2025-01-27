@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import back from '../assets/Images/background.png';
 
 const Login = () => {
   const [role, setRole] = useState(''); // Role selection: Student or Instructor
@@ -12,6 +12,7 @@ const Login = () => {
   const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [resetEmail, setResetEmail] = useState('');
   const [newPassword, setNewPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleRoleChange = (e) => {
     setRole(e.target.value);
@@ -82,15 +83,21 @@ const Login = () => {
     }
 
     setError('');
-    console.log(`Role: ${role}, Form Submitted:`, formData);
-    alert(`Login successful as ${role}`);
+
+    // Navigate to UploadTutorialPage if the role is Instructor
+    if (role === 'Instructor') {
+      alert('Login successful as Instructor');
+      navigate('/UploadTutorialPage');
+    } else {
+      alert('Login successful as Student');
+    }
   };
 
   return (
     <div className="d-flex position-relative flex-column min-vh-100">
-      <h1 className="bg-dark text-white text-center py-3 fw-normal" style={{marginTop: '50px'}}>Login here to Enroll Courses</h1>
+      <h1 className="bg-dark text-white text-center py-3 fw-normal" style={{ marginTop: '50px' }}>Login here to Enroll Courses</h1>
       {/* Main content */}
-      <main className="flex-grow-1 d-flex justify-content-center align-items-center" style={{opacity: 0.9}}>
+      <main className="flex-grow-1 d-flex justify-content-center align-items-center" style={{ opacity: 0.9 }}>
         <div className="card shadow-lg p-4" style={{ width: '100%', maxWidth: '500px', borderRadius: '20px' }}>
           <div className="card-header bg-dark text-white text-center fs-3 fw-bold py-3">
             Select Role
@@ -145,10 +152,9 @@ const Login = () => {
                       required
                     />
                   </div>
-                  <a href="/UploadTutorialPage"> 
                   <button type="submit" className="btn btn-primary fs-5 fw-bold w-100">
-                    Login 
-                  </button></a>
+                    Login
+                  </button>
                 </form>
                 <div className="text-center fs-5 fw-bold mt-3">
                   <p>

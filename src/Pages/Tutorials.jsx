@@ -47,7 +47,7 @@ const Tutorials = () => {
                 <h5
                   className="card-title"
                   style={{
-                    color: "#007bff", 
+                    color: "#2F4F4F", 
                     fontWeight: "bold",
                   }}
                 >
@@ -66,8 +66,8 @@ const Tutorials = () => {
                   to={`/tutorials/${tutorial.id}`}
                   className="btn btn-outline-white mt-3"
                   style={{
-                    color: "#007bff", 
-                    borderColor: "#007bff", 
+                    color: "#008B8B", 
+                    borderColor: "#008B8B", 
                     fontWeight: "bold",
                   }}
                 >

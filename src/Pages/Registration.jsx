@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import back from '../assets/Images/background.png';
 import axios from 'axios';
 
 const Registration = () => {
@@ -113,26 +112,17 @@ const Registration = () => {
   };
 
   return (
-    <div className="d-flex position-relative flex-column min-vh-100">
-      <div
-        className="position-absolute top-0 left-0 w-100 h-100"
-        style={{
-          backgroundImage: `url(${back})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'blur(8px)',
-          zIndex: -1,
-        }}
-      ></div>
-      <header className="text-white text-center py-3 shadow-lg">
-        <h2>Welcome to the Registration Page</h2>
-      </header>
+    <div className="d-flex position-relative flex-column min-vh-100" style={{opacity: 0.9}} >
+    <p className="text-white text-center bg-dark shadow-lg" style={{marginTop: '70px', height: '60px'}}>
+        <h2 style={{fontSize: '40px'}}>Welcome to the Registration Page</h2>
+      </p>
       <div className="d-flex justify-content-center align-items-center flex-grow-1 fw-bold">
         <div
           className="card shadow-lg bg-light p-4 rounded"
-          style={{ width: '100%', maxWidth: '600px', opacity: 0.9 }}
+          style={{ width: '100%', maxWidth: '600px'}}
         >
-          <h1 className="text-center mb-4">Registration</h1>
+          <h1 className="text-center mb-3 bg-dark" style={{borderRadius: '5px', color: "white", height: '60px'}}>
+            Registration</h1>
           {error && <div className="alert alert-danger">{error}</div>}
           {successMessage && <div className="alert alert-success">{successMessage}</div>}
           <form onSubmit={handleSubmit}>
@@ -275,16 +265,19 @@ const Registration = () => {
                     </a>.
                   </label>
                 </div>
-              </>
-            )}
-            <button type="submit" className="btn btn-primary fs-5 w-100 fw-bold">
-              Register Now
-            </button>
+                <button type="submit" className="btn btn-primary fs-5 w-100 fw-bold">
+                  Register Now
+                </button>
+            <div className="text-center fs-5 fw-bold mt-3">
+              <p>
+                Already have an account? <a href="/login">Login</a>
+              </p>
+            </div>  
+            </>
+            )}         
           </form>
-          <div className="text-center fs-5 fw-bold mt-3">
-            <p>
-              Already have an account? <a href="/login">Login</a>
-            </p>
+            <div className="card-footer text-center bg-dark text-white py-3">
+            <small>Powered by LearnLoop</small>
           </div>
         </div>
       </div>

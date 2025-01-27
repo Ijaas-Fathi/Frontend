@@ -13,27 +13,32 @@ const About = () => (
   <div style={{
     position: 'relative',
   }} >
-  <div className="container py-5" style={{ position: 'relative', zIndex: 1 }}>
+  <div className="container py-5" style={{ position: 'relative', zIndex: 1,}}>
     {/* Header Section */}
-    <div className="text-center mb-3 bg-white">
-      <h1 className="display-4 text-primary fw-bold">About Us</h1>
-      <p className="lead text-muted fw-bold">
+    <motion.div 
+    className="text-center mb-3" 
+    whileHover={{scale: 1.1}}
+    style={{borderRadius: '10px', backgroundColor: '	#FFF8DC'}}>
+      <h1 className="display-4  fw-bold" style={{color:" #2F4F4F"}}>About Us</h1>
+      <p className="lead text-dark fw-bold">
         Empowering learners worldwide by providing accessible, high-quality education that breaks barriers and creates opportunities. 
         We use innovative technology to offer personalized learning experiences, catering to diverse needs. 
       </p>
-    </div>
+      
+    </motion.div>
 
-    {/* Main Content Section */}
-    <div className="row align-items-center mb-5 bg-white">
-      {/* Left Section with Image */}
-      <motion.div className="col-md-5 mb-4 mb-md-0 " 
-                  whileHover={{ 
-                    scale: 1.1, }}
+    <motion.div 
+    className="bg-white d-flex align-items-center justify-content-between flex-wrap p-4"
+    whileHover={{scale: 1.1}}
+    style={{borderRadius: '10px'}}>
+      {/* Mission Image on Left side */}
+         <motion.div className="col-md-5 mb-4 mb-md-0 " 
                     style={{
                     animation: 'slideAnimation 2s infinite',
                       animationDelay: '2s',
                         }}            
-                    transition={{ repeat: Infinity, repeatType: "loop", duration: 2}}>
+                    transition={{ repeat: Infinity, repeatType: "loop", duration: 2}}
+                    >
         <img 
           src={mission}
           alt="Mission" 
@@ -41,30 +46,33 @@ const About = () => (
           style={{width: '70%', height: 'auto',}}
         />
       </motion.div>
-      
       {/* Mission Text */}
-      <div className="col-md-7 bg-white">
-        <h2 className="h3 mb-3 text-success fw-bold">Our Mission</h2>
-        <p className="text-muted">
+      <div className="col-md-7"
+          style={{ textAlign: "left", paddingLeft: "20px" }}>
+        <h2 className="h3 mb-3 fw-bold" style={{color: '#000080'}}>Our Mission</h2>
+        <p className="text-dark">
           Our mission is to make learning accessible to everyone by offering a wide range of tutorials and courses. 
           Whether you're a beginner or an expert, we have resources tailored to help you grow and succeed.
         </p>
       </div>
-    </div>
+    </motion.div>
 
-    <div className="row align-items-center mb-5 bg-white">
+    <br />
+    <motion.div 
+    className="row align-items-center mb-5"  
+    whileHover={{scale: 1.1}} 
+    style={{borderRadius: '10px', backgroundColor: '	#FAFAD2'}}>
       {/* Why Choose Us Text */}
-      <div className="col-md-7 order-md-2">
-        <h2 className="h3 mb-3 text-danger fw-bold">Why Choose Us?</h2>
-        <ul className="list-unstyled text-muted">
+      <motion.div className="col-md-7 order-md-2">
+        <h2 className="h3 mb-3 fw-bold" style={{color: ' #4B0082'}}>Why Choose Us?</h2>
+        <ul className="list-unstyled text-dark">
           <li>     
           <i className="bi bi-check-circle text-success me-2"></i> Expert instructors with industry experience</li>
           <li><i className="bi bi-check-circle text-success me-2"></i> Comprehensive and up-to-date content</li>
           <li><i className="bi bi-check-circle text-success me-2"></i> Flexible learning at your own pace</li>
           <li><i className="bi bi-check-circle text-success me-2"></i> Community-driven learning environment</li>
         </ul>
-      </div>
-
+      </motion.div>
       {/* Right Section with Image */}
       <motion.div className="col-md-5 order-md-1 mb-4 mb-md-0" whileHover={{ scale: 1.1 }}>
         <img 
@@ -74,30 +82,33 @@ const About = () => (
           style={{transform: 'rotate(325deg)', width: '70%', height: 'auto',}}
         />
       </motion.div>
-    </div>
+    </motion.div>
 
     {/* Join Us Section */}
-    <div className="text-center mt-5">
-    <img 
+     <motion.div className="text-center"  whileHover={{scale: 1.1}} >
+     <img 
           src={about_back}
           alt="Mission" 
           className="img-fluid rounded shadow"
           style={{width: '40%', height: 'auto', marginLeft: '700px', transform: 'rotate(30deg)', filter: 'blur(2px)', opacity: 0.8,}}
         />
-      <h2 className="h3 mb-4 text-warning fw-bold">Join Us</h2>
-      <p className="text-muted">
+      <h2 className="h3 fw-bold" style={{color: ' #800000'}}>Join Us!!!</h2>
+      <p className="text-dark">
         Be a part of our growing community of learners and educators. Together, we can make knowledge accessible to all.
-      </p>
+      </p><br />
       <button className="btn btn-dark btn-lg px-4">
         <a  href="/Login" className="text-white text-decoration-none">Get Started</a>
       </button>
+    </motion.div>
     </div>
 
+    <br />
+    <div style={{backgroundColor: '	#FFF8DC'}}>
     {/* Testimonials Section */}
-    <div className="mt-5">
-      <h2 className="h3 mb-4 text-center text-primary fw-bold">What Our Learners Say</h2>
+    <div className="mt-5"  whileHover={{scale: 1.1}} >
+      <h2 className="h3 mb-4 text-center fw-bold" style={{color: '#006400'}}>What Our Learners Say....</h2>
       <div className="row text-center">
-        <div className="col-md-4">
+        <motion.div className="col-md-4"  whileHover={{scale: 1.1}} >
           <div className="card shadow-sm">
             <img 
               src={alex}
@@ -112,8 +123,8 @@ const About = () => (
               <h5 className="card-title text-dark">- Alex M.</h5>
             </div>
           </div>
-        </div>
-        <div className="col-md-4">
+        </motion.div>
+        <motion.div className="col-md-4"  whileHover={{scale: 1.1}} >
           <div className="card shadow-sm">
             <img 
               src={jamie}
@@ -128,8 +139,8 @@ const About = () => (
               <h5 className="card-title text-dark">- Jamie R.</h5>
             </div>
           </div>
-        </div>
-        <div className="col-md-4">
+        </motion.div>
+        <motion.div className="col-md-4"  whileHover={{scale: 1.1}} >
           <div className="card shadow-sm">
             <img 
               src={taylor} 
@@ -137,17 +148,18 @@ const About = () => (
               className="card-img-top rounded-circle mx-auto mt-3" 
               style={{ width: '100px', height: '100px' }}
             />
-            <div className="card-body">
+            <div className="card-body" >
               <p className="card-text text-muted">
-                "Great instructors and community. Highly recommend!"
+                "Great instructors and community. 
+                <br />Highly recommend!"
               </p>
               <h5 className="card-title text-dark">- Taylor S.</h5>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
-  </div>
+    </div>
 </div>
 );
 

@@ -111,14 +111,14 @@ const Home = () => {
         </div>
       </div>
     </div>
-      <div style={{backgroundColor: '#F0F8FF'}}>
+      <motion.div style={{backgroundColor: '#F0F8FF'}} whileHover={{ scale: 1.1 }}>
       <h1 className="display-4 fw-bold"
       style={{
         fontFamily: "Pacifico, cursive", color: '#DC143C', backgroundColor: '#F0F8FF'}}>Unlock Your Potential Here!!!</h1>
         <br /><p className="lead fw-bold" >You can learn from top instructors across a wide range of subjects and enhance your skills by accessing thousands of online courses. 
         These courses are designed to cater to various learning levels, from beginners to advanced learners.</p>
-        </div>
-        </motion.div>
+       </motion.div>
+      </motion.div>
         <motion.div
         className="categories-section py-5"
         initial="hidden"
@@ -127,7 +127,7 @@ const Home = () => {
         transition={{ duration: 1, delay: 0.5 }}
       >
         <div className="container">
-          <h2 className="text-center mb-4 fw-bold fs-1"
+          <h2 className="text-center fw-bold fs-1"
           style={{
             backgroundSize: 'contain',
             padding: '10px 20px',
@@ -139,19 +139,19 @@ const Home = () => {
           }}>POPULAR CATEGORIES</h2>
           <div className="row">
             <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
-              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#55C79A'}}>React</div>
+              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#20B2AA'}}>React</div>
             </motion.div>
             <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
-              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#55C79A'}}>Business</div>
+              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#20B2AA'}}>Business</div>
             </motion.div>
             <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
-              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#55C79A'}}>Technology</div>
+              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#20B2AA'}}>Technology</div>
             </motion.div>
             <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
-              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#55C79A'}}>Art & Design</div>
+              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#20B2AA'}}>Art & Design</div>
             </motion.div>
             <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
-              <div className="category text-white text-center fw-bold py-3 fs-5 rounded"  style={{backgroundColor: '#55C79A'}}>Health & Fitness</div>
+              <div className="category text-white text-center fw-bold py-3 fs-5 rounded"  style={{backgroundColor: '#20B2AA'}}>Health & Fitness</div>
             </motion.div>
           </div>
         </div>

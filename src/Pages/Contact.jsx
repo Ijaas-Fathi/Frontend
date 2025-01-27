@@ -32,10 +32,12 @@ const Contact = () => {
 
   return (
     <div className="container py-5">
+      <div style={{backgroundColor: "#F0F8FF"}}>
       <h1
         className="text-center mb-4"
         style={{
-          background: "linear-gradient(to right, #1e3c72, #2a5298)", // Gradient for the heading
+          color: "#191970",
+          background: "linear-gradient(to right, #1e3c72, #2a5298)", 
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
           fontWeight: "bold",
@@ -44,9 +46,9 @@ const Contact = () => {
         Contact Us
       </h1>
       <p className="text-center mb-5" style={{ color: "#333" }}>
-        Have any questions? Reach out to us and we’ll get back to you as soon as possible.
+        Have any questions? Reach out to us and we'll get back to you as soon as possible.
       </p>
-
+      </div>
       <div className="row justify-content-center">
         <div className="col-md-4">
           {}

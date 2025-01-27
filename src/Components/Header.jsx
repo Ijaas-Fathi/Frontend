@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import logo from '../assets/Images/Logo.jpg';
 
 function Header() {
   return (
@@ -15,27 +16,32 @@ function Header() {
           zIndex: 100,
         }}
       >
-        <div className="container d-flex justify-content-between align-items-center" style={{ maxWidth: '1200px' }}>
-          {/* Logo */}
-          <div className="d-flex align-items-center justify-content-center mx-auto" style={{ flex: 1 }}>
-            <h1
-              className="text-uppercase fw-bold text-center"
-              style={{
-                marginLeft: '1px',
-                fontFamily: "'Pacifico', cursive",
-                letterSpacing: '1px',
-                fontSize: '2rem',
-                color: '#fff',
-                textShadow: '5px 5px 5px rgba(0, 0, 0, 0.3)',
-                display: 'inline-block',
-                padding: '10px 20px',
-              }}
-            >
-              Learn Loop
-            </h1>
-          </div>
+       <div className="container d-flex justify-content-between align-items-center" style={{ maxWidth: '1200px' }}>
+        {/* Logo */}
+        <div className="d-flex align-items-center justify-content-center mx-auto" style={{ flex: 1 }}>
+          <img
+            src={logo} 
+            alt="Logo"
+            style={{ width: '125px', height: '100px', marginRight: '10px', borderRadius: '100%'}} 
+          />
+          <h1
+            className="text-uppercase fw-bold text-center"
+            style={{
+              marginLeft: '1px',
+              fontFamily: "'Pacifico', cursive",
+              letterSpacing: '1px',
+              fontSize: '2rem',
+              color: '#fff',
+              textShadow: '5px 5px 5px rgba(0, 0, 0, 0.3)',
+              display: 'inline-block',
+              padding: '10px 20px',
+            }}
+          >
+            Learn Loop
+          </h1>
+        </div>
 
-          <nav style={{ flex: 3 }}>
+          <nav style={{ flex: 3}}>
             <ul className="nav justify-content-center">
               <li className="nav-item">
                 <a href="/" className="nav-link text-white fs-6 fw-semibold mx-2">
@@ -87,20 +93,18 @@ function Header() {
             </ul>
           </nav>
         </div>
-
-        <br />
-        <br />
         {/* Running Text at the Bottom */}
         <div
           className="running-text"
           style={{
-            backgroundColor: 'black',
+            backgroundColor: '#008080',
             color: 'white',
             padding: '10px 0',
             width: '100%',
-            height: '30%',
+            height: '40%',
             overflow: 'hidden',
             position: 'relative',
+            fontWeight: 'bold',
           }}
         >
           <div

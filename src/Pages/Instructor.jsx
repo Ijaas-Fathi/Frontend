@@ -67,11 +67,10 @@ const Instructor = () => {
         return stars;
     };
 
-
     return (
         <div className='container mt-5'>
             <div className='card' style={cardStyle}>
-                <div className='card-body'>
+                <div className='card-body' style={{marginTop: '30px'}}>
                     <h2 className='card-title' style={titleStyle}>
                         {instructorData.firstname} {instructorData.lastname}
                     </h2>
