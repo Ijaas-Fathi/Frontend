@@ -24,13 +24,12 @@ const About = () => (
         Empowering learners worldwide by providing accessible, high-quality education that breaks barriers and creates opportunities. 
         We use innovative technology to offer personalized learning experiences, catering to diverse needs. 
       </p>
-      
     </motion.div>
 
     <motion.div 
-    className="bg-white d-flex align-items-center justify-content-between flex-wrap p-4"
-    whileHover={{scale: 1.1}}
-    style={{borderRadius: '10px'}}>
+      className="bg-white d-flex align-items-center justify-content-between flex-wrap p-4"
+      whileHover={{scale: 1.1}}
+      style={{borderRadius: '10px'}}>
       {/* Mission Image on Left side */}
          <motion.div className="col-md-5 mb-4 mb-md-0 " 
                     style={{
@@ -57,11 +56,11 @@ const About = () => (
       </div>
     </motion.div>
 
-    <br />
-    <motion.div 
-    className="row align-items-center mb-5"  
-    whileHover={{scale: 1.1}} 
-    style={{borderRadius: '10px', backgroundColor: '	#FAFAD2'}}>
+      <br />
+      <motion.div 
+      className="row align-items-center mb-5"  
+      whileHover={{scale: 1.1}} 
+      style={{borderRadius: '10px', backgroundColor: '	#FAFAD2'}}>
       {/* Why Choose Us Text */}
       <motion.div className="col-md-7 order-md-2">
         <h2 className="h3 mb-3 fw-bold" style={{color: ' #4B0082'}}>Why Choose Us?</h2>

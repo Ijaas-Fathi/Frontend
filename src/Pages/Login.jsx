@@ -72,16 +72,6 @@ const Login = () => {
       return;
     }
 
-    if (!email || !password) {
-      setError('Please fill out all fields');
-      return;
-    }
-
-    if (!/\S+@\S+\.\S+/.test(email)) {
-      setError('Invalid email address');
-      return;
-    }
-
     setError('');
 
     // Navigate to UploadTutorialPage if the role is Instructor
@@ -123,17 +113,17 @@ const Login = () => {
                 {error && <div className="alert alert-danger">{error}</div>}
                 <form onSubmit={handleSubmit}>
                   <div className="mb-3 fw-bold">
-                    <label htmlFor="email" className="form-label">
-                      Email
+                    <label htmlFor="username" className="form-label">
+                      Username
                     </label>
                     <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
+                      type="username"
+                      id="username"
+                      name="username"
+                      value={formData.username}
                       onChange={handleChange}
                       className="form-control"
-                      placeholder="Enter your email"
+                      placeholder="Enter the username"
                       required
                     />
                   </div>

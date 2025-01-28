@@ -187,7 +187,7 @@ const TutorialDetails = () => {
 
         return (
             <div className="container py-5">
-              <h1 className="container-fluid display-4 text-center fw-bold text-gradient" style={{backgroundColor: '#F0F8FF'}}>
+              <h1 className="container-fluid display-4 text-center fw-bold text-gradient" style={{borderRadius: '10px', backgroundColor: ' #F0F8FF'}}>
                 Tutorial Details
               </h1>
               {tutorial ? (
@@ -200,6 +200,7 @@ const TutorialDetails = () => {
                         className="img-fluid rounded shadow-lg"
                         style={{
                           border: "6px solid",
+                          borderRadius: '10px',
                           borderImageSlice: 2,
                           borderImageSource: "linear-gradient(to right, #4facfe,rgb(31, 69, 71))",
                         }}
@@ -208,15 +209,15 @@ const TutorialDetails = () => {
                     <div className="col-lg-8 col-md-6">
                       <h2
                         style={{ 
-                          background: "linear-gradient(to right, #2c3e50, #4b79a1)",
+                          borderRadius: '10px',
+                          color: ' #112e4b',
+                          backgroundColor: " #cff0ea",
                           fontWeight: 'bold',  
-                          WebkitBackgroundClip: "text",
-                          WebkitTextFillColor: "transparent",
                         }}
                       >
                         {tutorial.title}
                       </h2>
-                      <div  style={{backgroundColor: '#E0FFFF'}}>
+                      <div  style={{backgroundColor: ' #cff0ea', borderRadius: '10px'}}>
                       <p>
                         <strong>Instructor:</strong><a href="/Instructor" > {tutorial.instructor} </a>
                       </p>
@@ -230,11 +231,11 @@ const TutorialDetails = () => {
                       </div>
                       <h3
                         style={{
-                          background: "linear-gradient(to right, #2c3e50, #4b79a1)",
+                          borderRadius: '10px',
+                          color: ' #112e4b',
+                          backgroundColor: " #cff0ea",
                           fontWeight: 'bold',               
-                          WebkitBackgroundClip: "text",
-                          WebkitTextFillColor: "transparent",
-                        }}
+                          }}
                         className="mt-4 text-dark"
                       >
                         Course Curriculum
@@ -245,7 +246,7 @@ const TutorialDetails = () => {
                             key={index}
                             className="list-group-item"
                             style={{
-                              background: "linear-gradient(to right, #ff9a9e, #fecfef)",
+                              background: "#cff0ea",
                             }}
                           >
                             {item}
@@ -253,18 +254,42 @@ const TutorialDetails = () => {
                         ))}
                       </ul>
                       <div className="cta-section mt-4">
-                        <button
-                          className="btn btn-lg"
-                          style={{
-                            background: "linear-gradient(to right, #ff7e5f, #feb47b)",
-                            color: "#fff",
-                            border: "none",
-                          }}
-                          onClick={handleEnrollClick} // Navigate when clicked
-                        >
-                          Enroll Now
-                        </button>
-                      </div>
+                  <button
+                    className="btn btn-lg"
+                    style={{
+                      backgroundColor: "#164940", // Initial color
+                      color: "#fff",
+                      border: "none",
+                      animation: "blinkColors 1.5s infinite",
+                    }}
+                    onClick={handleEnrollClick} // Navigate when clicked
+                  >
+                    Enroll Now
+                  </button>
+
+                  <style>
+                    {`
+                      @keyframes blinkColors {
+                        0% {
+                          background-color: #164940; 
+                        }
+                        25% {
+                          background-color:rgb(5, 43, 80); 
+                        }
+                        50% {
+                          background-color:rgb(9, 88, 42);
+                        }
+                        75% {
+                          background-color:rgb(2, 63, 63);
+                        }
+                        100% {
+                          background-color:rgb(3, 37, 59);
+                        }
+                      }
+                    `}
+                  </style>
+                </div>
+
                     </div>
                   </div>
                 </div>
