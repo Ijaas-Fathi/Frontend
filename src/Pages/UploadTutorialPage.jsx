@@ -15,14 +15,14 @@ const UploadTutorialPage = () => {
   const navigate = useNavigate();
 
   // Check if the user is logged in as an instructor
-  useEffect(() => {
+ /* useEffect(() => {
     const role = localStorage.getItem("role");  
 
     if (role !== "Instructor") {
       alert("Access denied. Only instructors can upload tutorials.");
       navigate("/login"); 
     }
-  }, [navigate]);
+  }, [navigate]);*/
 
   const handleFileChange = (e) => {
     setFiles([...e.target.files]);
