@@ -18,9 +18,14 @@ const Tutorials = () => {
   ];
 
   return (
-    <div className="container-fluid py-5">
+    <div className="container-fluid py-5"
+          style={{
+            backgroundColor: '#84A7A1',
+            }}
+          >
         <h1
-        className="display-4 fw-bold text-center mb-4 text-dark" style={{backgroundColor: '#5DC4B3', padding: '5px', borderRadius: '15px'}}>
+        className="display-4 fw-bold text-center mb-4" 
+        style={{padding: '5px', borderRadius: '15px', color: '#000'}}>
         Our Tutorials
         </h1>
       <div className="row row-cols-1 row-cols-md-3 g-4">
@@ -47,7 +52,7 @@ const Tutorials = () => {
                 <h5
                   className="card-title"
                   style={{
-                    color: "#2F4F4F", 
+                    color: "#0E2954", 
                     fontWeight: "bold",
                   }}
                 >
@@ -56,7 +61,7 @@ const Tutorials = () => {
                 <p
                   className="card-text"
                   style={{
-                    color: "#6c757d", 
+                    color: "#000", 
                     fontWeight: "bold",
                   }}
                 >
@@ -66,8 +71,8 @@ const Tutorials = () => {
                   to={`/tutorials/${tutorial.id}`}
                   className="btn btn-outline-white mt-3"
                   style={{
-                    color: "#008B8B", 
-                    borderColor: "#008B8B", 
+                    color: "#2E8A99", 
+                    borderColor: "#2E8A99", 
                     fontWeight: "bold",
                   }}
                 >

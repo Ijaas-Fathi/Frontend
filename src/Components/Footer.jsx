@@ -20,7 +20,7 @@ function Footer() {
   return (
     <footer
       className="border-top border-dark border-5 py-4"
-      style={{ backgroundColor: "#2F4F4F" }}
+      style={{ backgroundColor: "#0E2954" }}
     >
       <div className="container">
         <div className="row">

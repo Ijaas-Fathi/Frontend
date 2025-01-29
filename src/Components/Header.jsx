@@ -8,7 +8,7 @@ function Header() {
       <header
         className="border-bottom border-secondary border-5 shadow-sm"
         style={{
-          backgroundColor: '#2F4F4F',
+          backgroundColor: '#0E2954',
           position: 'fixed',
           top: 0,
           width: '100%',
@@ -22,23 +22,8 @@ function Header() {
           <img
             src={logo} 
             alt="Logo"
-            style={{ width: '125px', height: '100px', marginRight: '10px', borderRadius: '100%'}} 
+            style={{ width: '125px', height: '100px', marginRight: '10px', borderRadius: '50px'}} 
           />
-          <h1
-            className="text-uppercase fw-bold text-center"
-            style={{
-              marginLeft: '1px',
-              fontFamily: "'Pacifico', cursive",
-              letterSpacing: '1px',
-              fontSize: '2rem',
-              color: '#fff',
-              textShadow: '5px 5px 5px rgba(0, 0, 0, 0.3)',
-              display: 'inline-block',
-              padding: '10px 20px',
-            }}
-          >
-            Learn Loop
-          </h1>
         </div>
 
           <nav style={{ flex: 3}}>
@@ -84,7 +69,7 @@ function Header() {
                   <button
                     type="submit"
                     className="btn fw-bold"
-                    style={{ borderRadius: '15px', width: '100px', backgroundColor: '#66e0ec', borderWidth: '#2f6064' }}
+                    style={{ borderRadius: '15px', width: '80px', backgroundColor: '#84A7A1', borderWidth: '2px', borderColor: '#0E2954' }}
                   >
                     Search
                   </button>
@@ -97,7 +82,7 @@ function Header() {
         <div
           className="running-text"
           style={{
-            backgroundColor: '#008080',
+            backgroundColor: '#1F6E8C',
             color: 'white',
             padding: '10px 0',
             width: '100%',
