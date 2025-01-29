@@ -26,6 +26,7 @@ import back4 from './back4';
 import about_back from './about_back';
 import SiteBackground from './SiteBackground';
 import logo from './Logo';
+import upload from './upload';
 
 export const Images = {image1}
 export const Images1 = {image2}
@@ -55,3 +56,4 @@ export const back4 = {back4}
 export const about_back = {about_back}
 export const SiteBackground = {SiteBackground}
 export const logo = {logo}
+export const upload = {upload}

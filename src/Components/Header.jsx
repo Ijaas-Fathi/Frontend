@@ -96,7 +96,7 @@ function Header() {
             className="marquee"
             style={{
               whiteSpace: 'nowrap',
-              animation: 'scroll 20s linear infinite',
+              animation: 'scroll 35s linear infinite',
               fontSize: '1.2rem',
               fontFamily: "'Roboto', sans-serif",
               textAlign: 'center',
