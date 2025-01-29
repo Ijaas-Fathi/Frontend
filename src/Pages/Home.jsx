@@ -7,7 +7,11 @@ import back1 from '../assets/Images/back1.png';
 import back2 from '../assets/Images/back2.png'; 
 import back3 from '../assets/Images/back3.png'; 
 import back4 from '../assets/Images/back4.png'; 
-
+import reactBasic from '../assets/Images/reactBasic.png';
+import fin from '../assets/Images/finance.png';
+import cyber from '../assets/Images/cyber.png';
+import yoga from '../assets/Images/yoga.png';
+import graphic from '../assets/Images/graphic.png';
 
 const Home = () => {
   const images = [back1, back2, back3, back4];
@@ -70,7 +74,13 @@ const Home = () => {
         return () => clearInterval(interval);
       }, []);
     
-
+      const categories = [
+        { name: 'React', img: reactBasic },
+        { name: 'Business', img: fin },
+        { name: 'Technology', img: cyber },
+        { name: 'Art & Design', img: yoga },
+        { name: 'Health & Fitness', img: graphic },
+      ];
 
   return(
  <div className='bg-white'>
@@ -128,73 +138,80 @@ const Home = () => {
       >
         <div className="container">
           <h2 className="text-center fw-bold fs-1"
-          style={{
-            backgroundSize: 'contain',
-            padding: '10px 20px',
-            borderRadius: '30px',
-            width: '50%',
-            marginLeft: '300px',
-            fontFamily: 'Montserrat',
-            color: color,
-          }}>POPULAR CATEGORIES</h2>
-          <div className="row">
-            <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
-              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#2E8A99'}}>React</div>
+            style={{
+              backgroundSize: 'contain',
+              padding: '10px 20px',
+              borderRadius: '30px',
+              width: '50%',
+              margin: 'auto',
+              fontFamily: 'Montserrat',
+              color: '#2E8A99',
+            }}>
+            POPULAR CATEGORIES
+          </h2>
+          <motion.div className="categories-section py-5" 
+                      style={{ overflow: 'hidden', whiteSpace: 'nowrap', position: 'relative' }}>
+            <motion.div
+              style={{ display: 'flex', gap: '30px' }}
+              animate={{ x: ['0%', '-100%'] }}
+              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            >
+              {categories.concat(categories).map((category, index) => (
+                <div key={index} className="category-card" 
+                     style={{ display: 'flex', 
+                     alignItems: 'center', 
+                     padding: '15px 30px', 
+                     backgroundColor: '#2E8A99', 
+                     borderRadius: '10px', 
+                     color: 'white', fontSize: '1.2rem', fontWeight: 'bold' 
+                     }}>
+                  <img src={category.img} alt={category.name} style={{ height: '200px', width: '200px', marginRight: '10px' }} />
+                  {category.name}
+                </div>
+              ))}
             </motion.div>
-            <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
-              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#2E8A99'}}>Business</div>
-            </motion.div>
-            <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
-              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#2E8A99'}}>Technology</div>
-            </motion.div>
-            <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
-              <div className="category text-white text-center fw-bold py-3 fs-5 rounded" style={{backgroundColor: '#2E8A99'}}>Art & Design</div>
-            </motion.div>
-            <motion.div className="col-md-3 col-sm-6 mb-3" whileHover={{ scale: 1.1 }}>
-              <div className="category text-white text-center fw-bold py-3 fs-5 rounded"  style={{backgroundColor: '#2E8A99'}}>Health & Fitness</div>
-            </motion.div>
-          </div>
+          </motion.div>
         </div>
       </motion.div>
-  
-    <motion.div className="featured-section py-5"
-     initial="hidden"
-     animate="visible"
-     variants={slideInVariants}
-     transition={{ duration: 1, delay: 1 }}
-     >
-      <div className="container">
-        <motion.h2 
-           className="text-center mb-4" 
-           style={{backgroundColor: '#CDE8E5',borderRadius: '10px', fontWeight: 'bold', color: ' #0E2954'}} 
-           whileHover={{ scale: 1.05 }}>
-          Featured Courses</motion.h2>
-        <div className="row">
-        <motion.div className="col-md-6 d-flex align-items-stretch" whileHover={{ scale: 1.05 }}>
-        <div className="card mb-3 shadow">
-          <a href='Tutorials'><img src={image1} className="card-img-top" alt="React for Beginners"/></a>
-            <div className="card-body">
-              <h5 className="card-title">React for Beginners</h5>
-              <p className="card-text"  style={{backgroundSize: 'auto'}}>
-                Learn the fundamentals of React and start building modern web applications.
-              </p>
-            </div>
-          </div>
-          </motion.div>
-        <motion.div className="col-md-6 align-items-stretch" whileHover={{ scale: 1.05 }} >
+    
+      <motion.div className="featured-section py-5"
+      initial="hidden"
+      animate="visible"
+      variants={slideInVariants}
+      transition={{ duration: 1, delay: 1 }}
+      >
+        <div className="container">
+          <motion.h2 
+            className="text-center mb-4" 
+            style={{backgroundColor: '#CDE8E5',borderRadius: '10px', fontWeight: 'bold', color: ' #0E2954'}} 
+            whileHover={{ scale: 1.05 }}>
+            Featured Courses</motion.h2>
+          <div className="row">
+          <motion.div className="col-md-6 d-flex align-items-stretch" whileHover={{ scale: 1.05 }}>
           <div className="card mb-3 shadow">
-            <a href='Tutorials'><img src={image2} className="card-img-top" alt="Mastering Photoshop" /></a>
-            <div className="card-body">
-              <h5 className="card-title">Graphic Designing</h5>
-              <p className="card-text">
-              Creativity Meets Precision✨</p><p>Design Your Vision!!.              
-              </p>
+            <a href='Tutorials'><img src={image1} className="card-img-top" alt="React for Beginners"/></a>
+              <div className="card-body">
+                <h5 className="card-title">React for Beginners</h5>
+                <p className="card-text"  style={{backgroundSize: 'auto'}}>
+                  Learn the fundamentals of React and start building modern web applications.
+                </p>
+              </div>
             </div>
-          </div>
-        </motion.div>
-      </div>
-      </div>
-    </motion.div>
+            </motion.div>
+          <motion.div className="col-md-6 align-items-stretch" whileHover={{ scale: 1.05 }} >
+            <div className="card mb-3 shadow">
+              <a href='Tutorials'><img src={image2} className="card-img-top" alt="Mastering Photoshop" /></a>
+              <div className="card-body">
+                <h5 className="card-title">Graphic Designing</h5>
+                <p className="card-text">
+                Creativity Meets Precision✨</p><p>Design Your Vision!!.              
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+        </div>
+      </motion.div>
   </div>
   </div>
 );

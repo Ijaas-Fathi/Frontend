@@ -186,8 +186,8 @@ const TutorialDetails = () => {
         const tutorial = tutorialData[id];
 
         return (
-            <div className="container py-5">
-              <h1 className="container-fluid display-4 text-center fw-bold text-gradient" style={{borderRadius: '10px', backgroundColor: ' #F0F8FF'}}>
+            <div className="container py-5" style={{ backgroundColor: 'rgb(132, 190, 181)' }}>
+              <h1 className="container-fluid display-4 text-center fw-bold text-gradient" style={{color: '#000', borderRadius: '10px',}}>
                 Tutorial Details
               </h1>
               {tutorial ? (
@@ -211,13 +211,12 @@ const TutorialDetails = () => {
                         style={{ 
                           borderRadius: '10px',
                           color: ' #112e4b',
-                          backgroundColor: " #cff0ea",
                           fontWeight: 'bold',  
                         }}
                       >
                         {tutorial.title}
                       </h2>
-                      <div  style={{backgroundColor: ' #cff0ea', borderRadius: '10px'}}>
+                      <div  style={{borderRadius: '10px'}}>
                       <p>
                         <strong>Instructor:</strong><a href="/Instructor" > {tutorial.instructor} </a>
                       </p>
