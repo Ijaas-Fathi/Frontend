@@ -14,6 +14,7 @@ const UploadTutorialPage = () => {
   const [files, setFiles] = useState([]);
   const [coverImage, setCoverImage] = useState(null);
   const [price, setPrice] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleFileChange = (e) => {
@@ -31,23 +32,46 @@ const UploadTutorialPage = () => {
     }
   };
 
-  const handleUpload = () => {
+  const handleUpload = async () => {
     if (!title || !description || files.length === 0 || !coverImage || !price) {
       alert("Please fill in all fields, select files, and upload a cover image.");
       return;
     }
 
-    alert(
-      `Uploading tutorial:\nTitle: ${title}\nDescription: ${description}\nFiles: ${files
-        .map((file) => file.name)
-        .join(", ")}\nCover Image: ${coverImage.name}\nPrice: $${price}`
-    );
+    setIsLoading(true);
 
-    setTitle("");
-    setDescription("");
-    setFiles([]);
-    setCoverImage(null);
-    setPrice("");
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("price", price);
+    formData.append("description", description);
+    files.forEach((file) => formData.append("videoFile", file));
+    formData.append("coverImage", coverImage);
+
+    try {
+      const response = await fetch("http://localhost:8080/api/videos/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to upload tutorial.");
+      }
+
+      const data = await response.json();
+      alert("Tutorial uploaded successfully!");
+      console.log("Uploaded Tutorial:", data);
+
+      setTitle("");
+      setDescription("");
+      setFiles([]);
+      setCoverImage(null);
+      setPrice("");
+    } catch (error) {
+      console.error("Error uploading tutorial:", error);
+      alert("An error occurred while uploading the tutorial.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -56,15 +80,15 @@ const UploadTutorialPage = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        minHeight: "calc(100vh - 120px)", 
+        minHeight: "calc(100vh - 120px)",
         padding: "20px",
         backgroundColor: "#ebebeb",
         overflow: "auto",
-        marginTop: '30px',
-       }}
+        marginTop: "30px",
+      }}
     >
       {/* Left Side - Image */}
-      <motion.div style={{ flex: 1, textAlign: "center" }} whileHover={{scale: 1.1}}>
+      <motion.div style={{ flex: 1, textAlign: "center" }} whileHover={{ scale: 1.1 }}>
         <img
           src={upload}
           alt="Tutorial"
@@ -77,7 +101,7 @@ const UploadTutorialPage = () => {
       </motion.div>
 
       {/* Right Side - Form */}
-      <div style={{ flex: 1, display: "flex", justifyContent: "center",  opacity: 0.7, }}>
+      <div style={{ flex: 1, display: "flex", justifyContent: "center", opacity: 0.7 }}>
         <Card
           style={{
             boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
@@ -131,7 +155,14 @@ const UploadTutorialPage = () => {
               <label htmlFor="files" style={labelStyle}>
                 Upload Tutorial Videos
               </label>
-              <Input id="files" type="file" multiple style={inputStyle} onChange={handleFileChange} />
+              <Input
+                id="files"
+                type="file"
+                multiple
+                style={inputStyle}
+                onChange={handleFileChange}
+                name="videoFile"
+              />
             </div>
 
             {/* Cover Image Field */}
@@ -139,7 +170,13 @@ const UploadTutorialPage = () => {
               <label htmlFor="coverImage" style={labelStyle}>
                 Upload Cover Image
               </label>
-              <Input id="coverImage" type="file" style={inputStyle} onChange={handleCoverImageChange} />
+              <Input
+                id="coverImage"
+                type="file"
+                style={inputStyle}
+                onChange={handleCoverImageChange}
+                name="coverImage"
+              />
             </div>
 
             {/* Price Field */}
@@ -160,21 +197,20 @@ const UploadTutorialPage = () => {
             {/* Upload Button */}
             <Button
               onClick={handleUpload}
+              disabled={isLoading}
               style={{
                 width: "100%",
                 padding: "0.75rem",
-                backgroundColor: "#1F6E8C",
+                backgroundColor: isLoading ? "#ccc" : "#1F6E8C",
                 color: "white",
                 border: "5px",
                 borderRadius: "5px",
-                cursor: "pointer",
+                cursor: isLoading ? "not-allowed" : "pointer",
                 marginTop: "1rem",
                 fontWeight: "bold",
               }}
-              onMouseEnter={(e) => (e.target.style.backgroundColor = "#1F6E8C")}
-              onMouseLeave={(e) => (e.target.style.backgroundColor = "#1F6E8C")}
             >
-              Upload Tutorial
+              {isLoading ? "Uploading..." : "Upload Tutorial"}
             </Button>
           </CardContent>
         </Card>
