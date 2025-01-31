@@ -154,14 +154,14 @@ const Home = () => {
             <motion.div
               style={{ display: 'flex', gap: '30px' }}
               animate={{ x: ['0%', '-100%'] }}
-              transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
             >
               {categories.concat(categories).map((category, index) => (
                 <div key={index} className="category-card" 
                      style={{ display: 'flex', 
                      alignItems: 'center', 
                      padding: '15px 30px', 
-                     backgroundColor: '#2E8A99', 
+                     backgroundColor: '#84A7A1', 
                      borderRadius: '10px', 
                      color: 'white', fontSize: '1.2rem', fontWeight: 'bold' 
                      }}>

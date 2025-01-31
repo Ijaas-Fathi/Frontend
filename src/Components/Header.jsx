@@ -86,9 +86,9 @@ function Header() {
             color: 'white',
             padding: '10px 0',
             width: '100%',
-            height: '40%',
+            height: '30%',
             overflow: 'hidden',
-            position: 'relative',
+            position: 'center',
             fontWeight: 'bold',
           }}
         >
@@ -97,7 +97,7 @@ function Header() {
             style={{
               whiteSpace: 'nowrap',
               animation: 'scroll 35s linear infinite',
-              fontSize: '1.2rem',
+              fontSize: '1rem',
               fontFamily: "'Roboto', sans-serif",
               textAlign: 'center',
             }}
