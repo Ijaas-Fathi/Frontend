@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom'; // Correct hook for navigation i
 
 // A mock function to check if the user is logged in
 //const checkLoggedIn = () => {
-  // Replace with actual login check logic (e.g., checking localStorage or context)
-  //return localStorage.getItem('isLoggedIn') === 'true';
+// Replace with actual login check logic (e.g., checking localStorage or context)
+//return localStorage.getItem('isLoggedIn') === 'true';
 //};
 
 const Enrollment = () => {

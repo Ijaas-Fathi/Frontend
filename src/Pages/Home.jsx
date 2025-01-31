@@ -154,7 +154,7 @@ const Home = () => {
             <motion.div
               style={{ display: 'flex', gap: '30px' }}
               animate={{ x: ['0%', '-100%'] }}
-              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+              transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
             >
               {categories.concat(categories).map((category, index) => (
                 <div key={index} className="category-card" 
