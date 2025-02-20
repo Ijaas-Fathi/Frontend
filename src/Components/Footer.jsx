@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaYoutube, FaWhatsapp } from "react-icons/fa";
 
 function Footer() {
   const [email, setEmail] = useState("");
@@ -24,17 +24,18 @@ function Footer() {
     >
       <div className="container">
         <div className="row">
-        <div className="col-md-4 text-white mb-3">
-          <h5 className="fw-bold">Feel free to reach out for any queries or assistance.
-          </h5>
-          <p className="fs-6">
-            <strong>Phone:</strong> +1 (234) 567-8900 <br />
-            <strong>Email:</strong> contact@learnloop.com <br />
-            <strong>Address:</strong> 123, Learn Loop St, New York, USA <br />
-            <strong>Hotline:</strong> +1 (800) 123-4567 <br />
-          </p>
-        </div>
-          <div className="col-md-4 text-white text-center mb-3" style={{borderLeft: '3px solid #fff'}}>
+          <div className="col-md-4 text-white mb-3">
+            <h5 className="fw-bold">
+              Feel free to reach out for any queries or assistance.
+            </h5>
+            <p className="fs-6">
+              <strong>Phone:</strong> +1 (234) 567-8900 <br />
+              <strong>Email:</strong> contact@learnloop.com <br />
+              <strong>Address:</strong> 123, Learn Loop St, New York, USA <br />
+              <strong>Hotline:</strong> +1 (800) 123-4567 <br />
+            </p>
+          </div>
+          <div className="col-md-4 text-white text-center mb-3" style={{ borderLeft: '3px solid #fff' }}>
             <h5 className="fw-bold">Follow Us</h5>
 
             <div className="d-flex justify-content-center align-items-center mb-2">
@@ -67,38 +68,39 @@ function Footer() {
               </a>
             </div>
             <div className="d-flex justify-content-center align-items-center">
-                <a
-                  href="https://linkedin.com"
-                  className="fs-5 text-primary mx-3"
-                  aria-label="LinkedIn"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-linkedin" style={{ fontSize: "24px" }}></i>
-                </a>
-                <a
-                  href="https://youtube.com"
-                  className="fs-5 text-danger mx-3"
-                  aria-label="YouTube"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-youtube" style={{ fontSize: "24px" }}></i>
-                </a>
-                <a
-                  href="https://wa.me/1234567890" 
-                  className="fs-5 text-success mx-3"
-                  aria-label="WhatsApp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-whatsapp" style={{ fontSize: "24px" }}></i>
-                </a>
-              </div></div>
+              <a
+                href="https://linkedin.com"
+                className="fs-5 text-primary mx-3"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin size={24} />
+              </a>
+              <a
+                href="https://youtube.com"
+                className="fs-5 text-danger mx-3"
+                aria-label="YouTube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaYoutube size={24} />
+              </a>
+              <a
+                href="https://wa.me/1234567890"
+                className="fs-5 text-success mx-3"
+                aria-label="WhatsApp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaWhatsapp size={24} />
+              </a>
+            </div>
+          </div>
 
-          <div className="col-md-4 text-white text-right" style={{borderLeft: '3px solid #fff'}}>
+          <div className="col-md-4 text-white text-right" style={{ borderLeft: '3px solid #fff' }}>
             <h5 className="fw-bold">Subscribe to Our Newsletter</h5>
-            <form onSubmit={handleSubmit} className="mt-4 text-right" style={{width: '100%'}}>
+            <form onSubmit={handleSubmit} className="mt-4 text-right" style={{ width: '100%' }}>
               <input
                 type="email"
                 className="form-control mb-2"

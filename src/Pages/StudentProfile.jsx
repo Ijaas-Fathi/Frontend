@@ -35,7 +35,7 @@ const StudentProfile = () => {
 
           {/* Edit Profile Button */}
           <motion.button
-            className="mt-5 mb-5 text-red-600 font-semibold hover:underline flex items-center"
+            className="mt-1 mb-5 text-red-600 font-semibold hover:underline flex items-center"
             whileHover={{ scale: 1.1 }}
             style={{ backgroundColor: 'black', color: 'white' }}
           >

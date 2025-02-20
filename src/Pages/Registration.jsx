@@ -113,7 +113,7 @@ const Registration = () => {
 
   return (
     <div className="d-flex position-relative flex-column min-vh-100" style={{opacity: 0.9}} >
-    <p className="text-white text-center bg-dark shadow-lg" style={{marginTop: '70px', height: '60px'}}>
+    <p className="bg-dark text-white text-center py-3 fw-normal" style={{ marginTop: '50px' }}>
         <h2 style={{fontSize: '40px'}}>Welcome to the Registration Page</h2>
       </p>
       <div className="d-flex justify-content-center align-items-center flex-grow-1 fw-bold">

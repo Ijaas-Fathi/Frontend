@@ -69,7 +69,7 @@ const Home = () => {
         const interval = setInterval(() => {
           setColor(colors[index]);
           index = (index + 1) % colors.length;
-        }, 500);
+        }, 5000);
 
         return () => clearInterval(interval);
       }, []);
