@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Login = () => {
   const [role, setRole] = useState(''); // Role selection: Student or Instructor
   const [formData, setFormData] = useState({
-    username: '',
+    userName: '',
     password: '',
   });
   const [error, setError] = useState('');
@@ -113,14 +113,14 @@ const Login = () => {
                 {error && <div className="alert alert-danger">{error}</div>}
                 <form onSubmit={handleSubmit}>
                   <div className="mb-3 fw-bold">
-                    <label htmlFor="username" className="form-label">
+                    <label htmlFor="userName" className="form-label">
                       Username
                     </label>
                     <input
-                      type="username"
-                      id="username"
-                      name="username"
-                      value={formData.username}
+                      type="userName"
+                      id="userName"
+                      name="userName"
+                      value={formData.userName}
                       onChange={handleChange}
                       className="form-control"
                       placeholder="Enter the username"

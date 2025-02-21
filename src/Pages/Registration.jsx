@@ -8,7 +8,7 @@ const Registration = () => {
     first_name: '',
     last_name: '',
     email: '',
-    username: '',
+    userName: '',
     password: '',
     confirmPassword: '',
     bio: '', 
@@ -37,7 +37,7 @@ const Registration = () => {
       first_name,
       last_name,
       email,
-      username,
+      userName,
       password,
       confirmPassword,
       bio,
@@ -52,7 +52,7 @@ const Registration = () => {
       !first_name ||
       !last_name ||
       !email ||
-      !username ||
+      !userName ||
       !password ||
       !confirmPassword ||
       (role === 'Instructor' && !bio)
@@ -83,7 +83,7 @@ const Registration = () => {
       firstName: first_name,
       lastName: last_name,
       email,
-      userName: username,
+      userName: userName,
       password,
       ...(role === 'Instructor' && { bio }),
     };
@@ -95,7 +95,7 @@ const Registration = () => {
         first_name: '',
         last_name: '',
         email: '',
-        username: '',
+        userName: '',
         password: '',
         confirmPassword: '',
         bio: '',
@@ -191,14 +191,14 @@ const Registration = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="username" className="form-label">
+                  <label htmlFor="userName" className="form-label">
                     Username
                   </label>
                   <input
                     type="text"
-                    id="username"
-                    name="username"
-                    value={formData.username}
+                    id="userName"
+                    name="userName"
+                    value={formData.userName}
                     onChange={handleChange}
                     className="form-control"
                     placeholder="Enter your username"
