@@ -25,7 +25,6 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-
     const backgroundStyle = {
     background: `url(${SiteBackground}) no-repeat center ${50 + offsetY * 0.1}% fixed`,
     backgroundSize: "cover",

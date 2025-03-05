@@ -27,7 +27,7 @@ function Header() {
         <div className="container d-flex justify-content-between align-items-center" style={{ maxWidth: '1200px' }}>
           {/* Logo */}
           <div className="d-flex align-items-center justify-content-center mx-auto" style={{ flex: 1 }}>
-            <a href=''><img
+            <a href= '/'><img
               src={logo}
               alt="Logo"
               style={{ width: '125px', height: '100px', marginRight: '10px', borderRadius: '50px' }}
