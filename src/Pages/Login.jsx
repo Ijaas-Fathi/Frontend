@@ -62,9 +62,9 @@ const Login = () => {
     alert('Password has been reset successfully!');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const { email, password } = formData;
+    const { username, password } = formData;
 
     // Validation
     if (!role) {
@@ -72,14 +72,52 @@ const Login = () => {
       return;
     }
 
+    if (!username || !password) {
+      setError('Please fill in all fields');
+      return;
+    }
+
     setError('');
 
-    // Navigate to UploadTutorialPage if the role is Instructor
-    if (role === 'Instructor') {
-      alert('Login successful as Instructor');
-      navigate('/UploadTutorialPage');
-    } else {
-      alert('Login successful as Student');
+    try {
+      // Make a POST request to the backend
+      const response = await fetch('http://localhost:8080/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': '*/*',
+        },
+        body: JSON.stringify({
+          username,
+          password,
+          role,
+        }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Login failed');
+      }
+
+      const data = await response.json();
+
+      // Handle successful login
+      if (data.token) {
+        // Store the token in localStorage or sessionStorage
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('role', data.role);
+
+        // Navigate based on role
+        if (role === 'Instructor') {
+          navigate('/UploadTutorialPage');
+        } else {
+          navigate('/StudentDashboard'); // Replace with your student dashboard route
+        }
+      } else {
+        throw new Error('Login failed. Please try again.');
+      }
+    } catch (err) {
+      setError(err.message || 'Login failed. Please try again.');
     }
   };
 
