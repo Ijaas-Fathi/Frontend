@@ -6,7 +6,6 @@ import { Input } from "../Components/input";
 import { Textarea } from "../Components/textarea";
 import "bootstrap/dist/css/bootstrap.min.css";
 import upload from "../assets/Images/upload.png";
-import { motion } from "framer-motion";
 
 const UploadTutorialPage = () => {
   const [title, setTitle] = useState("");
@@ -88,7 +87,7 @@ const UploadTutorialPage = () => {
       }}
     >
       {/* Left Side - Image */}
-      <motion.div style={{ flex: 1, textAlign: "center" }} whileHover={{ scale: 1.1 }}>
+      <div style={{ flex: 1, textAlign: "center" }}>
         <img
           src={upload}
           alt="Tutorial"
@@ -98,7 +97,7 @@ const UploadTutorialPage = () => {
             boxShadow: "6px 6px 10px rgba(0,0,0,0.2)",
           }}
         />
-      </motion.div>
+      </div>
 
       {/* Right Side - Form */}
       <div style={{ flex: 1, display: "flex", justifyContent: "center", opacity: 0.7 }}>
@@ -113,11 +112,10 @@ const UploadTutorialPage = () => {
             opacity: "0.8",
             transition: "transform 0.3s ease-in-out",
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-          onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+          
         >
           <CardContent>
-            <h2 style={{marginTop: '1.5rem', textAlign: "center", color: "#2E8A99", marginBottom: "1.5rem" }}>
+            <h2 style={{marginTop: '1.5rem', textAlign: "center", color: "#1F6E8C", marginBottom: "1.5rem" }}>
               Upload Tutorial
             </h2>
 

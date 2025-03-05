@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-<<<<<<< HEAD
-import { Link } from 'react-router-dom'; 
-=======
-import { useNavigate } from 'react-router-dom'; // For navigation
->>>>>>> 1e824157f49f0287bd319eeb3e208aa7cbc0de83
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // For navigation
+
 
 const Registration = () => {
   const [role, setRole] = useState('');
