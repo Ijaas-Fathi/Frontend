@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const InstructorProfile = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: "#84A7A6" }}>
+    <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: "#84A7A1" }}>
       <motion.div 
         className="p-5 rounded-lg shadow-lg text-white w-full max-w-md mx-auto"
         style={{ backgroundColor: "#2E8A99" }}

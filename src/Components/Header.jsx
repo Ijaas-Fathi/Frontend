@@ -6,9 +6,12 @@ import logo from '../assets/Images/Logo.jpg';
 function Header() {
   const location = useLocation();
   const [activeLink, setActiveLink] = useState(location.pathname);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     setActiveLink(location.pathname);
+    const userRole = localStorage.getItem('userRole'); // Assuming user role is stored in localStorage
+    setIsLoggedIn(userRole === 'student' || userRole === 'instructor');
   }, [location.pathname]);
 
   return (
@@ -27,7 +30,7 @@ function Header() {
         <div className="container d-flex justify-content-between align-items-center" style={{ maxWidth: '1200px' }}>
           {/* Logo */}
           <div className="d-flex align-items-center justify-content-center mx-auto" style={{ flex: 1 }}>
-            <a href= '/'><img
+            <a href='/'><img
               src={logo}
               alt="Logo"
               style={{ width: '125px', height: '100px', marginRight: '10px', borderRadius: '50px' }}
@@ -47,44 +50,20 @@ function Header() {
                   </a>
                 </li>
               ))}
-              <li className="nav-item">
-                <a href="/login" className="btn btn-light text-dark fw-bold fs-6 px-3 mx-2">
-                  Login
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="/registration" className="btn btn-light text-dark fw-bold fs-6 px-3 mx-2">
-                  Sign Up
-                </a>
-              </li>
-              <li>
-                <form className="d-flex" style={{ flex: 1, marginTop: '20px'}}>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Search here..."
-                    style={{
-                      borderWidth: '3px',
-                      borderRadius: '15px',
-                      marginLeft: '10px',
-                      width: '200px',
-                    }}
-                  />
-                  <button
-                    type="submit"
-                    className="btn fw-bold"
-                    style={{
-                      borderRadius: '15px',
-                      width: '80px',
-                      backgroundColor: '#84A7A1',
-                      borderWidth: '2px',
-                      borderColor: '#0E2954',
-                    }}
-                  >
-                    Search
-                  </button>
-                </form>
-              </li>
+              {!isLoggedIn && (
+                <>
+                  <li className="nav-item">
+                    <a href="/login" className="btn btn-light text-dark fw-bold fs-6 px-3 mx-2">
+                      Login
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a href="/registration" className="btn btn-light text-dark fw-bold fs-6 px-3 mx-2">
+                      Sign Up
+                    </a>
+                  </li>
+                </>
+              )}
             </ul>
           </nav>
         </div>
