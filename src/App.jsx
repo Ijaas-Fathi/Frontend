@@ -13,8 +13,8 @@ import Enrollment from './Pages/Enrollment';
 import UploadTutorialPage from './Pages/UploadTutorialPage';
 import StudentProfile from './Pages/StudentProfile';
 import InstructorProfile from './Pages/InstructorProfile';
-import SiteBackground from './assets/Images/SiteBackground.png';
 
+import SiteBackground from './assets/Images/SiteBackground.png';
 function App() {
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => {
@@ -50,6 +50,8 @@ function App() {
           <Route path='/UploadTutorialPage' element={<UploadTutorialPage />} />
           <Route path='/studentProfile' element={<StudentProfile />} />
           <Route path='/instructorProfile' element={<InstructorProfile />} />
+          <Route path="/terms-and-conditions" element={<TermsPrivacy />} />
+          <Route path="/privacy-policy" element={<TermsPrivacy />} />
           <Route path="*" element={<div>404 Page Not Found</div>} />
         </Routes>
         <Footer />

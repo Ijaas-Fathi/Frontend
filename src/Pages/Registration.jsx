@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // For navigation
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // For navigation
+
 
 const Registration = () => {
   const [role, setRole] = useState('');
@@ -268,13 +270,9 @@ const Registration = () => {
                   <input type="checkbox" id="terms" required style={{ marginRight: '10px' }} />
                   <label htmlFor="terms">
                     By signing up, you agree to our{' '}
-                    <a href="/terms" target="_blank" rel="noopener noreferrer">
-                      Terms of Use
-                    </a>{' '}
+                    <Link to="/terms-and-conditions" className="text-blue-500">Terms and Conditions</Link>
                     and{' '}
-                    <a href="/privacy" target="_blank" rel="noopener noreferrer">
-                      Privacy Policy
-                    </a>.
+                    <Link to="/privacy-policy" className="text-blue-500">Privacy Policy</Link>{' '}
                   </label>
                 </div>
                 <button type="submit" className="btn btn-primary fs-5 w-100 fw-bold">

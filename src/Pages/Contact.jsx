@@ -31,7 +31,7 @@ const Contact = () => {
   };
 
   return (
-    <div style={{marginTop: '45px', backgroundColor: '#D1E3DF'}}>
+    <div style={{marginTop: '48px', backgroundColor: '#D1E3DF'}}>
       <div>
       <h1
         className="text-center mb-4"
@@ -53,7 +53,7 @@ const Contact = () => {
             src={contact} 
             alt="Contact"
             className="img-fluid rounded mb-4 shadow"
-            style={{marginTop: '200px', maxHeight: "300px", width: "75%", objectFit: "cover", transform: "rotate(345deg)", transition: "transform 0.5s ease" }}
+            style={{marginTop: '150px', maxHeight: "300px", width: "100%", objectFit: "cover", transform: "rotate(345deg)", transition: "transform 0.5s ease" }}
           />
         </div>
 
