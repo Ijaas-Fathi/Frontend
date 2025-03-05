@@ -31,7 +31,7 @@ const Contact = () => {
   };
 
   return (
-    <div style={{marginTop: '45px', backgroundColor: '#D1E3DF'}}>
+    <div style={{marginTop: '48px', backgroundColor: '#D1E3DF'}}>
       <div>
       <h1
         className="text-center mb-4"
