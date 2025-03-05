@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+<<<<<<< HEAD
 import { Link } from 'react-router-dom'; 
+=======
+import { useNavigate } from 'react-router-dom'; // For navigation
+>>>>>>> 1e824157f49f0287bd319eeb3e208aa7cbc0de83
 
 const Registration = () => {
   const [role, setRole] = useState('');
@@ -12,10 +16,11 @@ const Registration = () => {
     userName: '',
     password: '',
     confirmPassword: '',
-    bio: '', 
+    bio: '',
   });
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const navigate = useNavigate(); // For navigation
 
   const handleRoleChange = (e) => {
     setRole(e.target.value);
@@ -44,6 +49,7 @@ const Registration = () => {
       bio,
     } = formData;
 
+    // Validation
     if (!role) {
       setError('Please select a role (Student or Instructor)');
       return;
@@ -75,21 +81,27 @@ const Registration = () => {
     setError('');
     setSuccessMessage('');
 
-    const url =
-      role === 'Student'
-        ? 'http://localhost:8080/api/students'
-        : 'http://localhost:8080/api/instructors';
-
+    // Prepare data for the backend
     const data = {
       firstName: first_name,
       lastName: last_name,
       email,
       userName: userName,
       password,
+
       ...(role === 'Instructor' && { bio }),
     };
 
+    // Determine the registration endpoint based on the role
+    const url =
+      role === 'Student'
+        ? 'http://localhost:8080/api/students' // Existing student registration endpoint
+        : 'http://localhost:8080/api/instructors'; // Existing instructor registration endpoint
+
     try {
+
+      // Send registration request to the backend
+ 
       const response = await axios.post(url, data, { withCredentials: true });
       setSuccessMessage(`Registration Successful as ${role}!`);
       setFormData({
@@ -105,6 +117,7 @@ const Registration = () => {
       // Optionally redirect to login or another page
       setTimeout(() => (window.location.href = '/login'), 2000);
     } catch (error) {
+      // Handle registration errors
       setError(
         error.response?.data?.message || 'Error during registration. Please try again.'
       );
@@ -113,6 +126,7 @@ const Registration = () => {
   };
 
   return (
+
     <div className="d-flex position-relative flex-column min-vh-100" style={{opacity: 0.9}} >
     <p className="bg-dark text-white text-center py-3 fw-normal" style={{ marginTop: '50px' }}>
         <h2 style={{fontSize: '40px'}}>Welcome to the Registration Page</h2>
@@ -120,10 +134,11 @@ const Registration = () => {
       <div className="d-flex justify-content-center align-items-center flex-grow-1 fw-bold">
         <div
           className="card shadow-lg bg-light p-4 rounded"
-          style={{ width: '100%', maxWidth: '600px'}}
+          style={{ width: '100%', maxWidth: '600px' }}
         >
-          <h1 className="text-center mb-3 bg-dark" style={{borderRadius: '5px', color: "white", height: '60px'}}>
-            Registration</h1>
+          <h1 className="text-center mb-3 bg-dark" style={{ borderRadius: '5px', color: "white", height: '60px' }}>
+            Registration
+          </h1>
           {error && <div className="alert alert-danger">{error}</div>}
           {successMessage && <div className="alert alert-success">{successMessage}</div>}
           <form onSubmit={handleSubmit}>
@@ -265,15 +280,15 @@ const Registration = () => {
                 <button type="submit" className="btn btn-primary fs-5 w-100 fw-bold">
                   Register Now
                 </button>
-            <div className="text-center fs-5 fw-bold mt-3">
-              <p>
-                Already have an account? <a href="/login">Login</a>
-              </p>
-            </div>  
-            </>
-            )}         
+                <div className="text-center fs-5 fw-bold mt-3">
+                  <p>
+                    Already have an account? <a href="/login">Login</a>
+                  </p>
+                </div>
+              </>
+            )}
           </form>
-            <div className="card-footer text-center bg-dark text-white py-3">
+          <div className="card-footer text-center bg-dark text-white py-3">
             <small>Powered by LearnLoop</small>
           </div>
         </div>
