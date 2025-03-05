@@ -13,7 +13,7 @@ import Enrollment from './Pages/Enrollment';
 import UploadTutorialPage from './Pages/UploadTutorialPage';
 import StudentProfile from './Pages/StudentProfile';
 import InstructorProfile from './Pages/InstructorProfile';
-
+import TermsPrivacy from './Pages/TermsPrivacy'; // Ensure correct path
 import SiteBackground from './assets/Images/SiteBackground.png';
 function App() {
   const [offsetY, setOffsetY] = useState(0);
