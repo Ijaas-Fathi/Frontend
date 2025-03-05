@@ -117,7 +117,7 @@ const UploadTutorialPage = () => {
           onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
         >
           <CardContent>
-            <h2 style={{ textAlign: "center", color: "#2E8A99", marginBottom: "1.5rem" }}>
+            <h2 style={{marginTop: '1.5rem', textAlign: "center", color: "#2E8A99", marginBottom: "1.5rem" }}>
               Upload Tutorial
             </h2>
 

@@ -9,7 +9,7 @@ const Registration = () => {
     first_name: '',
     last_name: '',
     email: '',
-    username: '',
+    userName: '',
     password: '',
     confirmPassword: '',
     bio: '',
@@ -39,7 +39,7 @@ const Registration = () => {
       first_name,
       last_name,
       email,
-      username,
+      userName,
       password,
       confirmPassword,
       bio,
@@ -55,7 +55,7 @@ const Registration = () => {
       !first_name ||
       !last_name ||
       !email ||
-      !username ||
+      !userName ||
       !password ||
       !confirmPassword ||
       (role === 'Instructor' && !bio)
@@ -82,8 +82,9 @@ const Registration = () => {
       firstName: first_name,
       lastName: last_name,
       email,
-      username,
-      password, // Password will be hashed on the backend
+      userName: userName,
+      password,
+
       ...(role === 'Instructor' && { bio }),
     };
 
@@ -94,26 +95,23 @@ const Registration = () => {
         : 'http://localhost:8080/api/instructors'; // Existing instructor registration endpoint
 
     try {
+
       // Send registration request to the backend
-      const response = await axios.post(url, data);
-
-      // Handle successful registration
-      if (response.status === 200 || response.status === 201) {
-        setSuccessMessage(`Registration Successful as ${role}!`);
-        setFormData({
-          first_name: '',
-          last_name: '',
-          email: '',
-          username: '',
-          password: '',
-          confirmPassword: '',
-          bio: '',
-        });
-        setRole('');
-
-        // Redirect to the login page after 2 seconds
-        setTimeout(() => navigate('/login'), 2000);
-      }
+ 
+      const response = await axios.post(url, data, { withCredentials: true });
+      setSuccessMessage(`Registration Successful as ${role}!`);
+      setFormData({
+        first_name: '',
+        last_name: '',
+        email: '',
+        userName: '',
+        password: '',
+        confirmPassword: '',
+        bio: '',
+      });
+      setRole('');
+      // Optionally redirect to login or another page
+      setTimeout(() => (window.location.href = '/login'), 2000);
     } catch (error) {
       // Handle registration errors
       setError(
@@ -124,9 +122,10 @@ const Registration = () => {
   };
 
   return (
-    <div className="d-flex position-relative flex-column min-vh-100" style={{ opacity: 0.9 }}>
-      <p className="text-white text-center bg-dark shadow-lg" style={{ marginTop: '70px', height: '60px' }}>
-        <h2 style={{ fontSize: '40px' }}>Welcome to the Registration Page</h2>
+
+    <div className="d-flex position-relative flex-column min-vh-100" style={{opacity: 0.9}} >
+    <p className="bg-dark text-white text-center py-3 fw-normal" style={{ marginTop: '50px' }}>
+        <h2 style={{fontSize: '40px'}}>Welcome to the Registration Page</h2>
       </p>
       <div className="d-flex justify-content-center align-items-center flex-grow-1 fw-bold">
         <div
@@ -204,14 +203,14 @@ const Registration = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="username" className="form-label">
+                  <label htmlFor="userName" className="form-label">
                     Username
                   </label>
                   <input
                     type="text"
-                    id="username"
-                    name="username"
-                    value={formData.username}
+                    id="userName"
+                    name="userName"
+                    value={formData.userName}
                     onChange={handleChange}
                     className="form-control"
                     placeholder="Enter your username"

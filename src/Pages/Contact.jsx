@@ -31,21 +31,18 @@ const Contact = () => {
   };
 
   return (
-    <div className="container py-5">
-      <div style={{backgroundColor: "#F0F8FF"}}>
+    <div style={{marginTop: '45px', backgroundColor: '#D1E3DF'}}>
+      <div>
       <h1
         className="text-center mb-4"
         style={{
-          color: "#191970",
-          background: "linear-gradient(to right, #1e3c72, #2a5298)", 
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
+          color: "#0B2447",
           fontWeight: "bold",
         }}
       >
-        Contact Us
+        Contact Details....
       </h1>
-      <p className="text-center mb-5" style={{ color: "#333" }}>
+      <p className="text-center mb-5" style={{ color: "#333", fontSize: '25px'}}>
         Have any questions? Reach out to us and we'll get back to you as soon as possible.
       </p>
       </div>
@@ -56,16 +53,16 @@ const Contact = () => {
             src={contact} 
             alt="Contact"
             className="img-fluid rounded mb-4 shadow"
-            style={{ maxHeight: "400px", width: "100%", objectFit: "cover", transform: "rotate(345deg)", transition: "transform 0.5s ease" }}
+            style={{marginTop: '200px', maxHeight: "300px", width: "75%", objectFit: "cover", transform: "rotate(345deg)", transition: "transform 0.5s ease" }}
           />
         </div>
 
         <div className="col-md-8">
           <div
             className="contact-info mb-4 p-4 rounded shadow-sm"
-            style={{ background: "linear-gradient(to right, #6dd5ed, #2193b0)" }}
+            style={{ background: " #8BBCC9" }}
           >
-            <h3 className="text-dark fs-5 fw-bold">Get in Touch</h3>
+            <h3 className="fs-5 fw-bold" style={{color: ''}}>Get in Touch</h3>
             <p className="text-dark fs-6 fw-bold">
               Email:{" "}
               <a href="mailto:info@tutorialapp.com" className="text-dark">
@@ -88,11 +85,11 @@ const Contact = () => {
 
           <div
             className="contact-form-container p-4 rounded shadow-lg"
-            style={{ background: "linear-gradient(to right, #a1c4fd, #c2e9fb)" }}
+            style={{ background: " #A1C9D6" }}
           >
             <h3
               className="text-center"
-              style={{ color: "#2a5298", fontWeight: "bold" }}
+              style={{ color: " #195973", fontWeight: "bold" }}
             >
               Leave us a Message✉️
             </h3>
@@ -145,7 +142,7 @@ const Contact = () => {
               <button
                 type="submit"
                 className="btn btn-danger btn-block text-white mt-3 fw-bold fs-5"
-                style={{ background: "#2a5298", borderColor: "#1e3c72" }}
+                style={{ background: "#2E8A99", borderColor: "#1e3c72" }}
               >
                 Send
               </button>

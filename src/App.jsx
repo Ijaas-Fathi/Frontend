@@ -10,10 +10,10 @@ import Tutorials from './Pages/Tutorials';
 import TutorialDetails from './Pages/TutorialDetails';
 import Registration from './Pages/Registration';
 import Enrollment from './Pages/Enrollment';
-import Instructor from './Pages/Instructor';
 import UploadTutorialPage from './Pages/UploadTutorialPage';
 import SiteBackground from './assets/Images/SiteBackground.png';
-
+import StudentProfile from './Pages/StudentProfile';
+import InstructorProfile from './Pages/InstructorProfile';
 function App() {
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => {
@@ -24,7 +24,6 @@ function App() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
 
     const backgroundStyle = {
     background: `url(${SiteBackground}) no-repeat center ${50 + offsetY * 0.1}% fixed`,
@@ -48,8 +47,9 @@ function App() {
           <Route path="/tutorials/:id" element={<TutorialDetails />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/enrollment" element={<Enrollment />} />
-          <Route path='/instructor' element={<Instructor />} />
           <Route path='/UploadTutorialPage' element={<UploadTutorialPage />} />
+          <Route path='/studentProfile' element={<StudentProfile />} />
+          <Route path='/instructorProfile' element={<InstructorProfile />} />
           <Route path="*" element={<div>404 Page Not Found</div>} />
         </Routes>
         <Footer />
