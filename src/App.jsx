@@ -7,14 +7,14 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Tutorials from './Pages/Tutorials';
-import TutorialDetails from './Pages/TutorialDetails';
+import Player from './Pages/Player'; // Import new Player page
 import Registration from './Pages/Registration';
 import Enrollment from './Pages/Enrollment';
 import UploadTutorialPage from './Pages/UploadTutorialPage';
-import SiteBackground from './assets/Images/SiteBackground.png';
 import StudentProfile from './Pages/StudentProfile';
 import InstructorProfile from './Pages/InstructorProfile';
-import TermsPrivacy from './Pages/TermsPrivacy';
+
+import SiteBackground from './assets/Images/SiteBackground.png';
 function App() {
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => {
@@ -26,7 +26,7 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-    const backgroundStyle = {
+  const backgroundStyle = {
     background: `url(${SiteBackground}) no-repeat center ${50 + offsetY * 0.1}% fixed`,
     backgroundSize: "cover",
     minHeight: "100vh",
@@ -36,8 +36,7 @@ function App() {
 
   return (
     <div style={backgroundStyle}>
-    <Router>
-      <div className="App">
+      <Router>
         <Header /><br />
         <Routes>
           <Route path="/login" element={<Login />} />
@@ -45,7 +44,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/tutorials" element={<Tutorials />} />
-          <Route path="/tutorials/:id" element={<TutorialDetails />} />
+          <Route path="/player/:id" element={<Player />} /> 
           <Route path="/registration" element={<Registration />} />
           <Route path="/enrollment" element={<Enrollment />} />
           <Route path='/UploadTutorialPage' element={<UploadTutorialPage />} />
@@ -56,8 +55,8 @@ function App() {
           <Route path="*" element={<div>404 Page Not Found</div>} />
         </Routes>
         <Footer />
-      </div>
-    </Router></div>
+      </Router>
+    </div>
   );
 }
 
