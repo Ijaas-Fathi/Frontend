@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import loginback from '../assets/Images/loginback.png';
 
 const Login = () => {
   const [role, setRole] = useState(''); // Role selection: Student or Instructor
@@ -111,7 +112,7 @@ const Login = () => {
         if (role === 'Instructor') {
           navigate('/UploadTutorialPage');
         } else {
-          navigate('/StudentDashboard'); // Replace with your student dashboard route
+          navigate('/StudentProfile'); 
         }
       } else {
         throw new Error('Login failed. Please try again.');
@@ -122,8 +123,8 @@ const Login = () => {
   };
 
   return (
-    <div className="d-flex position-relative flex-column min-vh-100">
-      <h1 className="bg-dark text-white text-center py-3 fw-normal" style={{ marginTop: '50px' }}>Login here to Enroll Courses</h1>
+<div className="d-flex position-relative flex-column min-vh-100" style={{ backgroundImage: `url(${loginback})` }}>
+<h1 className="bg-dark text-white text-center py-3 fw-normal" style={{ marginTop: '50px' }}>Login here...</h1>
       {/* Main content */}
       <main className="flex-grow-1 d-flex justify-content-center align-items-center" style={{ opacity: 0.9 }}>
         <div className="card shadow-lg p-4" style={{ width: '100%', maxWidth: '500px', borderRadius: '20px' }}>

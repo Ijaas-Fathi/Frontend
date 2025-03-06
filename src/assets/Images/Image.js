@@ -28,6 +28,7 @@ import SiteBackground from './SiteBackground';
 import logo from './Logo';
 import upload from './upload';
 import stu1 from './stu1';
+import loginback from './loginback';
 
 export const Images = {image1}
 export const Images1 = {image2}
@@ -59,3 +60,4 @@ export const SiteBackground = {SiteBackground}
 export const logo = {logo}
 export const upload = {upload}
 export const stu1 = {stu1}
+export const loginback = {loginback}
