@@ -1,18 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useNavigate } from "react-router-dom";
 
 const InstructorProfile = () => {
   const [instructorData, setInstructorData] = useState({});
   const [courses, setCourses] = useState([]);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    const role = localStorage.getItem("role");
+
+    if (!token || role !== "Instructor") {
+      navigate("/login");
+      return;
+    }
+
     const fetchInstructorData = async () => {
       try {
         const response = await fetch("http://localhost:8080/api/instructor/profile", {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Authorization: `Bearer ${token}`,
           },
         });
         if (response.ok) {
@@ -29,51 +39,55 @@ const InstructorProfile = () => {
     };
 
     fetchInstructorData();
-  }, []);
+  }, [navigate]);
+
+  const handleUploadTutorial = () => {
+    navigate("/UploadTutorialPage");
+  };
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <motion.div
-        className="p-5 rounded-lg shadow-lg w-full max-w-md mx-auto"
-        style={{ backgroundColor: "#84A7A1", color: "black", textAlign: "left" }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        {error && (
-          <div className="alert alert-danger">
-            {error}
-          </div>
-        )}
-        <div>
-          <motion.img
+    <div className="min-h-screen d-flex align-items-center justify-content-center">
+      <div className="p-5 rounded-lg shadow-lg w-full max-w-4xl bg-light d-flex flex-column flex-lg-row">
+        {error && <div className="alert alert-danger w-100">{error}</div>}
+        <div className="d-flex flex-column align-items-end text-right w-50 p-4">
+          <img
             src={instructorData.profileImage || "https://via.placeholder.com/120"}
             alt="Profile"
-            className="rounded-full mb-4 border-4 border-dark"
+            className="rounded-circle mb-4 border border-dark"
             style={{ width: "120px", height: "120px" }}
-            whileHover={{ scale: 1.1 }}
           />
-          <h2 className="text-2xl font-bold">Full Name: {instructorData.fullName}</h2>
+          <h2 className="text-2xl font-bold">{instructorData.fullName}</h2>
           <p>{instructorData.email}</p>
+          <p className="mt-3">Description: {instructorData.bio || "Experienced educator guiding students through the world of technology."}</p>
+          <button className="btn btn-primary mt-4" onClick={handleUploadTutorial}>Upload Tutorial</button>
         </div>
-        <p className="mt-4 text-lg fs-4">
-          Description: {instructorData.bio || "Experienced educator guiding students through the world of technology."}
-        </p>
-        <div className="mt-5">
+        <div className="border-start border-dark mx-3"></div>
+        <div className="w-50 p-4">
           <h3 className="text-lg font-bold mb-3">Uploaded Course Details: </h3>
           {courses.length > 0 ? (
-            <ul className="list-group">
+            <div className="row">
               {courses.map((course, index) => (
-                <li key={index} className="list-group-item bg-light text-dark mb-2">
-                  {course.title} - {course.description}
-                </li>
+                <div key={index} className="col-12 mb-4">
+                  <div className="card">
+                    <img
+                      src={course.coverImage || "https://via.placeholder.com/300"}
+                      className="card-img-top"
+                      alt={course.title}
+                      style={{ height: "200px", objectFit: "cover" }}
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title">{course.title}</h5>
+                      <p className="card-text">{course.description}</p>
+                    </div>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           ) : (
             <p>No courses uploaded yet.</p>
           )}
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

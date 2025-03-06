@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Player = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const video = location.state?.video; // Get video details from state
+  const video = location.state?.video; 
 
   if (!video) {
     return <div className="text-center py-5">Video not found!</div>;

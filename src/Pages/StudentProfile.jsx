@@ -55,12 +55,11 @@ const StudentProfile = ({ userId }) => {
         }}>USER PROFILE</h2>
 
         <div className="w-1/3 flex justify-left items-center p-8 text-gray-900 rounded-l-lg">
-          <motion.img
+          <img
             src={stu1}
             alt="Profile"
             className="rounded-lg border-4 border-white"
             style={{ marginLeft: "500px", marginTop: "15px", width: "25%", height: "25%", objectFit: "auto" }}
-            whileHover={{ scale: 1.1 }}
           />
         </div>
 
@@ -84,7 +83,7 @@ const StudentProfile = ({ userId }) => {
             <p>No enrolled courses yet.</p>
           )}
 
-          <a href="/Enrollment">
+          <a href="/Tutorials">
             <button
               className="btn btn-dark mt-2 text-light"
               onClick={() => handleEnrollCourse(1)}
