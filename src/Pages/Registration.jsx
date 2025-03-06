@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-
+import regback from '../assets/Images/regback.png';
 import { Link, useNavigate } from 'react-router-dom';
 
 
@@ -118,12 +118,12 @@ const Registration = () => {
   };
 
   return (
-    <div className="d-flex position-relative flex-column min-vh-100" style={{ opacity: 0.9 }}>
+    <div className="d-flex position-relative flex-column min-vh-100" style={{backgroundImage: `url(${regback})`}}>
       <p className="bg-dark text-white text-center py-3 fw-normal" style={{ marginTop: '50px' }}>
         <h2 style={{ fontSize: '40px' }}>Welcome to the Registration Page</h2>
       </p>
-      <div className="d-flex justify-content-center align-items-center flex-grow-1 fw-bold">
-        <div className="card shadow-lg bg-light p-4 rounded" style={{ width: '100%', maxWidth: '600px' }}>
+      <div className="d-flex justify-content-center align-items-center flex-grow-1 fw-bold"  >
+        <div className="card shadow-lg bg-light p-4 rounded" style={{ width: '100%', maxWidth: '600px'}}>
           <h1 className="text-center mb-3 bg-dark" style={{ borderRadius: '5px', color: "white", height: '60px' }}>
             Registration
           </h1>

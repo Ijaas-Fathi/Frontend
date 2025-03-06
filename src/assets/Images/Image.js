@@ -29,6 +29,7 @@ import logo from './Logo';
 import upload from './upload';
 import stu1 from './stu1';
 import loginback from './loginback';
+import regback from './regback';
 
 export const Images = {image1}
 export const Images1 = {image2}
@@ -61,3 +62,4 @@ export const logo = {logo}
 export const upload = {upload}
 export const stu1 = {stu1}
 export const loginback = {loginback}
+export const regback = {regback}

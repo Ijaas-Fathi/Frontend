@@ -53,12 +53,12 @@ function Header() {
               {!isLoggedIn && (
                 <>
                   <li className="nav-item">
-                    <a href="/login" className="btn btn-light text-dark fw-bold fs-6 px-3 mx-2">
+                    <a href="/login" className="btn text-light fw-bold fs-6 px-3 mx-2">
                       Login
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a href="/registration" className="btn btn-light text-dark fw-bold fs-6 px-3 mx-2">
+                    <a href="/registration" className="btn text-light fw-bold fs-6 px-3 mx-2">
                       Sign Up
                     </a>
                   </li>
