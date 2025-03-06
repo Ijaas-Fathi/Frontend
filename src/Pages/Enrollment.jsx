@@ -1,27 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Correct hook for navigation in React Router v6+
-
-// A mock function to check if the user is logged in
-//const checkLoggedIn = () => {
-// Replace with actual login check logic (e.g., checking localStorage or context)
-//return localStorage.getItem('isLoggedIn') === 'true';
-//};
+import React, { useState } from 'react';
 
 const Enrollment = () => {
   const [student_id, setStudent_id] = useState('');
   const [course_id, setCourse_id] = useState('');
   const [enrollment_date, setEnrollment_date] = useState('');
   const [completion_status, setCompletion_status] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const navigate = useNavigate(); 
-
-  useEffect(() => {
-    if (!checkLoggedIn()) {
-      navigate('/login');
-    } else {
-      setIsLoggedIn(true);
-    }
-  }, [navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,7 +22,14 @@ const Enrollment = () => {
         Enrollment Form
       </h2>
 
-      {isLoggedIn ? (
+      <div
+        className="form-container"
+        style={{
+          backgroundColor: '#84A7A1',
+          padding: '20px',
+          borderRadius: '8px',
+        }}
+      >
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="student_id">Student ID:</label>
@@ -97,11 +87,7 @@ const Enrollment = () => {
             Submit Enrollment
           </button>
         </form>
-      ) : (
-        <div className="text-center">
-          <p>Please log in to access the enrollment page.</p>
-        </div>
-      )}
+      </div>
     </div>
   );
 };
