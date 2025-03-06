@@ -32,27 +32,40 @@ const StudentProfile = ({ userId }) => {
     }
   };
 
+  const handleLogout = () => {
+    window.location.href = "/"; // Redirect to home page
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-5">
       <motion.div
-        className="bg-white rounded-lg shadow-lg flex w-full max-w-4xl"
+        className="bg-white rounded-lg shadow-lg flex w-full max-w-4xl relative"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 3 }}
       >
+        <button
+          className="absolute btn btn-danger" style={{marginLeft: '1150px', marginTop: '5px'}}
+          onClick={handleLogout}
+        >
+          Logout
+        </button>
+
+        <h2 className="text-2xl fw-bold mb-6" style={{textAlign: 'center', color: '#0E2954', fontSize: '40px'
+        }}>USER PROFILE</h2>
+
         <div className="w-1/3 flex justify-left items-center p-8 text-gray-900 rounded-l-lg">
           <motion.img
             src={stu1}
             alt="Profile"
             className="rounded-lg border-4 border-white"
-            style={{ marginLeft: "125px", marginTop: "15px", width: "50%", height: "50%", objectFit: "auto" }}
+            style={{ marginLeft: "500px", marginTop: "15px", width: "25%", height: "25%", objectFit: "auto" }}
             whileHover={{ scale: 1.1 }}
           />
         </div>
 
         <div className="w-2/3 p-8 bg-[#F9F9F9] rounded-r-lg text-center">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-6">User Profile</h2>
-          <div className="bg-[#F1F0EB] p-4 rounded-lg text-gray-900">
+        <div className="bg-[#F1F0EB] p-4 rounded-lg text-gray-900">
             <p className="mb-4"><strong>Full Name:</strong> John Doe</p>
             <p className="mb-4"><strong>Username:</strong> johndoe123</p>
             <p className="mb-4"><strong>Email:</strong> johndoe@student.com</p>
@@ -71,20 +84,14 @@ const StudentProfile = ({ userId }) => {
             <p>No enrolled courses yet.</p>
           )}
 
-          <motion.button
-            className="mt-1 mb-5 text-red-600 font-semibold hover:underline"
-            whileHover={{ scale: 1.1 }}
-            style={{ backgroundColor: 'black', color: 'white' }}
-          >
-            Edit Profile →
-          </motion.button>
-
-          <button
-            className="btn btn-primary mt-3"
-            onClick={() => handleEnrollCourse(1)} 
-          >
-            Enroll New Course
-          </button>
+          <a href="/Enrollment">
+            <button
+              className="btn btn-dark mt-2 text-light"
+              onClick={() => handleEnrollCourse(1)}
+            >
+              Enroll New Course
+            </button>
+          </a>
         </div>
       </motion.div>
     </div>
