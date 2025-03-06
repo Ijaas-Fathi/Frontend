@@ -104,15 +104,15 @@ const Login = () => {
 
       // Handle successful login
       if (data.token) {
-        // Store the token in localStorage or sessionStorage
+        // Store the token and username in localStorage
         localStorage.setItem('token', data.token);
-        localStorage.setItem('role', data.role);
+        localStorage.setItem('username', username); // Store the username
 
         // Navigate based on role
         if (role === 'Instructor') {
           navigate('/InstructorProfile');
         } else {
-          navigate('/StudentProfile'); 
+          navigate('/StudentProfile');
         }
       } else {
         throw new Error('Login failed. Please try again.');
@@ -123,8 +123,9 @@ const Login = () => {
   };
 
   return (
-<div className="d-flex position-relative flex-column min-vh-100" style={{ backgroundImage: `url(${loginback})` }}>
-<h1 className="bg-dark text-white text-center py-3 fw-normal" style={{ marginTop: '50px' }}>Login here...</h1>
+    <div className="d-flex position-relative flex-column min-vh-100" style={{ backgroundImage: `url(${loginback})` }}>
+      <h1 className="bg-dark text-white text-center py-3 fw-normal" style={{ marginTop: '50px' }}>Login here...</h1>
+
       {/* Main content */}
       <main className="flex-grow-1 d-flex justify-content-center align-items-center" style={{ opacity: 0.9 }}>
         <div className="card shadow-lg p-4" style={{ width: '100%', maxWidth: '500px', borderRadius: '20px' }}>
