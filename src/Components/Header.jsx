@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from '../assets/Images/Logo.jpg';
+import axios from 'axios';
 
 function Header() {
   const location = useLocation();
@@ -11,9 +12,29 @@ function Header() {
 
   useEffect(() => {
     setActiveLink(location.pathname);
-    const storedUserRole = localStorage.getItem('userRole'); 
-    setIsLoggedIn(storedUserRole === 'student' || storedUserRole === 'instructor');
-    setUserRole(storedUserRole);
+    
+    const token = localStorage.getItem('token'); // JWT Token stored in localStorage
+  
+    if (token) {
+      axios.get('http://localhost:8080/api/user/details', {
+        headers: {
+          Authorization: `Bearer ${token}`, // Sending token to the backend
+        }
+      })
+      .then(response => {
+        const role = response.data.userRole; // Assuming the API returns { userRole: "student" }
+        if (role) {
+          setUserRole(role);
+          setIsLoggedIn(role === 'student' || role === 'instructor');
+        }
+      })
+      .catch(error => {
+        console.error('Failed to fetch user details', error);
+        setIsLoggedIn(false);
+      });
+    } else {
+      setIsLoggedIn(false);
+    }
   }, [location.pathname]);
 
   return (
@@ -35,7 +56,7 @@ function Header() {
             <a href='/'><img
               src={logo}
               alt="Logo"
-              style={{ width: '125px', height: '100px', marginRight: '10px', borderRadius: '50px' }}
+              style={{ width: '125px', height: '100px', marginRight: '10px', borderRadius: '50px', marginTop: '5px', marginBottom: '10px'}}
             /></a>
           </div>
 

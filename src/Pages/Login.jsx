@@ -110,7 +110,7 @@ const Login = () => {
 
         // Navigate based on role
         if (role === 'Instructor') {
-          navigate('/UploadTutorialPage');
+          navigate('/InstructorProfile');
         } else {
           navigate('/StudentProfile'); 
         }

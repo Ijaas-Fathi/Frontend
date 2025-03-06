@@ -20,7 +20,7 @@ const Home = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000);
+    }, 5000);
     return () => clearInterval(interval); 
   }, [images.length]);
 
@@ -154,7 +154,7 @@ const Home = () => {
             <motion.div
               style={{ display: 'flex', gap: '30px' }}
               animate={{ x: ['0%', '-100%'] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
+              transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
             >
               {categories.concat(categories).map((category, index) => (
                 <div key={index} className="category-card" 
@@ -173,46 +173,7 @@ const Home = () => {
           </motion.div>
         </div>
       </motion.div>
-    
-      <motion.div className="featured-section py-5"
-      initial="hidden"
-      animate="visible"
-      variants={slideInVariants}
-      transition={{ duration: 1, delay: 1 }}
-      >
-        <div className="container">
-          <motion.h2 
-            className="text-center mb-4" 
-            style={{backgroundColor: '#CDE8E5',borderRadius: '10px', fontWeight: 'bold', color: ' #0E2954'}} 
-            whileHover={{ scale: 1.05 }}>
-            Featured Courses</motion.h2>
-          <div className="row">
-          <motion.div className="col-md-6 d-flex align-items-stretch" whileHover={{ scale: 1.05 }}>
-          <div className="card mb-3 shadow">
-            <a href='Tutorials'><img src={image1} className="card-img-top" alt="React for Beginners"/></a>
-              <div className="card-body">
-                <h5 className="card-title">React for Beginners</h5>
-                <p className="card-text"  style={{backgroundSize: 'auto'}}>
-                  Learn the fundamentals of React and start building modern web applications.
-                </p>
-              </div>
-            </div>
-            </motion.div>
-          <motion.div className="col-md-6 align-items-stretch" whileHover={{ scale: 1.05 }} >
-            <div className="card mb-3 shadow">
-              <a href='Tutorials'><img src={image2} className="card-img-top" alt="Mastering Photoshop" /></a>
-              <div className="card-body">
-                <h5 className="card-title">Graphic Designing</h5>
-                <p className="card-text">
-                Creativity Meets Precision✨</p><p>Design Your Vision!!.              
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-        </div>
-      </motion.div>
-  </div>
+    </div>
   </div>
 );
 };
