@@ -7,11 +7,13 @@ function Header() {
   const location = useLocation();
   const [activeLink, setActiveLink] = useState(location.pathname);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userRole, setUserRole] = useState('');
 
   useEffect(() => {
     setActiveLink(location.pathname);
-    const userRole = localStorage.getItem('userRole'); // Assuming user role is stored in localStorage
-    setIsLoggedIn(userRole === 'student' || userRole === 'instructor');
+    const storedUserRole = localStorage.getItem('userRole'); // Assuming user role is stored in localStorage
+    setIsLoggedIn(storedUserRole === 'student' || storedUserRole === 'instructor');
+    setUserRole(storedUserRole);
   }, [location.pathname]);
 
   return (
@@ -39,17 +41,28 @@ function Header() {
 
           <nav style={{ flex: 3 }}>
             <ul className="nav justify-content-center">
-              {['/', '/about', '/tutorials', '/contact'].map((link, index) => (
+              {['/', '/about', '/contact'].map((link, index) => (
                 <li className="nav-item" key={index}>
                   <a
                     href={link}
                     className={`nav-link text-white fs-6 fw-semibold mx-2`}
                     style={{ borderBottom: activeLink === link ? '3px solid white' : 'none' }}
                   >
-                    {link === '/' ? 'Home' : link === '/about' ? 'About Us' : link.substring(1).charAt(0).toUpperCase() + link.substring(2)}
+                    {link === '/' ? 'Home' : link === '/about' ? 'About Us' : 'Contact'}
                   </a>
                 </li>
               ))}
+              {isLoggedIn && userRole === 'student' && (
+                <li className="nav-item">
+                  <a
+                    href="/tutorials"
+                    className={`nav-link text-white fs-6 fw-semibold mx-2`}
+                    style={{ borderBottom: activeLink === '/tutorials' ? '3px solid white' : 'none' }}
+                  >
+                    Tutorials
+                  </a>
+                </li>
+              )}
               {!isLoggedIn && (
                 <>
                   <li className="nav-item">
