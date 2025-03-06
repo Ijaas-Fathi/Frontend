@@ -18,42 +18,60 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    localStorage.setItem("contactFormResponse", JSON.stringify(formData));
-
-    setResponseStatus("Your message has been submitted and saved!");
-    setFormData({
-      name: '',
-      email: '',
-      message: '',
-    });
+  
+    try {
+      const response = await fetch("http://localhost:8080/api/contact/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      console.log("Response Status:", response.status); // Log the status code
+      const result = await response.json(); // Parse the response as JSON
+      console.log("Backend Response:", result); // Log the response for debugging
+  
+      if (response.ok) {
+        setResponseStatus(result); // Set success message
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        setResponseStatus("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error); // Log the error for debugging
+      setResponseStatus("An error occurred. Please try again.");
+    }
   };
-
   return (
-    <div style={{marginTop: '48px', backgroundColor: '#D1E3DF'}}>
+    <div style={{ marginTop: '48px', backgroundColor: '#D1E3DF' }}>
       <div>
-      <h1
-        className="text-center mb-4"
-        style={{
-          color: "#0B2447",
-          fontWeight: "bold",
-        }}
-      >
-        Contact Details....
-      </h1>
-      <p className="text-center mb-5" style={{ color: "#333", fontSize: '25px'}}>
-        Have any questions? Reach out to us and we'll get back to you as soon as possible.
-      </p>
+        <h1
+          className="text-center mb-4"
+          style={{
+            color: "#0B2447",
+            fontWeight: "bold",
+          }}
+        >
+          Contact Details....
+        </h1>
+        <p className="text-center mb-5" style={{ color: "#333", fontSize: '25px' }}>
+          Have any questions? Reach out to us and we'll get back to you as soon as possible.
+        </p>
       </div>
       <div className="row justify-content-center">
         <div className="col-md-4">
-          {}
           <img
-            src={contact} 
+            src={contact}
             alt="Contact"
             className="img-fluid rounded mb-4 shadow"
-            style={{marginTop: '150px', maxHeight: "300px", width: "100%", objectFit: "cover", transform: "rotate(345deg)", transition: "transform 0.5s ease" }}
+            style={{ marginTop: '150px', maxHeight: "300px", width: "100%", objectFit: "cover", transform: "rotate(345deg)", transition: "transform 0.5s ease" }}
           />
         </div>
 
@@ -62,7 +80,7 @@ const Contact = () => {
             className="contact-info mb-4 p-4 rounded shadow-sm"
             style={{ background: " #8BBCC9" }}
           >
-            <h3 className="fs-5 fw-bold" style={{color: ''}}>Get in Touch</h3>
+            <h3 className="fs-5 fw-bold" style={{ color: '' }}>Get in Touch</h3>
             <p className="text-dark fs-6 fw-bold">
               Email:{" "}
               <a href="mailto:info@tutorialapp.com" className="text-dark">

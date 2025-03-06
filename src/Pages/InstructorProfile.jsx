@@ -9,7 +9,7 @@ const InstructorProfile = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
+  /*useEffect(() => {
     const token = localStorage.getItem("token");
     const role = localStorage.getItem("role");
 
@@ -39,17 +39,22 @@ const InstructorProfile = () => {
     };
 
     fetchInstructorData();
-  }, [navigate]);
+  }, [navigate]);*/
 
   const handleUploadTutorial = () => {
     navigate("/UploadTutorialPage");
   };
 
   return (
-    <div className="min-h-screen d-flex align-items-center justify-content-center">
-      <div className="p-5 rounded-lg shadow-lg w-full max-w-4xl bg-light d-flex flex-column flex-lg-row">
+    <div className="min-h-screen d-flex flex-column align-items-center justify-content-center bg-light">
+      <h1 className="text-center mb-5" style={{ fontFamily: "Montserrat", color: "#2E8A99" }}>
+        INSTRUCTOR PROFILE
+      </h1>
+
+      <div className="p-5 rounded-lg shadow-lg w-100 max-w-4xl bg-light d-flex flex-column flex-lg-row">
         {error && <div className="alert alert-danger w-100">{error}</div>}
-        <div className="d-flex flex-column align-items-end text-right w-50 p-4">
+
+        <div className="d-flex flex-column align-items-center text-center w-50 p-4">
           <img
             src={instructorData.profileImage || "https://via.placeholder.com/120"}
             alt="Profile"
@@ -58,10 +63,16 @@ const InstructorProfile = () => {
           />
           <h2 className="text-2xl font-bold">{instructorData.fullName}</h2>
           <p>{instructorData.email}</p>
-          <p className="mt-3">Description: {instructorData.bio || "Experienced educator guiding students through the world of technology."}</p>
-          <button className="btn btn-primary mt-4" onClick={handleUploadTutorial}>Upload Tutorial</button>
+          <p className="mt-3">
+            Description: {instructorData.bio || "Experienced educator guiding students through the world of technology."}
+          </p>
+          <button className="btn btn-primary mt-4" onClick={handleUploadTutorial}>
+            Upload Tutorial
+          </button>
         </div>
+
         <div className="border-start border-dark mx-3"></div>
+
         <div className="w-50 p-4">
           <h3 className="text-lg font-bold mb-3">Uploaded Course Details: </h3>
           {courses.length > 0 ? (

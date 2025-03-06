@@ -38,7 +38,7 @@ const StudentProfile = ({ userId }) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-5">
+    <div className="min-h-screen flex items-center justify-center bg-secondary mt-4">
       <div
         className="bg-white rounded-lg shadow-lg flex w-full max-w-4xl relative"
         initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ const StudentProfile = ({ userId }) => {
         </button>
 
         <h2 className="text-2xl fw-bold mb-6" style={{textAlign: 'center', color: '#0E2954', fontSize: '40px'}}>
-          USER PROFILE
+          STUDENT PROFILE
         </h2>
 
         <div className="w-1/3 flex justify-left items-center p-8 text-gray-900 rounded-l-lg">
@@ -87,7 +87,7 @@ const StudentProfile = ({ userId }) => {
 
           <a href="/Tutorials">
             <button
-              className="btn btn-dark mt-2 text-light"
+              className="btn btn-dark mt-2 mb-3 text-light"
               onClick={() => handleEnrollCourse(1)}
             >
               Enroll New Course
