@@ -57,7 +57,7 @@ const Registration = () => {
       !first_name ||
       !last_name ||
       !email ||
-      !username || // Updated key
+      !username || 
       !password ||
       !confirmPassword ||
       (role === 'Instructor' && !bio)
