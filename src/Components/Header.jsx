@@ -63,6 +63,13 @@ function Header() {
                   </a>
                 </li>
               )}
+              {isLoggedIn && (
+                <li className="nav-item">
+                  <a href="/logout" className="btn text-light fw-bold fs-6 px-3 mx-2">
+                    Logout
+                  </a>
+                </li>
+              )}
               {!isLoggedIn && (
                 <>
                   <li className="nav-item">

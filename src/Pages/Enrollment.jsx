@@ -31,7 +31,7 @@ const Enrollment = () => {
         }}
       >
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
+          <div className="form-group fw-bold">
             <label htmlFor="student_id">Student ID:</label>
             <input
               type="text"
@@ -43,7 +43,7 @@ const Enrollment = () => {
             />
           </div>
 
-          <div className="form-group">
+          <div className="form-group fw-bold">
             <label htmlFor="course_id">Tutorial ID:</label>
             <input
               type="text"
@@ -55,7 +55,7 @@ const Enrollment = () => {
             />
           </div>
 
-          <div className="form-group">
+          <div className="form-group fw-bold">
             <label htmlFor="enrollment_date">Enrollment Date:</label>
             <input
               type="date"
@@ -67,7 +67,7 @@ const Enrollment = () => {
             />
           </div>
 
-          <div className="form-group">
+          <div className="form-group fw-bold">
             <label htmlFor="completion_status">Completion Status:</label>
             <select
               id="completion_status"
