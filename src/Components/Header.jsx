@@ -11,7 +11,7 @@ function Header() {
 
   useEffect(() => {
     setActiveLink(location.pathname);
-    const storedUserRole = localStorage.getItem('userRole'); // Assuming user role is stored in localStorage
+    const storedUserRole = localStorage.getItem('userRole'); 
     setIsLoggedIn(storedUserRole === 'student' || storedUserRole === 'instructor');
     setUserRole(storedUserRole);
   }, [location.pathname]);
@@ -31,7 +31,7 @@ function Header() {
       >
         <div className="container d-flex justify-content-between align-items-center" style={{ maxWidth: '1200px' }}>
           {/* Logo */}
-          <div className="d-flex align-items-center justify-content-center mx-auto" style={{ flex: 1 }}>
+          <div className="d-flex align-items-center justify-content-center" style={{ flex: 1 }}>
             <a href='/'><img
               src={logo}
               alt="Logo"
@@ -40,7 +40,7 @@ function Header() {
           </div>
 
           <nav style={{ flex: 3 }}>
-            <ul className="nav justify-content-center">
+            <ul className="nav justify-content-end">
               {['/', '/about', '/contact'].map((link, index) => (
                 <li className="nav-item" key={index}>
                   <a

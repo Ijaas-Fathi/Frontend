@@ -118,7 +118,12 @@ const Registration = () => {
   };
 
   return (
-    <div className="d-flex position-relative flex-column min-vh-100" style={{backgroundImage: `url(${regback})`}}>
+    <div className="d-flex position-relative flex-column min-vh-100" 
+    style={{
+    backgroundImage: `url(${regback})`,  
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",}}>
       <p className="bg-dark text-white text-center py-3 fw-normal" style={{ marginTop: '50px' }}>
         <h2 style={{ fontSize: '40px' }}>Welcome to the Registration Page</h2>
       </p>
