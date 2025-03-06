@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import "bootstrap/dist/css/bootstrap.min.css";
 import stu1 from "../assets/Images/stu1.png";
 import axios from "axios";
+import { FaSignOutAlt } from "react-icons/fa";
 
 const StudentProfile = ({ userId }) => {
   const [courses, setCourses] = useState([]);
@@ -38,21 +39,22 @@ const StudentProfile = ({ userId }) => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-5">
-      <motion.div
+      <div
         className="bg-white rounded-lg shadow-lg flex w-full max-w-4xl relative"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 3 }}
       >
         <button
-          className="absolute btn btn-danger" style={{marginLeft: '1150px', marginTop: '5px'}}
+          className="absolute btn btn-danger d-flex align-items-center" style={{marginLeft: '1150px', marginTop: '5px'}}
           onClick={handleLogout}
         >
-          Logout
+          <FaSignOutAlt className="me-2" /> Logout
         </button>
 
-        <h2 className="text-2xl fw-bold mb-6" style={{textAlign: 'center', color: '#0E2954', fontSize: '40px'
-        }}>USER PROFILE</h2>
+        <h2 className="text-2xl fw-bold mb-6" style={{textAlign: 'center', color: '#0E2954', fontSize: '40px'}}>
+          USER PROFILE
+        </h2>
 
         <div className="w-1/3 flex justify-left items-center p-8 text-gray-900 rounded-l-lg">
           <img
@@ -64,7 +66,7 @@ const StudentProfile = ({ userId }) => {
         </div>
 
         <div className="w-2/3 p-8 bg-[#F9F9F9] rounded-r-lg text-center">
-        <div className="bg-[#F1F0EB] p-4 rounded-lg text-gray-900">
+          <div className="bg-[#F1F0EB] p-4 rounded-lg text-gray-900">
             <p className="mb-4"><strong>Full Name:</strong> John Doe</p>
             <p className="mb-4"><strong>Username:</strong> johndoe123</p>
             <p className="mb-4"><strong>Email:</strong> johndoe@student.com</p>
@@ -92,7 +94,7 @@ const StudentProfile = ({ userId }) => {
             </button>
           </a>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
